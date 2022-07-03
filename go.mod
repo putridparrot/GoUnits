@@ -1,3 +1,3 @@
-module github.com/putridparrot/GoUnit
+module github.com/putridparrot/GoUnits
 
 go 1.16
