@@ -4,10 +4,11 @@
 // Changes to this file will be lost if the code is regenerated
 // </auto-generated>
 
+package angle
+
 import (
 	"math"
 )
-package angle
 
 /// Degrees conversion functions
 type Degrees float64
