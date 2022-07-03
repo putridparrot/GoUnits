@@ -4,68 +4,68 @@
 // Changes to this file will be lost if the code is regenerated
 // </auto-generated>
 
-package luminous_energy
+package luminousenergy
 
-/// LumenHour conversion functions
+// LumenHour (LumenHour) conversion functions
 type LumenHour float64
 
-/// Converts the supplied LumenHour value to Talbot
+// ToTalbot converts the supplied LumenHour value to Talbot
 func (value LumenHour) ToTalbot() float64 { 
 	return float64(value * 3600.0)
 }
-/// Converts the supplied LumenHour value to LumenMinute
+// ToLumenMinute converts the supplied LumenHour value to LumenMinute
 func (value LumenHour) ToLumenMinute() float64 { 
 	return float64(value * 60.0)
 }
-/// Converts the supplied LumenHour value to LumenSecond
+// ToLumenSecond converts the supplied LumenHour value to LumenSecond
 func (value LumenHour) ToLumenSecond() float64 { 
 	return float64(value * 3600.0)
 }
 
-/// LumenMinute conversion functions
+// LumenMinute (LumenMinute) conversion functions
 type LumenMinute float64
 
-/// Converts the supplied LumenMinute value to Talbot
+// ToTalbot converts the supplied LumenMinute value to Talbot
 func (value LumenMinute) ToTalbot() float64 { 
 	return float64(value * 60.0)
 }
-/// Converts the supplied LumenMinute value to LumenHour
+// ToLumenHour converts the supplied LumenMinute value to LumenHour
 func (value LumenMinute) ToLumenHour() float64 { 
 	return float64(value / 60.0)
 }
-/// Converts the supplied LumenMinute value to LumenSecond
+// ToLumenSecond converts the supplied LumenMinute value to LumenSecond
 func (value LumenMinute) ToLumenSecond() float64 { 
 	return float64(value * 60.0)
 }
 
-/// LumenSecond conversion functions
+// LumenSecond (LumenSecond) conversion functions
 type LumenSecond float64
 
-/// Converts the supplied LumenSecond value to Talbot
+// ToTalbot converts the supplied LumenSecond value to Talbot
 func (value LumenSecond) ToTalbot() float64 { 
 	return float64(value)
 }
-/// Converts the supplied LumenSecond value to LumenHour
+// ToLumenHour converts the supplied LumenSecond value to LumenHour
 func (value LumenSecond) ToLumenHour() float64 { 
 	return float64(value / 3600.0)
 }
-/// Converts the supplied LumenSecond value to LumenMinute
+// ToLumenMinute converts the supplied LumenSecond value to LumenMinute
 func (value LumenSecond) ToLumenMinute() float64 { 
 	return float64(value / 60.0)
 }
 
-/// Talbot conversion functions
+// Talbot (Talbot) conversion functions
 type Talbot float64
 
-/// Converts the supplied Talbot value to LumenSecond
+// ToLumenSecond converts the supplied Talbot value to LumenSecond
 func (value Talbot) ToLumenSecond() float64 { 
 	return float64(value)
 }
-/// Converts the supplied Talbot value to LumenHour
+// ToLumenHour converts the supplied Talbot value to LumenHour
 func (value Talbot) ToLumenHour() float64 { 
 	return float64(value / 3600.0)
 }
-/// Converts the supplied Talbot value to LumenMinute
+// ToLumenMinute converts the supplied Talbot value to LumenMinute
 func (value Talbot) ToLumenMinute() float64 { 
 	return float64(value / 60.0)
 }

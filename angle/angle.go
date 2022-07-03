@@ -10,146 +10,146 @@ import (
 	"math"
 )
 
-/// Degrees conversion functions
+// Degrees (Degrees) conversion functions
 type Degrees float64
 
-/// Converts the supplied Degrees value to Radians
+// ToRadians converts the supplied Degrees value to Radians
 func (value Degrees) ToRadians() float64 { 
 	return float64(value * math.Pi/180.0)
 }
-/// Converts the supplied Degrees value to Gradians
+// ToGradians converts the supplied Degrees value to Gradians
 func (value Degrees) ToGradians() float64 { 
 	return float64(value * 200.0/180.0)
 }
-/// Converts the supplied Degrees value to Milliradians
+// ToMilliradians converts the supplied Degrees value to Milliradians
 func (value Degrees) ToMilliradians() float64 { 
 	return float64(value * (1000.0 * math.Pi)/180.0)
 }
-/// Converts the supplied Degrees value to Minute Of Arc
+// ToMinuteOfArc converts the supplied Degrees value to Minute Of Arc
 func (value Degrees) ToMinuteOfArc() float64 { 
 	return float64(value * 60.0)
 }
-/// Converts the supplied Degrees value to Seconds Of Arc
+// ToSecondsOfArc converts the supplied Degrees value to Seconds Of Arc
 func (value Degrees) ToSecondsOfArc() float64 { 
 	return float64(value * 3600.0)
 }
 
-/// Gradians conversion functions
+// Gradians (Gradians) conversion functions
 type Gradians float64
 
-/// Converts the supplied Gradians value to Degrees
+// ToDegrees converts the supplied Gradians value to Degrees
 func (value Gradians) ToDegrees() float64 { 
 	return float64(value * 180.0/200.0)
 }
-/// Converts the supplied Gradians value to Radians
+// ToRadians converts the supplied Gradians value to Radians
 func (value Gradians) ToRadians() float64 { 
 	return float64(value * math.Pi/200.0)
 }
-/// Converts the supplied Gradians value to Milliradians
+// ToMilliradians converts the supplied Gradians value to Milliradians
 func (value Gradians) ToMilliradians() float64 { 
 	return float64(value * (1000.0*math.Pi)/200.0)
 }
-/// Converts the supplied Gradians value to Minute Of Arc
+// ToMinuteOfArc converts the supplied Gradians value to Minute Of Arc
 func (value Gradians) ToMinuteOfArc() float64 { 
 	return float64(value * 54.0)
 }
-/// Converts the supplied Gradians value to Seconds Of Arc
+// ToSecondsOfArc converts the supplied Gradians value to Seconds Of Arc
 func (value Gradians) ToSecondsOfArc() float64 { 
 	return float64(value * 3240.0)
 }
 
-/// Milliradians conversion functions
+// Milliradians (Milliradians) conversion functions
 type Milliradians float64
 
-/// Converts the supplied Milliradians value to Degrees
+// ToDegrees converts the supplied Milliradians value to Degrees
 func (value Milliradians) ToDegrees() float64 { 
 	return float64(value * 180.0/(1000.0 * math.Pi))
 }
-/// Converts the supplied Milliradians value to Radians
+// ToRadians converts the supplied Milliradians value to Radians
 func (value Milliradians) ToRadians() float64 { 
 	return float64(value / 1000.0)
 }
-/// Converts the supplied Milliradians value to Gradians
+// ToGradians converts the supplied Milliradians value to Gradians
 func (value Milliradians) ToGradians() float64 { 
 	return float64(value * 200.0/(1000.0 * math.Pi))
 }
-/// Converts the supplied Milliradians value to Minute Of Arc
+// ToMinuteOfArc converts the supplied Milliradians value to Minute Of Arc
 func (value Milliradians) ToMinuteOfArc() float64 { 
 	return float64(value * (60.0 * 180.0)/(1000.0 * math.Pi))
 }
-/// Converts the supplied Milliradians value to Seconds Of Arc
+// ToSecondsOfArc converts the supplied Milliradians value to Seconds Of Arc
 func (value Milliradians) ToSecondsOfArc() float64 { 
 	return float64(value * (3600.0 * 180.0)/(1000.0 * math.Pi))
 }
 
-/// Minute Of Arc conversion functions
+// MinuteOfArc (Minute Of Arc) conversion functions
 type MinuteOfArc float64
 
-/// Converts the supplied Minute Of Arc value to Degrees
+// ToDegrees converts the supplied Minute Of Arc value to Degrees
 func (value MinuteOfArc) ToDegrees() float64 { 
 	return float64(value / 60.0)
 }
-/// Converts the supplied Minute Of Arc value to Radians
+// ToRadians converts the supplied Minute Of Arc value to Radians
 func (value MinuteOfArc) ToRadians() float64 { 
 	return float64(value * math.Pi/(60.0 * 180.0))
 }
-/// Converts the supplied Minute Of Arc value to Gradians
+// ToGradians converts the supplied Minute Of Arc value to Gradians
 func (value MinuteOfArc) ToGradians() float64 { 
 	return float64(value / 54.0)
 }
-/// Converts the supplied Minute Of Arc value to Milliradians
+// ToMilliradians converts the supplied Minute Of Arc value to Milliradians
 func (value MinuteOfArc) ToMilliradians() float64 { 
 	return float64(value * (1000.0 * math.Pi) / (60.0 * 180.0))
 }
-/// Converts the supplied Minute Of Arc value to Seconds Of Arc
+// ToSecondsOfArc converts the supplied Minute Of Arc value to Seconds Of Arc
 func (value MinuteOfArc) ToSecondsOfArc() float64 { 
 	return float64(value * 60.0)
 }
 
-/// Radians conversion functions
+// Radians (Radians) conversion functions
 type Radians float64
 
-/// Converts the supplied Radians value to Degrees
+// ToDegrees converts the supplied Radians value to Degrees
 func (value Radians) ToDegrees() float64 { 
 	return float64(value * 180.0/math.Pi)
 }
-/// Converts the supplied Radians value to Gradians
+// ToGradians converts the supplied Radians value to Gradians
 func (value Radians) ToGradians() float64 { 
 	return float64(value * 200.0/math.Pi)
 }
-/// Converts the supplied Radians value to Milliradians
+// ToMilliradians converts the supplied Radians value to Milliradians
 func (value Radians) ToMilliradians() float64 { 
 	return float64(value * 1000.0)
 }
-/// Converts the supplied Radians value to Minute Of Arc
+// ToMinuteOfArc converts the supplied Radians value to Minute Of Arc
 func (value Radians) ToMinuteOfArc() float64 { 
 	return float64(value * (60.0 * 180.0)/math.Pi)
 }
-/// Converts the supplied Radians value to Seconds Of Arc
+// ToSecondsOfArc converts the supplied Radians value to Seconds Of Arc
 func (value Radians) ToSecondsOfArc() float64 { 
 	return float64(value * (3600.0 * 180.0)/math.Pi)
 }
 
-/// Seconds Of Arc conversion functions
+// SecondsOfArc (Seconds Of Arc) conversion functions
 type SecondsOfArc float64
 
-/// Converts the supplied Seconds Of Arc value to Degrees
+// ToDegrees converts the supplied Seconds Of Arc value to Degrees
 func (value SecondsOfArc) ToDegrees() float64 { 
 	return float64(value / 3600.0)
 }
-/// Converts the supplied Seconds Of Arc value to Radians
+// ToRadians converts the supplied Seconds Of Arc value to Radians
 func (value SecondsOfArc) ToRadians() float64 { 
 	return float64(value * math.Pi/(180.0 * 3600.0))
 }
-/// Converts the supplied Seconds Of Arc value to Gradians
+// ToGradians converts the supplied Seconds Of Arc value to Gradians
 func (value SecondsOfArc) ToGradians() float64 { 
 	return float64(value / 3240.0)
 }
-/// Converts the supplied Seconds Of Arc value to Milliradians
+// ToMilliradians converts the supplied Seconds Of Arc value to Milliradians
 func (value SecondsOfArc) ToMilliradians() float64 { 
 	return float64(value * (1000.0 * math.Pi) / (180.0 * 3600.0))
 }
-/// Converts the supplied Seconds Of Arc value to Minute Of Arc
+// ToMinuteOfArc converts the supplied Seconds Of Arc value to Minute Of Arc
 func (value SecondsOfArc) ToMinuteOfArc() float64 { 
 	return float64(value / 60.0)
 }

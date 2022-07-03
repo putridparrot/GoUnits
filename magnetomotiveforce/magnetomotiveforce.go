@@ -4,20 +4,20 @@
 // Changes to this file will be lost if the code is regenerated
 // </auto-generated>
 
-package magnetomotive_force
+package magnetomotiveforce
 
-/// Ampere-turns conversion functions
+// Ampereturns (Ampere-turns) conversion functions
 type Ampereturns float64
 
-/// Converts the supplied Ampere-turns value to Gilberts
+// ToGilberts converts the supplied Ampere-turns value to Gilberts
 func (value Ampereturns) ToGilberts() float64 { 
 	return float64(value / 0.7957747154595)
 }
 
-/// Gilberts conversion functions
+// Gilberts (Gilberts) conversion functions
 type Gilberts float64
 
-/// Converts the supplied Gilberts value to Ampere-turns
+// ToAmpereturns converts the supplied Gilberts value to Ampere-turns
 func (value Gilberts) ToAmpereturns() float64 { 
 	return float64(value * 0.7957747154595)
 }

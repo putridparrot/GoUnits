@@ -6,1026 +6,1026 @@
 
 package volume
 
-/// Fluid Ounces conversion functions
+// FluidOunces (Fluid Ounces) conversion functions
 type FluidOunces float64
 
-/// Converts the supplied Fluid Ounces value to Millilitres
+// ToMillilitres converts the supplied Fluid Ounces value to Millilitres
 func (value FluidOunces) ToMillilitres() float64 { 
 	return float64(value * 28.413074243749994496)
 }
-/// Converts the supplied Fluid Ounces value to Litres
+// ToLitres converts the supplied Fluid Ounces value to Litres
 func (value FluidOunces) ToLitres() float64 { 
 	return float64(value * 0.028413074243749994496)
 }
-/// Converts the supplied Fluid Ounces value to Kilolitres
+// ToKilolitres converts the supplied Fluid Ounces value to Kilolitres
 func (value FluidOunces) ToKilolitres() float64 { 
 	return float64(value * 0.000028413074243749994)
 }
-/// Converts the supplied Fluid Ounces value to Teaspoons
+// ToTeaspoons converts the supplied Fluid Ounces value to Teaspoons
 func (value FluidOunces) ToTeaspoons() float64 { 
 	return float64(value * 4.8)
 }
-/// Converts the supplied Fluid Ounces value to Tablespoons
+// ToTablespoons converts the supplied Fluid Ounces value to Tablespoons
 func (value FluidOunces) ToTablespoons() float64 { 
 	return float64(value * 1.6)
 }
-/// Converts the supplied Fluid Ounces value to Quarts
+// ToQuarts converts the supplied Fluid Ounces value to Quarts
 func (value FluidOunces) ToQuarts() float64 { 
 	return float64(value / 40.0)
 }
-/// Converts the supplied Fluid Ounces value to Pints
+// ToPints converts the supplied Fluid Ounces value to Pints
 func (value FluidOunces) ToPints() float64 { 
 	return float64(value / 20.0)
 }
-/// Converts the supplied Fluid Ounces value to Gallons
+// ToGallons converts the supplied Fluid Ounces value to Gallons
 func (value FluidOunces) ToGallons() float64 { 
 	return float64(value / 160.0)
 }
-/// Converts the supplied Fluid Ounces value to US Teaspoons
+// ToUSTeaspoons converts the supplied Fluid Ounces value to US Teaspoons
 func (value FluidOunces) ToUSTeaspoons() float64 { 
 	return float64(value / 0.1734737167638313984)
 }
-/// Converts the supplied Fluid Ounces value to US Tablespoons
+// ToUSTablespoons converts the supplied Fluid Ounces value to US Tablespoons
 func (value FluidOunces) ToUSTablespoons() float64 { 
 	return float64(value / 0.52042115029149417472)
 }
-/// Converts the supplied Fluid Ounces value to US Quarts
+// ToUSQuarts converts the supplied Fluid Ounces value to US Quarts
 func (value FluidOunces) ToUSQuarts() float64 { 
 	return float64(value / 33.306953618655629312)
 }
-/// Converts the supplied Fluid Ounces value to US Pints
+// ToUSPints converts the supplied Fluid Ounces value to US Pints
 func (value FluidOunces) ToUSPints() float64 { 
 	return float64(value / 16.653476809327814656)
 }
-/// Converts the supplied Fluid Ounces value to US Gallons
+// ToUSGallons converts the supplied Fluid Ounces value to US Gallons
 func (value FluidOunces) ToUSGallons() float64 { 
 	return float64(value / 133.22781447462252544)
 }
-/// Converts the supplied Fluid Ounces value to US Fluid Ounces
+// ToUSFluidOunces converts the supplied Fluid Ounces value to US Fluid Ounces
 func (value FluidOunces) ToUSFluidOunces() float64 { 
 	return float64(value / 1.0408423005829883904)
 }
-/// Converts the supplied Fluid Ounces value to US Cups
+// ToUSCups converts the supplied Fluid Ounces value to US Cups
 func (value FluidOunces) ToUSCups() float64 { 
 	return float64(value / 8.3267384046639071232)
 }
 
-/// Gallons conversion functions
+// Gallons (Gallons) conversion functions
 type Gallons float64
 
-/// Converts the supplied Gallons value to Millilitres
+// ToMillilitres converts the supplied Gallons value to Millilitres
 func (value Gallons) ToMillilitres() float64 { 
 	return float64(value * 4546.091879)
 }
-/// Converts the supplied Gallons value to Litres
+// ToLitres converts the supplied Gallons value to Litres
 func (value Gallons) ToLitres() float64 { 
 	return float64(value * 4.546091879)
 }
-/// Converts the supplied Gallons value to Kilolitres
+// ToKilolitres converts the supplied Gallons value to Kilolitres
 func (value Gallons) ToKilolitres() float64 { 
 	return float64(value * 0.0045460918799)
 }
-/// Converts the supplied Gallons value to Teaspoons
+// ToTeaspoons converts the supplied Gallons value to Teaspoons
 func (value Gallons) ToTeaspoons() float64 { 
 	return float64(value * 768.0)
 }
-/// Converts the supplied Gallons value to Tablespoons
+// ToTablespoons converts the supplied Gallons value to Tablespoons
 func (value Gallons) ToTablespoons() float64 { 
 	return float64(value * 256.0)
 }
-/// Converts the supplied Gallons value to Quarts
+// ToQuarts converts the supplied Gallons value to Quarts
 func (value Gallons) ToQuarts() float64 { 
 	return float64(value * 4.0)
 }
-/// Converts the supplied Gallons value to Pints
+// ToPints converts the supplied Gallons value to Pints
 func (value Gallons) ToPints() float64 { 
 	return float64(value * 8.0)
 }
-/// Converts the supplied Gallons value to Fluid Ounces
+// ToFluidOunces converts the supplied Gallons value to Fluid Ounces
 func (value Gallons) ToFluidOunces() float64 { 
 	return float64(value * 160.0)
 }
-/// Converts the supplied Gallons value to US Teaspoons
+// ToUSTeaspoons converts the supplied Gallons value to US Teaspoons
 func (value Gallons) ToUSTeaspoons() float64 { 
 	return float64(value / 0.00108421072977394606)
 }
-/// Converts the supplied Gallons value to US Tablespoons
+// ToUSTablespoons converts the supplied Gallons value to US Tablespoons
 func (value Gallons) ToUSTablespoons() float64 { 
 	return float64(value / 0.003252632189321838592)
 }
-/// Converts the supplied Gallons value to US Quarts
+// ToUSQuarts converts the supplied Gallons value to US Quarts
 func (value Gallons) ToUSQuarts() float64 { 
 	return float64(value / 0.20816846011659767808)
 }
-/// Converts the supplied Gallons value to US Pints
+// ToUSPints converts the supplied Gallons value to US Pints
 func (value Gallons) ToUSPints() float64 { 
 	return float64(value / 0.10408423005829883904)
 }
-/// Converts the supplied Gallons value to US Gallons
+// ToUSGallons converts the supplied Gallons value to US Gallons
 func (value Gallons) ToUSGallons() float64 { 
 	return float64(value / 0.83267384046639071232)
 }
-/// Converts the supplied Gallons value to US Fluid Ounces
+// ToUSFluidOunces converts the supplied Gallons value to US Fluid Ounces
 func (value Gallons) ToUSFluidOunces() float64 { 
 	return float64(value / 0.006505264378643677184)
 }
-/// Converts the supplied Gallons value to US Cups
+// ToUSCups converts the supplied Gallons value to US Cups
 func (value Gallons) ToUSCups() float64 { 
 	return float64(value / 0.052042115029149417472)
 }
 
-/// Kilolitres conversion functions
+// Kilolitres (Kilolitres) conversion functions
 type Kilolitres float64
 
-/// Converts the supplied Kilolitres value to Millilitres
+// ToMillilitres converts the supplied Kilolitres value to Millilitres
 func (value Kilolitres) ToMillilitres() float64 { 
 	return float64(value * 1000000.0)
 }
-/// Converts the supplied Kilolitres value to Litres
+// ToLitres converts the supplied Kilolitres value to Litres
 func (value Kilolitres) ToLitres() float64 { 
 	return float64(value * 1000.0)
 }
-/// Converts the supplied Kilolitres value to Teaspoons
+// ToTeaspoons converts the supplied Kilolitres value to Teaspoons
 func (value Kilolitres) ToTeaspoons() float64 { 
 	return float64(value / 0.000005919390467447916)
 }
-/// Converts the supplied Kilolitres value to Tablespoons
+// ToTablespoons converts the supplied Kilolitres value to Tablespoons
 func (value Kilolitres) ToTablespoons() float64 { 
 	return float64(value / 0.000017758171402343747)
 }
-/// Converts the supplied Kilolitres value to Quarts
+// ToQuarts converts the supplied Kilolitres value to Quarts
 func (value Kilolitres) ToQuarts() float64 { 
 	return float64(value / 0.00113652296975)
 }
-/// Converts the supplied Kilolitres value to Pints
+// ToPints converts the supplied Kilolitres value to Pints
 func (value Kilolitres) ToPints() float64 { 
 	return float64(value / 0.000568261484874999889)
 }
-/// Converts the supplied Kilolitres value to Gallons
+// ToGallons converts the supplied Kilolitres value to Gallons
 func (value Kilolitres) ToGallons() float64 { 
 	return float64(value / 0.0045460918799)
 }
-/// Converts the supplied Kilolitres value to Fluid Ounces
+// ToFluidOunces converts the supplied Kilolitres value to Fluid Ounces
 func (value Kilolitres) ToFluidOunces() float64 { 
 	return float64(value / 0.0000284130742437499946)
 }
-/// Converts the supplied Kilolitres value to US Teaspoons
+// ToUSTeaspoons converts the supplied Kilolitres value to US Teaspoons
 func (value Kilolitres) ToUSTeaspoons() float64 { 
 	return float64(value / 0.000004928921593749999)
 }
-/// Converts the supplied Kilolitres value to US Tablespoons
+// ToUSTablespoons converts the supplied Kilolitres value to US Tablespoons
 func (value Kilolitres) ToUSTablespoons() float64 { 
 	return float64(value / 0.000014786764781249998)
 }
-/// Converts the supplied Kilolitres value to US Quarts
+// ToUSQuarts converts the supplied Kilolitres value to US Quarts
 func (value Kilolitres) ToUSQuarts() float64 { 
 	return float64(value / 0.000946352945999999959)
 }
-/// Converts the supplied Kilolitres value to US Pints
+// ToUSPints converts the supplied Kilolitres value to US Pints
 func (value Kilolitres) ToUSPints() float64 { 
 	return float64(value / 0.000473176472999999979)
 }
-/// Converts the supplied Kilolitres value to US Gallons
+// ToUSGallons converts the supplied Kilolitres value to US Gallons
 func (value Kilolitres) ToUSGallons() float64 { 
 	return float64(value / 0.003785411784)
 }
-/// Converts the supplied Kilolitres value to US Fluid Ounces
+// ToUSFluidOunces converts the supplied Kilolitres value to US Fluid Ounces
 func (value Kilolitres) ToUSFluidOunces() float64 { 
 	return float64(value / 0.0000295735296)
 }
-/// Converts the supplied Kilolitres value to US Cups
+// ToUSCups converts the supplied Kilolitres value to US Cups
 func (value Kilolitres) ToUSCups() float64 { 
 	return float64(value / 0.000236588236499999989)
 }
 
-/// Litres conversion functions
+// Litres (Litres) conversion functions
 type Litres float64
 
-/// Converts the supplied Litres value to Millilitres
+// ToMillilitres converts the supplied Litres value to Millilitres
 func (value Litres) ToMillilitres() float64 { 
 	return float64(value * 1000.0)
 }
-/// Converts the supplied Litres value to Kilolitres
+// ToKilolitres converts the supplied Litres value to Kilolitres
 func (value Litres) ToKilolitres() float64 { 
 	return float64(value / 1000.0)
 }
-/// Converts the supplied Litres value to Teaspoons
+// ToTeaspoons converts the supplied Litres value to Teaspoons
 func (value Litres) ToTeaspoons() float64 { 
 	return float64(value / 0.005919390467447916134)
 }
-/// Converts the supplied Litres value to Tablespoons
+// ToTablespoons converts the supplied Litres value to Tablespoons
 func (value Litres) ToTablespoons() float64 { 
 	return float64(value / 0.017758171402343747584)
 }
-/// Converts the supplied Litres value to Quarts
+// ToQuarts converts the supplied Litres value to Quarts
 func (value Litres) ToQuarts() float64 { 
 	return float64(value / 1.13652296975)
 }
-/// Converts the supplied Litres value to Pints
+// ToPints converts the supplied Litres value to Pints
 func (value Litres) ToPints() float64 { 
 	return float64(value / 0.56826148487499988992)
 }
-/// Converts the supplied Litres value to Gallons
+// ToGallons converts the supplied Litres value to Gallons
 func (value Litres) ToGallons() float64 { 
 	return float64(value / 4.546091879)
 }
-/// Converts the supplied Litres value to Fluid Ounces
+// ToFluidOunces converts the supplied Litres value to Fluid Ounces
 func (value Litres) ToFluidOunces() float64 { 
 	return float64(value / 0.028413074243749994496)
 }
-/// Converts the supplied Litres value to US Teaspoons
+// ToUSTeaspoons converts the supplied Litres value to US Teaspoons
 func (value Litres) ToUSTeaspoons() float64 { 
 	return float64(value / 0.004928921593749999616)
 }
-/// Converts the supplied Litres value to US Tablespoons
+// ToUSTablespoons converts the supplied Litres value to US Tablespoons
 func (value Litres) ToUSTablespoons() float64 { 
 	return float64(value / 0.014786764781249998848)
 }
-/// Converts the supplied Litres value to US Quarts
+// ToUSQuarts converts the supplied Litres value to US Quarts
 func (value Litres) ToUSQuarts() float64 { 
 	return float64(value / 0.94635294599999995904)
 }
-/// Converts the supplied Litres value to US Pints
+// ToUSPints converts the supplied Litres value to US Pints
 func (value Litres) ToUSPints() float64 { 
 	return float64(value / 0.47317647299999997952)
 }
-/// Converts the supplied Litres value to US Gallons
+// ToUSGallons converts the supplied Litres value to US Gallons
 func (value Litres) ToUSGallons() float64 { 
 	return float64(value / 3.785411784)
 }
-/// Converts the supplied Litres value to US Fluid Ounces
+// ToUSFluidOunces converts the supplied Litres value to US Fluid Ounces
 func (value Litres) ToUSFluidOunces() float64 { 
 	return float64(value / 0.029573529562499997696)
 }
-/// Converts the supplied Litres value to US Cups
+// ToUSCups converts the supplied Litres value to US Cups
 func (value Litres) ToUSCups() float64 { 
 	return float64(value / 0.23658823649999998976)
 }
 
-/// Millilitres conversion functions
+// Millilitres (Millilitres) conversion functions
 type Millilitres float64
 
-/// Converts the supplied Millilitres value to Litres
+// ToLitres converts the supplied Millilitres value to Litres
 func (value Millilitres) ToLitres() float64 { 
 	return float64(value / 1000.0)
 }
-/// Converts the supplied Millilitres value to Kilolitres
+// ToKilolitres converts the supplied Millilitres value to Kilolitres
 func (value Millilitres) ToKilolitres() float64 { 
 	return float64(value / 1000000.0)
 }
-/// Converts the supplied Millilitres value to Teaspoons
+// ToTeaspoons converts the supplied Millilitres value to Teaspoons
 func (value Millilitres) ToTeaspoons() float64 { 
 	return float64(value / 5.9193904674479161344)
 }
-/// Converts the supplied Millilitres value to Tablespoons
+// ToTablespoons converts the supplied Millilitres value to Tablespoons
 func (value Millilitres) ToTablespoons() float64 { 
 	return float64(value / 17.758171402343747584)
 }
-/// Converts the supplied Millilitres value to Quarts
+// ToQuarts converts the supplied Millilitres value to Quarts
 func (value Millilitres) ToQuarts() float64 { 
 	return float64(value / 1136.52296975)
 }
-/// Converts the supplied Millilitres value to Pints
+// ToPints converts the supplied Millilitres value to Pints
 func (value Millilitres) ToPints() float64 { 
 	return float64(value / 568.26148487499988992)
 }
-/// Converts the supplied Millilitres value to Gallons
+// ToGallons converts the supplied Millilitres value to Gallons
 func (value Millilitres) ToGallons() float64 { 
 	return float64(value / 4546.091879)
 }
-/// Converts the supplied Millilitres value to Fluid Ounces
+// ToFluidOunces converts the supplied Millilitres value to Fluid Ounces
 func (value Millilitres) ToFluidOunces() float64 { 
 	return float64(value / 28.413074243749994496)
 }
-/// Converts the supplied Millilitres value to US Teaspoons
+// ToUSTeaspoons converts the supplied Millilitres value to US Teaspoons
 func (value Millilitres) ToUSTeaspoons() float64 { 
 	return float64(value / 4.928921593749999616)
 }
-/// Converts the supplied Millilitres value to US Tablespoons
+// ToUSTablespoons converts the supplied Millilitres value to US Tablespoons
 func (value Millilitres) ToUSTablespoons() float64 { 
 	return float64(value / 14.786764781249998848)
 }
-/// Converts the supplied Millilitres value to US Quarts
+// ToUSQuarts converts the supplied Millilitres value to US Quarts
 func (value Millilitres) ToUSQuarts() float64 { 
 	return float64(value / 946.35294599999995904)
 }
-/// Converts the supplied Millilitres value to US Pints
+// ToUSPints converts the supplied Millilitres value to US Pints
 func (value Millilitres) ToUSPints() float64 { 
 	return float64(value / 473.17647299999997952)
 }
-/// Converts the supplied Millilitres value to US Gallons
+// ToUSGallons converts the supplied Millilitres value to US Gallons
 func (value Millilitres) ToUSGallons() float64 { 
 	return float64(value / 3785.411784)
 }
-/// Converts the supplied Millilitres value to US Fluid Ounces
+// ToUSFluidOunces converts the supplied Millilitres value to US Fluid Ounces
 func (value Millilitres) ToUSFluidOunces() float64 { 
 	return float64(value / 29.573529562499997696)
 }
-/// Converts the supplied Millilitres value to US Cups
+// ToUSCups converts the supplied Millilitres value to US Cups
 func (value Millilitres) ToUSCups() float64 { 
 	return float64(value / 236.58823649999998976)
 }
 
-/// Pints conversion functions
+// Pints (Pints) conversion functions
 type Pints float64
 
-/// Converts the supplied Pints value to Millilitres
+// ToMillilitres converts the supplied Pints value to Millilitres
 func (value Pints) ToMillilitres() float64 { 
 	return float64(value * 568.26148487499988992)
 }
-/// Converts the supplied Pints value to Litres
+// ToLitres converts the supplied Pints value to Litres
 func (value Pints) ToLitres() float64 { 
 	return float64(value * 0.56826148487499988992)
 }
-/// Converts the supplied Pints value to Kilolitres
+// ToKilolitres converts the supplied Pints value to Kilolitres
 func (value Pints) ToKilolitres() float64 { 
 	return float64(value * 0.000568261484874999889)
 }
-/// Converts the supplied Pints value to Teaspoons
+// ToTeaspoons converts the supplied Pints value to Teaspoons
 func (value Pints) ToTeaspoons() float64 { 
 	return float64(value * 96.0)
 }
-/// Converts the supplied Pints value to Tablespoons
+// ToTablespoons converts the supplied Pints value to Tablespoons
 func (value Pints) ToTablespoons() float64 { 
 	return float64(value * 32.0)
 }
-/// Converts the supplied Pints value to Quarts
+// ToQuarts converts the supplied Pints value to Quarts
 func (value Pints) ToQuarts() float64 { 
 	return float64(value  / 2.0)
 }
-/// Converts the supplied Pints value to Gallons
+// ToGallons converts the supplied Pints value to Gallons
 func (value Pints) ToGallons() float64 { 
 	return float64(value / 8.0)
 }
-/// Converts the supplied Pints value to Fluid Ounces
+// ToFluidOunces converts the supplied Pints value to Fluid Ounces
 func (value Pints) ToFluidOunces() float64 { 
 	return float64(value * 20.0)
 }
-/// Converts the supplied Pints value to US Teaspoons
+// ToUSTeaspoons converts the supplied Pints value to US Teaspoons
 func (value Pints) ToUSTeaspoons() float64 { 
 	return float64(value / 0.008673685838191568486)
 }
-/// Converts the supplied Pints value to US Tablespoons
+// ToUSTablespoons converts the supplied Pints value to US Tablespoons
 func (value Pints) ToUSTablespoons() float64 { 
 	return float64(value / 0.026021057514574708736)
 }
-/// Converts the supplied Pints value to US Quarts
+// ToUSQuarts converts the supplied Pints value to US Quarts
 func (value Pints) ToUSQuarts() float64 { 
 	return float64(value / 1.6653476809327814656)
 }
-/// Converts the supplied Pints value to US Pints
+// ToUSPints converts the supplied Pints value to US Pints
 func (value Pints) ToUSPints() float64 { 
 	return float64(value / 0.83267384046639071232)
 }
-/// Converts the supplied Pints value to US Gallons
+// ToUSGallons converts the supplied Pints value to US Gallons
 func (value Pints) ToUSGallons() float64 { 
 	return float64(value / 6.6613907237311258624)
 }
-/// Converts the supplied Pints value to US Fluid Ounces
+// ToUSFluidOunces converts the supplied Pints value to US Fluid Ounces
 func (value Pints) ToUSFluidOunces() float64 { 
 	return float64(value / 0.052042115029149417472)
 }
-/// Converts the supplied Pints value to US Cups
+// ToUSCups converts the supplied Pints value to US Cups
 func (value Pints) ToUSCups() float64 { 
 	return float64(value / 0.41633692023319535616)
 }
 
-/// Quarts conversion functions
+// Quarts (Quarts) conversion functions
 type Quarts float64
 
-/// Converts the supplied Quarts value to Millilitres
+// ToMillilitres converts the supplied Quarts value to Millilitres
 func (value Quarts) ToMillilitres() float64 { 
 	return float64(value * 1136.52296975)
 }
-/// Converts the supplied Quarts value to Litres
+// ToLitres converts the supplied Quarts value to Litres
 func (value Quarts) ToLitres() float64 { 
 	return float64(value * 1.13652296975)
 }
-/// Converts the supplied Quarts value to Kilolitres
+// ToKilolitres converts the supplied Quarts value to Kilolitres
 func (value Quarts) ToKilolitres() float64 { 
 	return float64(value * 0.00113652296975)
 }
-/// Converts the supplied Quarts value to Teaspoons
+// ToTeaspoons converts the supplied Quarts value to Teaspoons
 func (value Quarts) ToTeaspoons() float64 { 
 	return float64(value * 192.0)
 }
-/// Converts the supplied Quarts value to Tablespoons
+// ToTablespoons converts the supplied Quarts value to Tablespoons
 func (value Quarts) ToTablespoons() float64 { 
 	return float64(value * 64.0)
 }
-/// Converts the supplied Quarts value to Pints
+// ToPints converts the supplied Quarts value to Pints
 func (value Quarts) ToPints() float64 { 
 	return float64(value * 2.0)
 }
-/// Converts the supplied Quarts value to Gallons
+// ToGallons converts the supplied Quarts value to Gallons
 func (value Quarts) ToGallons() float64 { 
 	return float64(value / 4.0)
 }
-/// Converts the supplied Quarts value to Fluid Ounces
+// ToFluidOunces converts the supplied Quarts value to Fluid Ounces
 func (value Quarts) ToFluidOunces() float64 { 
 	return float64(value * 40.0)
 }
-/// Converts the supplied Quarts value to US Teaspoons
+// ToUSTeaspoons converts the supplied Quarts value to US Teaspoons
 func (value Quarts) ToUSTeaspoons() float64 { 
 	return float64(value / 0.004336842919095784243)
 }
-/// Converts the supplied Quarts value to US Tablespoons
+// ToUSTablespoons converts the supplied Quarts value to US Tablespoons
 func (value Quarts) ToUSTablespoons() float64 { 
 	return float64(value / 0.013010528757287354368)
 }
-/// Converts the supplied Quarts value to US Quarts
+// ToUSQuarts converts the supplied Quarts value to US Quarts
 func (value Quarts) ToUSQuarts() float64 { 
 	return float64(value / 0.83267384046639071232)
 }
-/// Converts the supplied Quarts value to US Pints
+// ToUSPints converts the supplied Quarts value to US Pints
 func (value Quarts) ToUSPints() float64 { 
 	return float64(value / 0.41633692023319535616)
 }
-/// Converts the supplied Quarts value to US Gallons
+// ToUSGallons converts the supplied Quarts value to US Gallons
 func (value Quarts) ToUSGallons() float64 { 
 	return float64(value / 3.3306953618655629312)
 }
-/// Converts the supplied Quarts value to US Fluid Ounces
+// ToUSFluidOunces converts the supplied Quarts value to US Fluid Ounces
 func (value Quarts) ToUSFluidOunces() float64 { 
 	return float64(value / 0.026021057514574708736)
 }
-/// Converts the supplied Quarts value to US Cups
+// ToUSCups converts the supplied Quarts value to US Cups
 func (value Quarts) ToUSCups() float64 { 
 	return float64(value / 0.20816846011659767808)
 }
 
-/// Tablespoons conversion functions
+// Tablespoons (Tablespoons) conversion functions
 type Tablespoons float64
 
-/// Converts the supplied Tablespoons value to Millilitres
+// ToMillilitres converts the supplied Tablespoons value to Millilitres
 func (value Tablespoons) ToMillilitres() float64 { 
 	return float64(value * 17.758171402343747584)
 }
-/// Converts the supplied Tablespoons value to Litres
+// ToLitres converts the supplied Tablespoons value to Litres
 func (value Tablespoons) ToLitres() float64 { 
 	return float64(value * 0.017758171402343747584)
 }
-/// Converts the supplied Tablespoons value to Kilolitres
+// ToKilolitres converts the supplied Tablespoons value to Kilolitres
 func (value Tablespoons) ToKilolitres() float64 { 
 	return float64(value * 0.000017758171402343747)
 }
-/// Converts the supplied Tablespoons value to Teaspoons
+// ToTeaspoons converts the supplied Tablespoons value to Teaspoons
 func (value Tablespoons) ToTeaspoons() float64 { 
 	return float64(value * 3.0)
 }
-/// Converts the supplied Tablespoons value to Quarts
+// ToQuarts converts the supplied Tablespoons value to Quarts
 func (value Tablespoons) ToQuarts() float64 { 
 	return float64(value / 64.0)
 }
-/// Converts the supplied Tablespoons value to Pints
+// ToPints converts the supplied Tablespoons value to Pints
 func (value Tablespoons) ToPints() float64 { 
 	return float64(value / 32.0)
 }
-/// Converts the supplied Tablespoons value to Gallons
+// ToGallons converts the supplied Tablespoons value to Gallons
 func (value Tablespoons) ToGallons() float64 { 
 	return float64(value / 256.0)
 }
-/// Converts the supplied Tablespoons value to Fluid Ounces
+// ToFluidOunces converts the supplied Tablespoons value to Fluid Ounces
 func (value Tablespoons) ToFluidOunces() float64 { 
 	return float64(value / 1.6)
 }
-/// Converts the supplied Tablespoons value to US Teaspoons
+// ToUSTeaspoons converts the supplied Tablespoons value to US Teaspoons
 func (value Tablespoons) ToUSTeaspoons() float64 { 
 	return float64(value / 0.27755794682213023744)
 }
-/// Converts the supplied Tablespoons value to US Tablespoons
+// ToUSTablespoons converts the supplied Tablespoons value to US Tablespoons
 func (value Tablespoons) ToUSTablespoons() float64 { 
 	return float64(value / 0.83267384046639071232)
 }
-/// Converts the supplied Tablespoons value to US Quarts
+// ToUSQuarts converts the supplied Tablespoons value to US Quarts
 func (value Tablespoons) ToUSQuarts() float64 { 
 	return float64(value / 53.291125789849001984)
 }
-/// Converts the supplied Tablespoons value to US Pints
+// ToUSPints converts the supplied Tablespoons value to US Pints
 func (value Tablespoons) ToUSPints() float64 { 
 	return float64(value / 26.645562894924500992)
 }
-/// Converts the supplied Tablespoons value to US Gallons
+// ToUSGallons converts the supplied Tablespoons value to US Gallons
 func (value Tablespoons) ToUSGallons() float64 { 
 	return float64(value / 213.16450315939602432)
 }
-/// Converts the supplied Tablespoons value to US Fluid Ounces
+// ToUSFluidOunces converts the supplied Tablespoons value to US Fluid Ounces
 func (value Tablespoons) ToUSFluidOunces() float64 { 
 	return float64(value / 1.6653476809327814656)
 }
-/// Converts the supplied Tablespoons value to US Cups
+// ToUSCups converts the supplied Tablespoons value to US Cups
 func (value Tablespoons) ToUSCups() float64 { 
 	return float64(value / 13.322781447462250496)
 }
 
-/// Teaspoons conversion functions
+// Teaspoons (Teaspoons) conversion functions
 type Teaspoons float64
 
-/// Converts the supplied Teaspoons value to Millilitres
+// ToMillilitres converts the supplied Teaspoons value to Millilitres
 func (value Teaspoons) ToMillilitres() float64 { 
 	return float64(value * 5.9193904674479161344)
 }
-/// Converts the supplied Teaspoons value to Litres
+// ToLitres converts the supplied Teaspoons value to Litres
 func (value Teaspoons) ToLitres() float64 { 
 	return float64(value * 0.005919390467447916134)
 }
-/// Converts the supplied Teaspoons value to Kilolitres
+// ToKilolitres converts the supplied Teaspoons value to Kilolitres
 func (value Teaspoons) ToKilolitres() float64 { 
 	return float64(value * 0.000005919390467447916)
 }
-/// Converts the supplied Teaspoons value to Tablespoons
+// ToTablespoons converts the supplied Teaspoons value to Tablespoons
 func (value Teaspoons) ToTablespoons() float64 { 
 	return float64(value / 3.0)
 }
-/// Converts the supplied Teaspoons value to Quarts
+// ToQuarts converts the supplied Teaspoons value to Quarts
 func (value Teaspoons) ToQuarts() float64 { 
 	return float64(value / 192.0)
 }
-/// Converts the supplied Teaspoons value to Pints
+// ToPints converts the supplied Teaspoons value to Pints
 func (value Teaspoons) ToPints() float64 { 
 	return float64(value / 96.0)
 }
-/// Converts the supplied Teaspoons value to Gallons
+// ToGallons converts the supplied Teaspoons value to Gallons
 func (value Teaspoons) ToGallons() float64 { 
 	return float64(value / 768.0)
 }
-/// Converts the supplied Teaspoons value to Fluid Ounces
+// ToFluidOunces converts the supplied Teaspoons value to Fluid Ounces
 func (value Teaspoons) ToFluidOunces() float64 { 
 	return float64(value / 4.8)
 }
-/// Converts the supplied Teaspoons value to US Teaspoons
+// ToUSTeaspoons converts the supplied Teaspoons value to US Teaspoons
 func (value Teaspoons) ToUSTeaspoons() float64 { 
 	return float64(value / 0.83267384046639071232)
 }
-/// Converts the supplied Teaspoons value to US Tablespoons
+// ToUSTablespoons converts the supplied Teaspoons value to US Tablespoons
 func (value Teaspoons) ToUSTablespoons() float64 { 
 	return float64(value / 2.4980215213991718912)
 }
-/// Converts the supplied Teaspoons value to US Quarts
+// ToUSQuarts converts the supplied Teaspoons value to US Quarts
 func (value Teaspoons) ToUSQuarts() float64 { 
 	return float64(value / 159.87337736954701824)
 }
-/// Converts the supplied Teaspoons value to US Pints
+// ToUSPints converts the supplied Teaspoons value to US Pints
 func (value Teaspoons) ToUSPints() float64 { 
 	return float64(value / 79.936688684773507072)
 }
-/// Converts the supplied Teaspoons value to US Gallons
+// ToUSGallons converts the supplied Teaspoons value to US Gallons
 func (value Teaspoons) ToUSGallons() float64 { 
 	return float64(value / 639.49350947818807296)
 }
-/// Converts the supplied Teaspoons value to US Fluid Ounces
+// ToUSFluidOunces converts the supplied Teaspoons value to US Fluid Ounces
 func (value Teaspoons) ToUSFluidOunces() float64 { 
 	return float64(value / 4.9960430427983437824)
 }
-/// Converts the supplied Teaspoons value to US Cups
+// ToUSCups converts the supplied Teaspoons value to US Cups
 func (value Teaspoons) ToUSCups() float64 { 
 	return float64(value / 39.968344342386753536)
 }
 
-/// US Cups conversion functions
+// USCups (US Cups) conversion functions
 type USCups float64
 
-/// Converts the supplied US Cups value to Millilitres
+// ToMillilitres converts the supplied US Cups value to Millilitres
 func (value USCups) ToMillilitres() float64 { 
 	return float64(value * 236.58823649999998976)
 }
-/// Converts the supplied US Cups value to Litres
+// ToLitres converts the supplied US Cups value to Litres
 func (value USCups) ToLitres() float64 { 
 	return float64(value * 0.23658823649999998976)
 }
-/// Converts the supplied US Cups value to Kilolitres
+// ToKilolitres converts the supplied US Cups value to Kilolitres
 func (value USCups) ToKilolitres() float64 { 
 	return float64(value * 0.000236588236499999989)
 }
-/// Converts the supplied US Cups value to Teaspoons
+// ToTeaspoons converts the supplied US Cups value to Teaspoons
 func (value USCups) ToTeaspoons() float64 { 
 	return float64(value * 39.968344342386753536)
 }
-/// Converts the supplied US Cups value to Tablespoons
+// ToTablespoons converts the supplied US Cups value to Tablespoons
 func (value USCups) ToTablespoons() float64 { 
 	return float64(value * 13.322781447462250496)
 }
-/// Converts the supplied US Cups value to Quarts
+// ToQuarts converts the supplied US Cups value to Quarts
 func (value USCups) ToQuarts() float64 { 
 	return float64(value * 0.20816846011659767808)
 }
-/// Converts the supplied US Cups value to Pints
+// ToPints converts the supplied US Cups value to Pints
 func (value USCups) ToPints() float64 { 
 	return float64(value * 0.41633692023319535616)
 }
-/// Converts the supplied US Cups value to Gallons
+// ToGallons converts the supplied US Cups value to Gallons
 func (value USCups) ToGallons() float64 { 
 	return float64(value * 0.052042115029149417472)
 }
-/// Converts the supplied US Cups value to Fluid Ounces
+// ToFluidOunces converts the supplied US Cups value to Fluid Ounces
 func (value USCups) ToFluidOunces() float64 { 
 	return float64(value * 8.3267384046639071232)
 }
-/// Converts the supplied US Cups value to US Teaspoons
+// ToUSTeaspoons converts the supplied US Cups value to US Teaspoons
 func (value USCups) ToUSTeaspoons() float64 { 
 	return float64(value * 48.0)
 }
-/// Converts the supplied US Cups value to US Tablespoons
+// ToUSTablespoons converts the supplied US Cups value to US Tablespoons
 func (value USCups) ToUSTablespoons() float64 { 
 	return float64(value * 16.0)
 }
-/// Converts the supplied US Cups value to US Quarts
+// ToUSQuarts converts the supplied US Cups value to US Quarts
 func (value USCups) ToUSQuarts() float64 { 
 	return float64(value / 4.0)
 }
-/// Converts the supplied US Cups value to US Pints
+// ToUSPints converts the supplied US Cups value to US Pints
 func (value USCups) ToUSPints() float64 { 
 	return float64(value / 2.0)
 }
-/// Converts the supplied US Cups value to US Gallons
+// ToUSGallons converts the supplied US Cups value to US Gallons
 func (value USCups) ToUSGallons() float64 { 
 	return float64(value / 16.0)
 }
-/// Converts the supplied US Cups value to US Fluid Ounces
+// ToUSFluidOunces converts the supplied US Cups value to US Fluid Ounces
 func (value USCups) ToUSFluidOunces() float64 { 
 	return float64(value * 8.0)
 }
 
-/// US Fluid Ounces conversion functions
+// USFluidOunces (US Fluid Ounces) conversion functions
 type USFluidOunces float64
 
-/// Converts the supplied US Fluid Ounces value to Millilitres
+// ToMillilitres converts the supplied US Fluid Ounces value to Millilitres
 func (value USFluidOunces) ToMillilitres() float64 { 
 	return float64(value * 29.573529562499997696)
 }
-/// Converts the supplied US Fluid Ounces value to Litres
+// ToLitres converts the supplied US Fluid Ounces value to Litres
 func (value USFluidOunces) ToLitres() float64 { 
 	return float64(value * 0.029573529562499997696)
 }
-/// Converts the supplied US Fluid Ounces value to Kilolitres
+// ToKilolitres converts the supplied US Fluid Ounces value to Kilolitres
 func (value USFluidOunces) ToKilolitres() float64 { 
 	return float64(value * 0.0000295735296)
 }
-/// Converts the supplied US Fluid Ounces value to Teaspoons
+// ToTeaspoons converts the supplied US Fluid Ounces value to Teaspoons
 func (value USFluidOunces) ToTeaspoons() float64 { 
 	return float64(value * 4.9960430427983437824)
 }
-/// Converts the supplied US Fluid Ounces value to Tablespoons
+// ToTablespoons converts the supplied US Fluid Ounces value to Tablespoons
 func (value USFluidOunces) ToTablespoons() float64 { 
 	return float64(value * 1.6653476809327814656)
 }
-/// Converts the supplied US Fluid Ounces value to Quarts
+// ToQuarts converts the supplied US Fluid Ounces value to Quarts
 func (value USFluidOunces) ToQuarts() float64 { 
 	return float64(value * 0.026021057514574708736)
 }
-/// Converts the supplied US Fluid Ounces value to Pints
+// ToPints converts the supplied US Fluid Ounces value to Pints
 func (value USFluidOunces) ToPints() float64 { 
 	return float64(value * 0.052042115029149417472)
 }
-/// Converts the supplied US Fluid Ounces value to Gallons
+// ToGallons converts the supplied US Fluid Ounces value to Gallons
 func (value USFluidOunces) ToGallons() float64 { 
 	return float64(value * 0.006505264378643677184)
 }
-/// Converts the supplied US Fluid Ounces value to Fluid Ounces
+// ToFluidOunces converts the supplied US Fluid Ounces value to Fluid Ounces
 func (value USFluidOunces) ToFluidOunces() float64 { 
 	return float64(value * 1.0408423005829883904)
 }
-/// Converts the supplied US Fluid Ounces value to US Teaspoons
+// ToUSTeaspoons converts the supplied US Fluid Ounces value to US Teaspoons
 func (value USFluidOunces) ToUSTeaspoons() float64 { 
 	return float64(value * 6.0)
 }
-/// Converts the supplied US Fluid Ounces value to US Tablespoons
+// ToUSTablespoons converts the supplied US Fluid Ounces value to US Tablespoons
 func (value USFluidOunces) ToUSTablespoons() float64 { 
 	return float64(value * 2.0)
 }
-/// Converts the supplied US Fluid Ounces value to US Quarts
+// ToUSQuarts converts the supplied US Fluid Ounces value to US Quarts
 func (value USFluidOunces) ToUSQuarts() float64 { 
 	return float64(value / 32.0)
 }
-/// Converts the supplied US Fluid Ounces value to US Pints
+// ToUSPints converts the supplied US Fluid Ounces value to US Pints
 func (value USFluidOunces) ToUSPints() float64 { 
 	return float64(value / 16.0)
 }
-/// Converts the supplied US Fluid Ounces value to US Gallons
+// ToUSGallons converts the supplied US Fluid Ounces value to US Gallons
 func (value USFluidOunces) ToUSGallons() float64 { 
 	return float64(value / 128.0)
 }
-/// Converts the supplied US Fluid Ounces value to US Cups
+// ToUSCups converts the supplied US Fluid Ounces value to US Cups
 func (value USFluidOunces) ToUSCups() float64 { 
 	return float64(value / 8.0)
 }
 
-/// US Gallons conversion functions
+// USGallons (US Gallons) conversion functions
 type USGallons float64
 
-/// Converts the supplied US Gallons value to Millilitres
+// ToMillilitres converts the supplied US Gallons value to Millilitres
 func (value USGallons) ToMillilitres() float64 { 
 	return float64(value * 3785.411784)
 }
-/// Converts the supplied US Gallons value to Litres
+// ToLitres converts the supplied US Gallons value to Litres
 func (value USGallons) ToLitres() float64 { 
 	return float64(value * 3.785411784)
 }
-/// Converts the supplied US Gallons value to Kilolitres
+// ToKilolitres converts the supplied US Gallons value to Kilolitres
 func (value USGallons) ToKilolitres() float64 { 
 	return float64(value * 0.003785411784)
 }
-/// Converts the supplied US Gallons value to Teaspoons
+// ToTeaspoons converts the supplied US Gallons value to Teaspoons
 func (value USGallons) ToTeaspoons() float64 { 
 	return float64(value * 639.49350947818807296)
 }
-/// Converts the supplied US Gallons value to Tablespoons
+// ToTablespoons converts the supplied US Gallons value to Tablespoons
 func (value USGallons) ToTablespoons() float64 { 
 	return float64(value * 213.16450315939602432)
 }
-/// Converts the supplied US Gallons value to Quarts
+// ToQuarts converts the supplied US Gallons value to Quarts
 func (value USGallons) ToQuarts() float64 { 
 	return float64(value * 3.3306953618655629312)
 }
-/// Converts the supplied US Gallons value to Pints
+// ToPints converts the supplied US Gallons value to Pints
 func (value USGallons) ToPints() float64 { 
 	return float64(value * 6.6613907237311258624)
 }
-/// Converts the supplied US Gallons value to Gallons
+// ToGallons converts the supplied US Gallons value to Gallons
 func (value USGallons) ToGallons() float64 { 
 	return float64(value * 0.83267384046639071232)
 }
-/// Converts the supplied US Gallons value to Fluid Ounces
+// ToFluidOunces converts the supplied US Gallons value to Fluid Ounces
 func (value USGallons) ToFluidOunces() float64 { 
 	return float64(value * 133.22781447462252544)
 }
-/// Converts the supplied US Gallons value to US Teaspoons
+// ToUSTeaspoons converts the supplied US Gallons value to US Teaspoons
 func (value USGallons) ToUSTeaspoons() float64 { 
 	return float64(value * 768.0)
 }
-/// Converts the supplied US Gallons value to US Tablespoons
+// ToUSTablespoons converts the supplied US Gallons value to US Tablespoons
 func (value USGallons) ToUSTablespoons() float64 { 
 	return float64(value * 256.0)
 }
-/// Converts the supplied US Gallons value to US Quarts
+// ToUSQuarts converts the supplied US Gallons value to US Quarts
 func (value USGallons) ToUSQuarts() float64 { 
 	return float64(value * 4.0)
 }
-/// Converts the supplied US Gallons value to US Pints
+// ToUSPints converts the supplied US Gallons value to US Pints
 func (value USGallons) ToUSPints() float64 { 
 	return float64(value * 8.0)
 }
-/// Converts the supplied US Gallons value to US Fluid Ounces
+// ToUSFluidOunces converts the supplied US Gallons value to US Fluid Ounces
 func (value USGallons) ToUSFluidOunces() float64 { 
 	return float64(value * 128.0)
 }
-/// Converts the supplied US Gallons value to US Cups
+// ToUSCups converts the supplied US Gallons value to US Cups
 func (value USGallons) ToUSCups() float64 { 
 	return float64(value * 16.0)
 }
 
-/// US Pints conversion functions
+// USPints (US Pints) conversion functions
 type USPints float64
 
-/// Converts the supplied US Pints value to Millilitres
+// ToMillilitres converts the supplied US Pints value to Millilitres
 func (value USPints) ToMillilitres() float64 { 
 	return float64(value * 473.17647299999997952)
 }
-/// Converts the supplied US Pints value to Litres
+// ToLitres converts the supplied US Pints value to Litres
 func (value USPints) ToLitres() float64 { 
 	return float64(value * 0.47317647299999997952)
 }
-/// Converts the supplied US Pints value to Kilolitres
+// ToKilolitres converts the supplied US Pints value to Kilolitres
 func (value USPints) ToKilolitres() float64 { 
 	return float64(value * 0.000473176472999999979)
 }
-/// Converts the supplied US Pints value to Teaspoons
+// ToTeaspoons converts the supplied US Pints value to Teaspoons
 func (value USPints) ToTeaspoons() float64 { 
 	return float64(value * 79.936688684773507072)
 }
-/// Converts the supplied US Pints value to Tablespoons
+// ToTablespoons converts the supplied US Pints value to Tablespoons
 func (value USPints) ToTablespoons() float64 { 
 	return float64(value * 26.645562894924500992)
 }
-/// Converts the supplied US Pints value to Quarts
+// ToQuarts converts the supplied US Pints value to Quarts
 func (value USPints) ToQuarts() float64 { 
 	return float64(value * 0.41633692023319535616)
 }
-/// Converts the supplied US Pints value to Pints
+// ToPints converts the supplied US Pints value to Pints
 func (value USPints) ToPints() float64 { 
 	return float64(value * 0.83267384046639071232)
 }
-/// Converts the supplied US Pints value to Gallons
+// ToGallons converts the supplied US Pints value to Gallons
 func (value USPints) ToGallons() float64 { 
 	return float64(value * 0.10408423005829883904)
 }
-/// Converts the supplied US Pints value to Fluid Ounces
+// ToFluidOunces converts the supplied US Pints value to Fluid Ounces
 func (value USPints) ToFluidOunces() float64 { 
 	return float64(value * 16.653476809327814656)
 }
-/// Converts the supplied US Pints value to US Teaspoons
+// ToUSTeaspoons converts the supplied US Pints value to US Teaspoons
 func (value USPints) ToUSTeaspoons() float64 { 
 	return float64(value * 96.0)
 }
-/// Converts the supplied US Pints value to US Tablespoons
+// ToUSTablespoons converts the supplied US Pints value to US Tablespoons
 func (value USPints) ToUSTablespoons() float64 { 
 	return float64(value * 32.0)
 }
-/// Converts the supplied US Pints value to US Quarts
+// ToUSQuarts converts the supplied US Pints value to US Quarts
 func (value USPints) ToUSQuarts() float64 { 
 	return float64(value / 2.0)
 }
-/// Converts the supplied US Pints value to US Gallons
+// ToUSGallons converts the supplied US Pints value to US Gallons
 func (value USPints) ToUSGallons() float64 { 
 	return float64(value / 8.0)
 }
-/// Converts the supplied US Pints value to US Fluid Ounces
+// ToUSFluidOunces converts the supplied US Pints value to US Fluid Ounces
 func (value USPints) ToUSFluidOunces() float64 { 
 	return float64(value * 16.0)
 }
-/// Converts the supplied US Pints value to US Cups
+// ToUSCups converts the supplied US Pints value to US Cups
 func (value USPints) ToUSCups() float64 { 
 	return float64(value * 2.0)
 }
 
-/// US Quarts conversion functions
+// USQuarts (US Quarts) conversion functions
 type USQuarts float64
 
-/// Converts the supplied US Quarts value to Millilitres
+// ToMillilitres converts the supplied US Quarts value to Millilitres
 func (value USQuarts) ToMillilitres() float64 { 
 	return float64(value * 946.35294599999995904)
 }
-/// Converts the supplied US Quarts value to Litres
+// ToLitres converts the supplied US Quarts value to Litres
 func (value USQuarts) ToLitres() float64 { 
 	return float64(value * 0.94635294599999995904)
 }
-/// Converts the supplied US Quarts value to Kilolitres
+// ToKilolitres converts the supplied US Quarts value to Kilolitres
 func (value USQuarts) ToKilolitres() float64 { 
 	return float64(value * 0.000946352945999999959)
 }
-/// Converts the supplied US Quarts value to Teaspoons
+// ToTeaspoons converts the supplied US Quarts value to Teaspoons
 func (value USQuarts) ToTeaspoons() float64 { 
 	return float64(value * 159.87337736954701824)
 }
-/// Converts the supplied US Quarts value to Tablespoons
+// ToTablespoons converts the supplied US Quarts value to Tablespoons
 func (value USQuarts) ToTablespoons() float64 { 
 	return float64(value * 53.291125789849001984)
 }
-/// Converts the supplied US Quarts value to Quarts
+// ToQuarts converts the supplied US Quarts value to Quarts
 func (value USQuarts) ToQuarts() float64 { 
 	return float64(value * 0.83267384046639071232)
 }
-/// Converts the supplied US Quarts value to Pints
+// ToPints converts the supplied US Quarts value to Pints
 func (value USQuarts) ToPints() float64 { 
 	return float64(value * 1.6653476809327814656)
 }
-/// Converts the supplied US Quarts value to Gallons
+// ToGallons converts the supplied US Quarts value to Gallons
 func (value USQuarts) ToGallons() float64 { 
 	return float64(value * 0.20816846011659767808)
 }
-/// Converts the supplied US Quarts value to Fluid Ounces
+// ToFluidOunces converts the supplied US Quarts value to Fluid Ounces
 func (value USQuarts) ToFluidOunces() float64 { 
 	return float64(value * 33.306953618655629312)
 }
-/// Converts the supplied US Quarts value to US Teaspoons
+// ToUSTeaspoons converts the supplied US Quarts value to US Teaspoons
 func (value USQuarts) ToUSTeaspoons() float64 { 
 	return float64(value * 192.0)
 }
-/// Converts the supplied US Quarts value to US Tablespoons
+// ToUSTablespoons converts the supplied US Quarts value to US Tablespoons
 func (value USQuarts) ToUSTablespoons() float64 { 
 	return float64(value * 64.0)
 }
-/// Converts the supplied US Quarts value to US Pints
+// ToUSPints converts the supplied US Quarts value to US Pints
 func (value USQuarts) ToUSPints() float64 { 
 	return float64(value * 2.0)
 }
-/// Converts the supplied US Quarts value to US Gallons
+// ToUSGallons converts the supplied US Quarts value to US Gallons
 func (value USQuarts) ToUSGallons() float64 { 
 	return float64(value / 4.0)
 }
-/// Converts the supplied US Quarts value to US Fluid Ounces
+// ToUSFluidOunces converts the supplied US Quarts value to US Fluid Ounces
 func (value USQuarts) ToUSFluidOunces() float64 { 
 	return float64(value * 32.0)
 }
-/// Converts the supplied US Quarts value to US Cups
+// ToUSCups converts the supplied US Quarts value to US Cups
 func (value USQuarts) ToUSCups() float64 { 
 	return float64(value * 4.0)
 }
 
-/// US Tablespoons conversion functions
+// USTablespoons (US Tablespoons) conversion functions
 type USTablespoons float64
 
-/// Converts the supplied US Tablespoons value to Millilitres
+// ToMillilitres converts the supplied US Tablespoons value to Millilitres
 func (value USTablespoons) ToMillilitres() float64 { 
 	return float64(value * 14.786764781249998848)
 }
-/// Converts the supplied US Tablespoons value to Litres
+// ToLitres converts the supplied US Tablespoons value to Litres
 func (value USTablespoons) ToLitres() float64 { 
 	return float64(value * 0.014786764781249998848)
 }
-/// Converts the supplied US Tablespoons value to Kilolitres
+// ToKilolitres converts the supplied US Tablespoons value to Kilolitres
 func (value USTablespoons) ToKilolitres() float64 { 
 	return float64(value * 0.000014786764781249998)
 }
-/// Converts the supplied US Tablespoons value to Teaspoons
+// ToTeaspoons converts the supplied US Tablespoons value to Teaspoons
 func (value USTablespoons) ToTeaspoons() float64 { 
 	return float64(value * 2.4980215213991718912)
 }
-/// Converts the supplied US Tablespoons value to Tablespoons
+// ToTablespoons converts the supplied US Tablespoons value to Tablespoons
 func (value USTablespoons) ToTablespoons() float64 { 
 	return float64(value * 0.83267384046639071232)
 }
-/// Converts the supplied US Tablespoons value to Quarts
+// ToQuarts converts the supplied US Tablespoons value to Quarts
 func (value USTablespoons) ToQuarts() float64 { 
 	return float64(value * 0.013010528757287354368)
 }
-/// Converts the supplied US Tablespoons value to Pints
+// ToPints converts the supplied US Tablespoons value to Pints
 func (value USTablespoons) ToPints() float64 { 
 	return float64(value * 0.026021057514574708736)
 }
-/// Converts the supplied US Tablespoons value to Gallons
+// ToGallons converts the supplied US Tablespoons value to Gallons
 func (value USTablespoons) ToGallons() float64 { 
 	return float64(value * 0.003252632189321838592)
 }
-/// Converts the supplied US Tablespoons value to Fluid Ounces
+// ToFluidOunces converts the supplied US Tablespoons value to Fluid Ounces
 func (value USTablespoons) ToFluidOunces() float64 { 
 	return float64(value * 0.52042115029149417472)
 }
-/// Converts the supplied US Tablespoons value to US Teaspoons
+// ToUSTeaspoons converts the supplied US Tablespoons value to US Teaspoons
 func (value USTablespoons) ToUSTeaspoons() float64 { 
 	return float64(value * 3.0)
 }
-/// Converts the supplied US Tablespoons value to US Quarts
+// ToUSQuarts converts the supplied US Tablespoons value to US Quarts
 func (value USTablespoons) ToUSQuarts() float64 { 
 	return float64(value / 64.0)
 }
-/// Converts the supplied US Tablespoons value to US Pints
+// ToUSPints converts the supplied US Tablespoons value to US Pints
 func (value USTablespoons) ToUSPints() float64 { 
 	return float64(value / 32.0)
 }
-/// Converts the supplied US Tablespoons value to US Gallons
+// ToUSGallons converts the supplied US Tablespoons value to US Gallons
 func (value USTablespoons) ToUSGallons() float64 { 
 	return float64(value / 256.0)
 }
-/// Converts the supplied US Tablespoons value to US Fluid Ounces
+// ToUSFluidOunces converts the supplied US Tablespoons value to US Fluid Ounces
 func (value USTablespoons) ToUSFluidOunces() float64 { 
 	return float64(value / 2.0)
 }
-/// Converts the supplied US Tablespoons value to US Cups
+// ToUSCups converts the supplied US Tablespoons value to US Cups
 func (value USTablespoons) ToUSCups() float64 { 
 	return float64(value / 16.0)
 }
 
-/// US Teaspoons conversion functions
+// USTeaspoons (US Teaspoons) conversion functions
 type USTeaspoons float64
 
-/// Converts the supplied US Teaspoons value to Millilitres
+// ToMillilitres converts the supplied US Teaspoons value to Millilitres
 func (value USTeaspoons) ToMillilitres() float64 { 
 	return float64(value * 4.928921593749999616)
 }
-/// Converts the supplied US Teaspoons value to Litres
+// ToLitres converts the supplied US Teaspoons value to Litres
 func (value USTeaspoons) ToLitres() float64 { 
 	return float64(value * 0.004928921593749999616)
 }
-/// Converts the supplied US Teaspoons value to Kilolitres
+// ToKilolitres converts the supplied US Teaspoons value to Kilolitres
 func (value USTeaspoons) ToKilolitres() float64 { 
 	return float64(value * 0.000004928921593749999)
 }
-/// Converts the supplied US Teaspoons value to Teaspoons
+// ToTeaspoons converts the supplied US Teaspoons value to Teaspoons
 func (value USTeaspoons) ToTeaspoons() float64 { 
 	return float64(value * 0.83267384046639071232)
 }
-/// Converts the supplied US Teaspoons value to Tablespoons
+// ToTablespoons converts the supplied US Teaspoons value to Tablespoons
 func (value USTeaspoons) ToTablespoons() float64 { 
 	return float64(value * 0.27755794682213023744)
 }
-/// Converts the supplied US Teaspoons value to Quarts
+// ToQuarts converts the supplied US Teaspoons value to Quarts
 func (value USTeaspoons) ToQuarts() float64 { 
 	return float64(value * 0.004336842919095784243)
 }
-/// Converts the supplied US Teaspoons value to Pints
+// ToPints converts the supplied US Teaspoons value to Pints
 func (value USTeaspoons) ToPints() float64 { 
 	return float64(value * 0.008673685838191568486)
 }
-/// Converts the supplied US Teaspoons value to Gallons
+// ToGallons converts the supplied US Teaspoons value to Gallons
 func (value USTeaspoons) ToGallons() float64 { 
 	return float64(value * 0.00108421072977394606)
 }
-/// Converts the supplied US Teaspoons value to Fluid Ounces
+// ToFluidOunces converts the supplied US Teaspoons value to Fluid Ounces
 func (value USTeaspoons) ToFluidOunces() float64 { 
 	return float64(value * 0.1734737167638313984)
 }
-/// Converts the supplied US Teaspoons value to US Tablespoons
+// ToUSTablespoons converts the supplied US Teaspoons value to US Tablespoons
 func (value USTeaspoons) ToUSTablespoons() float64 { 
 	return float64(value / 3.0)
 }
-/// Converts the supplied US Teaspoons value to US Quarts
+// ToUSQuarts converts the supplied US Teaspoons value to US Quarts
 func (value USTeaspoons) ToUSQuarts() float64 { 
 	return float64(value / 192.0)
 }
-/// Converts the supplied US Teaspoons value to US Pints
+// ToUSPints converts the supplied US Teaspoons value to US Pints
 func (value USTeaspoons) ToUSPints() float64 { 
 	return float64(value / 96.0)
 }
-/// Converts the supplied US Teaspoons value to US Gallons
+// ToUSGallons converts the supplied US Teaspoons value to US Gallons
 func (value USTeaspoons) ToUSGallons() float64 { 
 	return float64(value / 768.0)
 }
-/// Converts the supplied US Teaspoons value to US Fluid Ounces
+// ToUSFluidOunces converts the supplied US Teaspoons value to US Fluid Ounces
 func (value USTeaspoons) ToUSFluidOunces() float64 { 
 	return float64(value / 6.0)
 }
-/// Converts the supplied US Teaspoons value to US Cups
+// ToUSCups converts the supplied US Teaspoons value to US Cups
 func (value USTeaspoons) ToUSCups() float64 { 
 	return float64(value / 48.0)
 }

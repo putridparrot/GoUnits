@@ -6,102 +6,102 @@
 
 package pressure
 
-/// Atmospheres conversion functions
+// Atmospheres (Atmospheres) conversion functions
 type Atmospheres float64
 
-/// Converts the supplied Atmospheres value to Bars
+// ToBars converts the supplied Atmospheres value to Bars
 func (value Atmospheres) ToBars() float64 { 
 	return float64(value * 1.01325)
 }
-/// Converts the supplied Atmospheres value to Pascals
+// ToPascals converts the supplied Atmospheres value to Pascals
 func (value Atmospheres) ToPascals() float64 { 
 	return float64(value * 101325.0)
 }
-/// Converts the supplied Atmospheres value to Torrs
+// ToTorrs converts the supplied Atmospheres value to Torrs
 func (value Atmospheres) ToTorrs() float64 { 
 	return float64(value * 760.0)
 }
-/// Converts the supplied Atmospheres value to Psi
+// ToPsi converts the supplied Atmospheres value to Psi
 func (value Atmospheres) ToPsi() float64 { 
 	return float64(value * 14.69596432068)
 }
 
-/// Bars conversion functions
+// Bars (Bars) conversion functions
 type Bars float64
 
-/// Converts the supplied Bars value to Atmospheres
+// ToAtmospheres converts the supplied Bars value to Atmospheres
 func (value Bars) ToAtmospheres() float64 { 
 	return float64(value / 1.01325)
 }
-/// Converts the supplied Bars value to Pascals
+// ToPascals converts the supplied Bars value to Pascals
 func (value Bars) ToPascals() float64 { 
 	return float64(value / 0.00001)
 }
-/// Converts the supplied Bars value to Torrs
+// ToTorrs converts the supplied Bars value to Torrs
 func (value Bars) ToTorrs() float64 { 
 	return float64(value * 750.0616827042)
 }
-/// Converts the supplied Bars value to Psi
+// ToPsi converts the supplied Bars value to Psi
 func (value Bars) ToPsi() float64 { 
 	return float64(value * 14.50378911491)
 }
 
-/// Pascals conversion functions
+// Pascals (Pascals) conversion functions
 type Pascals float64
 
-/// Converts the supplied Pascals value to Atmospheres
+// ToAtmospheres converts the supplied Pascals value to Atmospheres
 func (value Pascals) ToAtmospheres() float64 { 
 	return float64(value / 101325.0)
 }
-/// Converts the supplied Pascals value to Bars
+// ToBars converts the supplied Pascals value to Bars
 func (value Pascals) ToBars() float64 { 
 	return float64(value * 0.00001)
 }
-/// Converts the supplied Pascals value to Torrs
+// ToTorrs converts the supplied Pascals value to Torrs
 func (value Pascals) ToTorrs() float64 { 
 	return float64(value * 0.007500616827042)
 }
-/// Converts the supplied Pascals value to Psi
+// ToPsi converts the supplied Pascals value to Psi
 func (value Pascals) ToPsi() float64 { 
 	return float64(value * 0.0001450378911491)
 }
 
-/// Psi conversion functions
+// Psi (Psi) conversion functions
 type Psi float64
 
-/// Converts the supplied Psi value to Bars
+// ToBars converts the supplied Psi value to Bars
 func (value Psi) ToBars() float64 { 
 	return float64(value / 14.50378911491)
 }
-/// Converts the supplied Psi value to Pascals
+// ToPascals converts the supplied Psi value to Pascals
 func (value Psi) ToPascals() float64 { 
 	return float64(value / 0.0001450378911491)
 }
-/// Converts the supplied Psi value to Atmospheres
+// ToAtmospheres converts the supplied Psi value to Atmospheres
 func (value Psi) ToAtmospheres() float64 { 
 	return float64(value / 14.69596432068)
 }
-/// Converts the supplied Psi value to Torrs
+// ToTorrs converts the supplied Psi value to Torrs
 func (value Psi) ToTorrs() float64 { 
 	return float64(value / 0.01933679515879)
 }
 
-/// Torrs conversion functions
+// Torrs (Torrs) conversion functions
 type Torrs float64
 
-/// Converts the supplied Torrs value to Bars
+// ToBars converts the supplied Torrs value to Bars
 func (value Torrs) ToBars() float64 { 
 	return float64(value / 750.0616827042)
 }
-/// Converts the supplied Torrs value to Pascals
+// ToPascals converts the supplied Torrs value to Pascals
 func (value Torrs) ToPascals() float64 { 
 	return float64(value / 0.007500616827042)
 }
-/// Converts the supplied Torrs value to Atmospheres
+// ToAtmospheres converts the supplied Torrs value to Atmospheres
 func (value Torrs) ToAtmospheres() float64 { 
 	return float64(value / 760.0)
 }
-/// Converts the supplied Torrs value to Psi
+// ToPsi converts the supplied Torrs value to Psi
 func (value Torrs) ToPsi() float64 { 
 	return float64(value * 0.01933679515879)
 }

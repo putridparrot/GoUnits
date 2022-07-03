@@ -6,66 +6,66 @@
 
 package force
 
-/// Dynes conversion functions
+// Dynes (Dynes) conversion functions
 type Dynes float64
 
-/// Converts the supplied Dynes value to Newtons
+// ToNewtons converts the supplied Dynes value to Newtons
 func (value Dynes) ToNewtons() float64 { 
 	return float64(value / 100000.0)
 }
-/// Converts the supplied Dynes value to Poundals
+// ToPoundals converts the supplied Dynes value to Poundals
 func (value Dynes) ToPoundals() float64 { 
 	return float64(value / 13825.4954376)
 }
-/// Converts the supplied Dynes value to Kilogram-force
+// ToKilogramforce converts the supplied Dynes value to Kilogram-force
 func (value Dynes) ToKilogramforce() float64 { 
 	return float64(value / 980665.0)
 }
 
-/// Kilogram-force conversion functions
+// Kilogramforce (Kilogram-force) conversion functions
 type Kilogramforce float64
 
-/// Converts the supplied Kilogram-force value to Newtons
+// ToNewtons converts the supplied Kilogram-force value to Newtons
 func (value Kilogramforce) ToNewtons() float64 { 
 	return float64(value * 9.80665)
 }
-/// Converts the supplied Kilogram-force value to Dynes
+// ToDynes converts the supplied Kilogram-force value to Dynes
 func (value Kilogramforce) ToDynes() float64 { 
 	return float64(value * 980665.0)
 }
-/// Converts the supplied Kilogram-force value to Poundals
+// ToPoundals converts the supplied Kilogram-force value to Poundals
 func (value Kilogramforce) ToPoundals() float64 { 
 	return float64(value * 70.93163528397)
 }
 
-/// Newtons conversion functions
+// Newtons (Newtons) conversion functions
 type Newtons float64
 
-/// Converts the supplied Newtons value to Dynes
+// ToDynes converts the supplied Newtons value to Dynes
 func (value Newtons) ToDynes() float64 { 
 	return float64(value * 100000.0)
 }
-/// Converts the supplied Newtons value to Poundals
+// ToPoundals converts the supplied Newtons value to Poundals
 func (value Newtons) ToPoundals() float64 { 
 	return float64(value * 7.23301)
 }
-/// Converts the supplied Newtons value to Kilogram-force
+// ToKilogramforce converts the supplied Newtons value to Kilogram-force
 func (value Newtons) ToKilogramforce() float64 { 
 	return float64(value / 9.80665)
 }
 
-/// Poundals conversion functions
+// Poundals (Poundals) conversion functions
 type Poundals float64
 
-/// Converts the supplied Poundals value to Newtons
+// ToNewtons converts the supplied Poundals value to Newtons
 func (value Poundals) ToNewtons() float64 { 
 	return float64(value / 7.23301)
 }
-/// Converts the supplied Poundals value to Dynes
+// ToDynes converts the supplied Poundals value to Dynes
 func (value Poundals) ToDynes() float64 { 
 	return float64(value * 13825.4954376)
 }
-/// Converts the supplied Poundals value to Kilogram-force
+// ToKilogramforce converts the supplied Poundals value to Kilogram-force
 func (value Poundals) ToKilogramforce() float64 { 
 	return float64(value / 70.93163528397)
 }

@@ -6,66 +6,66 @@
 
 package temperature
 
-/// Celsius conversion functions
+// Celsius (Celsius) conversion functions
 type Celsius float64
 
-/// Converts the supplied Celsius value to Fahrenheit
+// ToFahrenheit converts the supplied Celsius value to Fahrenheit
 func (value Celsius) ToFahrenheit() float64 { 
 	return float64(value * 1.8 + 32.0)
 }
-/// Converts the supplied Celsius value to Kelvin
+// ToKelvin converts the supplied Celsius value to Kelvin
 func (value Celsius) ToKelvin() float64 { 
 	return float64(value + 273.15)
 }
-/// Converts the supplied Celsius value to Rankine
+// ToRankine converts the supplied Celsius value to Rankine
 func (value Celsius) ToRankine() float64 { 
 	return float64(value * 9.0/5.0 + 491.67)
 }
 
-/// Fahrenheit conversion functions
+// Fahrenheit (Fahrenheit) conversion functions
 type Fahrenheit float64
 
-/// Converts the supplied Fahrenheit value to Celsius
+// ToCelsius converts the supplied Fahrenheit value to Celsius
 func (value Fahrenheit) ToCelsius() float64 { 
 	return float64(((value - 32.0) * 5.0) / 9.0)
 }
-/// Converts the supplied Fahrenheit value to Kelvin
+// ToKelvin converts the supplied Fahrenheit value to Kelvin
 func (value Fahrenheit) ToKelvin() float64 { 
 	return float64((((value - 32.0) * 5.0) / 9.0) + 273.15)
 }
-/// Converts the supplied Fahrenheit value to Rankine
+// ToRankine converts the supplied Fahrenheit value to Rankine
 func (value Fahrenheit) ToRankine() float64 { 
 	return float64(value + 459.67)
 }
 
-/// Kelvin conversion functions
+// Kelvin (Kelvin) conversion functions
 type Kelvin float64
 
-/// Converts the supplied Kelvin value to Celsius
+// ToCelsius converts the supplied Kelvin value to Celsius
 func (value Kelvin) ToCelsius() float64 { 
 	return float64(value - 273.15)
 }
-/// Converts the supplied Kelvin value to Fahrenheit
+// ToFahrenheit converts the supplied Kelvin value to Fahrenheit
 func (value Kelvin) ToFahrenheit() float64 { 
 	return float64(((value - 273.15) * 1.8) + 32.0)
 }
-/// Converts the supplied Kelvin value to Rankine
+// ToRankine converts the supplied Kelvin value to Rankine
 func (value Kelvin) ToRankine() float64 { 
 	return float64(value * 1.8)
 }
 
-/// Rankine conversion functions
+// Rankine (Rankine) conversion functions
 type Rankine float64
 
-/// Converts the supplied Rankine value to Celsius
+// ToCelsius converts the supplied Rankine value to Celsius
 func (value Rankine) ToCelsius() float64 { 
 	return float64((value - 491.67) * 5.0/9.0)
 }
-/// Converts the supplied Rankine value to Fahrenheit
+// ToFahrenheit converts the supplied Rankine value to Fahrenheit
 func (value Rankine) ToFahrenheit() float64 { 
 	return float64(value - 459.67)
 }
-/// Converts the supplied Rankine value to Kelvin
+// ToKelvin converts the supplied Rankine value to Kelvin
 func (value Rankine) ToKelvin() float64 { 
 	return float64(value / 1.8)
 }

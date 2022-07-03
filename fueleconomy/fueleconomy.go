@@ -4,68 +4,68 @@
 // Changes to this file will be lost if the code is regenerated
 // </auto-generated>
 
-package fuel_economy
+package fueleconomy
 
-/// Kilometre Per Litre conversion functions
+// KilometrePerLitre (Kilometre Per Litre) conversion functions
 type KilometrePerLitre float64
 
-/// Converts the supplied Kilometre Per Litre value to US Miles Per Gallon
+// ToUSMilesPerGallon converts the supplied Kilometre Per Litre value to US Miles Per Gallon
 func (value KilometrePerLitre) ToUSMilesPerGallon() float64 { 
 	return float64(value * 2.35215)
 }
-/// Converts the supplied Kilometre Per Litre value to Miles Per Gallon
+// ToMilesPerGallon converts the supplied Kilometre Per Litre value to Miles Per Gallon
 func (value KilometrePerLitre) ToMilesPerGallon() float64 { 
 	return float64(value * 2.82481)
 }
-/// Converts the supplied Kilometre Per Litre value to Litres Per 100 Kilometres
+// ToLitresPer100Kilometres converts the supplied Kilometre Per Litre value to Litres Per 100 Kilometres
 func (value KilometrePerLitre) ToLitresPer100Kilometres() float64 { 
 	return float64(100.0 / value)
 }
 
-/// Litres Per 100 Kilometres conversion functions
+// LitresPer100Kilometres (Litres Per 100 Kilometres) conversion functions
 type LitresPer100Kilometres float64
 
-/// Converts the supplied Litres Per 100 Kilometres value to Kilometre Per Litre
+// ToKilometrePerLitre converts the supplied Litres Per 100 Kilometres value to Kilometre Per Litre
 func (value LitresPer100Kilometres) ToKilometrePerLitre() float64 { 
 	return float64(100.0 / value)
 }
-/// Converts the supplied Litres Per 100 Kilometres value to Miles Per Gallon
+// ToMilesPerGallon converts the supplied Litres Per 100 Kilometres value to Miles Per Gallon
 func (value LitresPer100Kilometres) ToMilesPerGallon() float64 { 
 	return float64(282.481 / value)
 }
-/// Converts the supplied Litres Per 100 Kilometres value to US Miles Per Gallon
+// ToUSMilesPerGallon converts the supplied Litres Per 100 Kilometres value to US Miles Per Gallon
 func (value LitresPer100Kilometres) ToUSMilesPerGallon() float64 { 
 	return float64(235.215 / value)
 }
 
-/// Miles Per Gallon conversion functions
+// MilesPerGallon (Miles Per Gallon) conversion functions
 type MilesPerGallon float64
 
-/// Converts the supplied Miles Per Gallon value to Kilometre Per Litre
+// ToKilometrePerLitre converts the supplied Miles Per Gallon value to Kilometre Per Litre
 func (value MilesPerGallon) ToKilometrePerLitre() float64 { 
 	return float64(value / 2.82481)
 }
-/// Converts the supplied Miles Per Gallon value to US Miles Per Gallon
+// ToUSMilesPerGallon converts the supplied Miles Per Gallon value to US Miles Per Gallon
 func (value MilesPerGallon) ToUSMilesPerGallon() float64 { 
 	return float64(value / 1.20095)
 }
-/// Converts the supplied Miles Per Gallon value to Litres Per 100 Kilometres
+// ToLitresPer100Kilometres converts the supplied Miles Per Gallon value to Litres Per 100 Kilometres
 func (value MilesPerGallon) ToLitresPer100Kilometres() float64 { 
 	return float64(282.481 / value)
 }
 
-/// US Miles Per Gallon conversion functions
+// USMilesPerGallon (US Miles Per Gallon) conversion functions
 type USMilesPerGallon float64
 
-/// Converts the supplied US Miles Per Gallon value to Kilometre Per Litre
+// ToKilometrePerLitre converts the supplied US Miles Per Gallon value to Kilometre Per Litre
 func (value USMilesPerGallon) ToKilometrePerLitre() float64 { 
 	return float64(value / 2.35215)
 }
-/// Converts the supplied US Miles Per Gallon value to Miles Per Gallon
+// ToMilesPerGallon converts the supplied US Miles Per Gallon value to Miles Per Gallon
 func (value USMilesPerGallon) ToMilesPerGallon() float64 { 
 	return float64(value * 1.20095)
 }
-/// Converts the supplied US Miles Per Gallon value to Litres Per 100 Kilometres
+// ToLitresPer100Kilometres converts the supplied US Miles Per Gallon value to Litres Per 100 Kilometres
 func (value USMilesPerGallon) ToLitresPer100Kilometres() float64 { 
 	return float64(235.215 / value)
 }

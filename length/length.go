@@ -6,326 +6,326 @@
 
 package length
 
-/// Centimetres conversion functions
+// Centimetres (Centimetres) conversion functions
 type Centimetres float64
 
-/// Converts the supplied Centimetres value to Millimetres
+// ToMillimetres converts the supplied Centimetres value to Millimetres
 func (value Centimetres) ToMillimetres() float64 { 
 	return float64(value * 10.0)
 }
-/// Converts the supplied Centimetres value to Metres
+// ToMetres converts the supplied Centimetres value to Metres
 func (value Centimetres) ToMetres() float64 { 
 	return float64(value / 100.0)
 }
-/// Converts the supplied Centimetres value to Kilometres
+// ToKilometres converts the supplied Centimetres value to Kilometres
 func (value Centimetres) ToKilometres() float64 { 
 	return float64(value / 100000.0)
 }
-/// Converts the supplied Centimetres value to Inches
+// ToInches converts the supplied Centimetres value to Inches
 func (value Centimetres) ToInches() float64 { 
 	return float64(value / 2.54)
 }
-/// Converts the supplied Centimetres value to Feet
+// ToFeet converts the supplied Centimetres value to Feet
 func (value Centimetres) ToFeet() float64 { 
 	return float64(value / 30.48)
 }
-/// Converts the supplied Centimetres value to Yards
+// ToYards converts the supplied Centimetres value to Yards
 func (value Centimetres) ToYards() float64 { 
 	return float64(value / 91.44)
 }
-/// Converts the supplied Centimetres value to Miles
+// ToMiles converts the supplied Centimetres value to Miles
 func (value Centimetres) ToMiles() float64 { 
 	return float64(value / 160934.4)
 }
-/// Converts the supplied Centimetres value to Nautical Miles
+// ToNauticalMiles converts the supplied Centimetres value to Nautical Miles
 func (value Centimetres) ToNauticalMiles() float64 { 
 	return float64(value / 185200.0)
 }
 
-/// Feet conversion functions
+// Feet (Feet) conversion functions
 type Feet float64
 
-/// Converts the supplied Feet value to Millimetres
+// ToMillimetres converts the supplied Feet value to Millimetres
 func (value Feet) ToMillimetres() float64 { 
 	return float64(value * 304.8)
 }
-/// Converts the supplied Feet value to Centimetres
+// ToCentimetres converts the supplied Feet value to Centimetres
 func (value Feet) ToCentimetres() float64 { 
 	return float64(value * 30.48)
 }
-/// Converts the supplied Feet value to Metres
+// ToMetres converts the supplied Feet value to Metres
 func (value Feet) ToMetres() float64 { 
 	return float64(value * 0.3048)
 }
-/// Converts the supplied Feet value to Kilometres
+// ToKilometres converts the supplied Feet value to Kilometres
 func (value Feet) ToKilometres() float64 { 
 	return float64(value * 0.0003048)
 }
-/// Converts the supplied Feet value to Inches
+// ToInches converts the supplied Feet value to Inches
 func (value Feet) ToInches() float64 { 
 	return float64(value * 12.0)
 }
-/// Converts the supplied Feet value to Yards
+// ToYards converts the supplied Feet value to Yards
 func (value Feet) ToYards() float64 { 
 	return float64(value / 3.0)
 }
-/// Converts the supplied Feet value to Miles
+// ToMiles converts the supplied Feet value to Miles
 func (value Feet) ToMiles() float64 { 
 	return float64(value / 5280.0)
 }
-/// Converts the supplied Feet value to Nautical Miles
+// ToNauticalMiles converts the supplied Feet value to Nautical Miles
 func (value Feet) ToNauticalMiles() float64 { 
 	return float64(value / 6076.12)
 }
 
-/// Inches conversion functions
+// Inches (Inches) conversion functions
 type Inches float64
 
-/// Converts the supplied Inches value to Millimetres
+// ToMillimetres converts the supplied Inches value to Millimetres
 func (value Inches) ToMillimetres() float64 { 
 	return float64(value * 25.4)
 }
-/// Converts the supplied Inches value to Centimetres
+// ToCentimetres converts the supplied Inches value to Centimetres
 func (value Inches) ToCentimetres() float64 { 
 	return float64(value * 2.54)
 }
-/// Converts the supplied Inches value to Metres
+// ToMetres converts the supplied Inches value to Metres
 func (value Inches) ToMetres() float64 { 
 	return float64(value / 39.37007874)
 }
-/// Converts the supplied Inches value to Kilometres
+// ToKilometres converts the supplied Inches value to Kilometres
 func (value Inches) ToKilometres() float64 { 
 	return float64(value / 39370.07874)
 }
-/// Converts the supplied Inches value to Feet
+// ToFeet converts the supplied Inches value to Feet
 func (value Inches) ToFeet() float64 { 
 	return float64(value / 12.0)
 }
-/// Converts the supplied Inches value to Yards
+// ToYards converts the supplied Inches value to Yards
 func (value Inches) ToYards() float64 { 
 	return float64(value / 36.0)
 }
-/// Converts the supplied Inches value to Miles
+// ToMiles converts the supplied Inches value to Miles
 func (value Inches) ToMiles() float64 { 
 	return float64(value / 63360.0)
 }
-/// Converts the supplied Inches value to Nautical Miles
+// ToNauticalMiles converts the supplied Inches value to Nautical Miles
 func (value Inches) ToNauticalMiles() float64 { 
 	return float64(value / 72913.4)
 }
 
-/// Kilometres conversion functions
+// Kilometres (Kilometres) conversion functions
 type Kilometres float64
 
-/// Converts the supplied Kilometres value to Millimetres
+// ToMillimetres converts the supplied Kilometres value to Millimetres
 func (value Kilometres) ToMillimetres() float64 { 
 	return float64(value * 1000000.0)
 }
-/// Converts the supplied Kilometres value to Centimetres
+// ToCentimetres converts the supplied Kilometres value to Centimetres
 func (value Kilometres) ToCentimetres() float64 { 
 	return float64(value * 100000.0)
 }
-/// Converts the supplied Kilometres value to Metres
+// ToMetres converts the supplied Kilometres value to Metres
 func (value Kilometres) ToMetres() float64 { 
 	return float64(value * 1000.0)
 }
-/// Converts the supplied Kilometres value to Inches
+// ToInches converts the supplied Kilometres value to Inches
 func (value Kilometres) ToInches() float64 { 
 	return float64(value * 39370.07874)
 }
-/// Converts the supplied Kilometres value to Feet
+// ToFeet converts the supplied Kilometres value to Feet
 func (value Kilometres) ToFeet() float64 { 
 	return float64(value / 0.0003048)
 }
-/// Converts the supplied Kilometres value to Yards
+// ToYards converts the supplied Kilometres value to Yards
 func (value Kilometres) ToYards() float64 { 
 	return float64(value / 0.0009144)
 }
-/// Converts the supplied Kilometres value to Miles
+// ToMiles converts the supplied Kilometres value to Miles
 func (value Kilometres) ToMiles() float64 { 
 	return float64(value / 1.609344)
 }
-/// Converts the supplied Kilometres value to Nautical Miles
+// ToNauticalMiles converts the supplied Kilometres value to Nautical Miles
 func (value Kilometres) ToNauticalMiles() float64 { 
 	return float64(value / 1.85200)
 }
 
-/// Metres conversion functions
+// Metres (Metres) conversion functions
 type Metres float64
 
-/// Converts the supplied Metres value to Millimetres
+// ToMillimetres converts the supplied Metres value to Millimetres
 func (value Metres) ToMillimetres() float64 { 
 	return float64(value * 1000.0)
 }
-/// Converts the supplied Metres value to Centimetres
+// ToCentimetres converts the supplied Metres value to Centimetres
 func (value Metres) ToCentimetres() float64 { 
 	return float64(value * 100.0)
 }
-/// Converts the supplied Metres value to Kilometres
+// ToKilometres converts the supplied Metres value to Kilometres
 func (value Metres) ToKilometres() float64 { 
 	return float64(value / 1000.0)
 }
-/// Converts the supplied Metres value to Inches
+// ToInches converts the supplied Metres value to Inches
 func (value Metres) ToInches() float64 { 
 	return float64(value * 39.37007874)
 }
-/// Converts the supplied Metres value to Feet
+// ToFeet converts the supplied Metres value to Feet
 func (value Metres) ToFeet() float64 { 
 	return float64(value / 0.3048)
 }
-/// Converts the supplied Metres value to Yards
+// ToYards converts the supplied Metres value to Yards
 func (value Metres) ToYards() float64 { 
 	return float64(value / 0.9144)
 }
-/// Converts the supplied Metres value to Miles
+// ToMiles converts the supplied Metres value to Miles
 func (value Metres) ToMiles() float64 { 
 	return float64(value / 1609.344)
 }
-/// Converts the supplied Metres value to Nautical Miles
+// ToNauticalMiles converts the supplied Metres value to Nautical Miles
 func (value Metres) ToNauticalMiles() float64 { 
 	return float64(value / 1852.0)
 }
 
-/// Miles conversion functions
+// Miles (Miles) conversion functions
 type Miles float64
 
-/// Converts the supplied Miles value to Millimetres
+// ToMillimetres converts the supplied Miles value to Millimetres
 func (value Miles) ToMillimetres() float64 { 
 	return float64(value * 1609344.0)
 }
-/// Converts the supplied Miles value to Centimetres
+// ToCentimetres converts the supplied Miles value to Centimetres
 func (value Miles) ToCentimetres() float64 { 
 	return float64(value * 160934.4)
 }
-/// Converts the supplied Miles value to Metres
+// ToMetres converts the supplied Miles value to Metres
 func (value Miles) ToMetres() float64 { 
 	return float64(value * 1609.344)
 }
-/// Converts the supplied Miles value to Kilometres
+// ToKilometres converts the supplied Miles value to Kilometres
 func (value Miles) ToKilometres() float64 { 
 	return float64(value * 1.609344)
 }
-/// Converts the supplied Miles value to Inches
+// ToInches converts the supplied Miles value to Inches
 func (value Miles) ToInches() float64 { 
 	return float64(value * 63360.0)
 }
-/// Converts the supplied Miles value to Feet
+// ToFeet converts the supplied Miles value to Feet
 func (value Miles) ToFeet() float64 { 
 	return float64(value * 5280.0)
 }
-/// Converts the supplied Miles value to Yards
+// ToYards converts the supplied Miles value to Yards
 func (value Miles) ToYards() float64 { 
 	return float64(value * 1760.0)
 }
-/// Converts the supplied Miles value to Nautical Miles
+// ToNauticalMiles converts the supplied Miles value to Nautical Miles
 func (value Miles) ToNauticalMiles() float64 { 
 	return float64(value / 1.15078)
 }
 
-/// Millimetres conversion functions
+// Millimetres (Millimetres) conversion functions
 type Millimetres float64
 
-/// Converts the supplied Millimetres value to Centimetres
+// ToCentimetres converts the supplied Millimetres value to Centimetres
 func (value Millimetres) ToCentimetres() float64 { 
 	return float64(value / 10.0)
 }
-/// Converts the supplied Millimetres value to Metres
+// ToMetres converts the supplied Millimetres value to Metres
 func (value Millimetres) ToMetres() float64 { 
 	return float64(value / 1000.0)
 }
-/// Converts the supplied Millimetres value to Kilometres
+// ToKilometres converts the supplied Millimetres value to Kilometres
 func (value Millimetres) ToKilometres() float64 { 
 	return float64(value / 1000000.0)
 }
-/// Converts the supplied Millimetres value to Inches
+// ToInches converts the supplied Millimetres value to Inches
 func (value Millimetres) ToInches() float64 { 
 	return float64(value / 25.4)
 }
-/// Converts the supplied Millimetres value to Feet
+// ToFeet converts the supplied Millimetres value to Feet
 func (value Millimetres) ToFeet() float64 { 
 	return float64(value / 304.8)
 }
-/// Converts the supplied Millimetres value to Yards
+// ToYards converts the supplied Millimetres value to Yards
 func (value Millimetres) ToYards() float64 { 
 	return float64(value / 914.4)
 }
-/// Converts the supplied Millimetres value to Miles
+// ToMiles converts the supplied Millimetres value to Miles
 func (value Millimetres) ToMiles() float64 { 
 	return float64(value / 1609344.0)
 }
-/// Converts the supplied Millimetres value to Nautical Miles
+// ToNauticalMiles converts the supplied Millimetres value to Nautical Miles
 func (value Millimetres) ToNauticalMiles() float64 { 
 	return float64(value / 1852000.0)
 }
 
-/// Nautical Miles conversion functions
+// NauticalMiles (Nautical Miles) conversion functions
 type NauticalMiles float64
 
-/// Converts the supplied Nautical Miles value to Millimetres
+// ToMillimetres converts the supplied Nautical Miles value to Millimetres
 func (value NauticalMiles) ToMillimetres() float64 { 
 	return float64(value * 1852000.0)
 }
-/// Converts the supplied Nautical Miles value to Centimetres
+// ToCentimetres converts the supplied Nautical Miles value to Centimetres
 func (value NauticalMiles) ToCentimetres() float64 { 
 	return float64(value * 185200.0)
 }
-/// Converts the supplied Nautical Miles value to Metres
+// ToMetres converts the supplied Nautical Miles value to Metres
 func (value NauticalMiles) ToMetres() float64 { 
 	return float64(value * 1852.0)
 }
-/// Converts the supplied Nautical Miles value to Kilometres
+// ToKilometres converts the supplied Nautical Miles value to Kilometres
 func (value NauticalMiles) ToKilometres() float64 { 
 	return float64(value * 1.85200)
 }
-/// Converts the supplied Nautical Miles value to Inches
+// ToInches converts the supplied Nautical Miles value to Inches
 func (value NauticalMiles) ToInches() float64 { 
 	return float64(value * 72913.4)
 }
-/// Converts the supplied Nautical Miles value to Feet
+// ToFeet converts the supplied Nautical Miles value to Feet
 func (value NauticalMiles) ToFeet() float64 { 
 	return float64(value * 6076.12)
 }
-/// Converts the supplied Nautical Miles value to Yards
+// ToYards converts the supplied Nautical Miles value to Yards
 func (value NauticalMiles) ToYards() float64 { 
 	return float64(value * 2025.37)
 }
-/// Converts the supplied Nautical Miles value to Miles
+// ToMiles converts the supplied Nautical Miles value to Miles
 func (value NauticalMiles) ToMiles() float64 { 
 	return float64(value * 1.15078)
 }
 
-/// Yards conversion functions
+// Yards (Yards) conversion functions
 type Yards float64
 
-/// Converts the supplied Yards value to Millimetres
+// ToMillimetres converts the supplied Yards value to Millimetres
 func (value Yards) ToMillimetres() float64 { 
 	return float64(value * 914.4)
 }
-/// Converts the supplied Yards value to Centimetres
+// ToCentimetres converts the supplied Yards value to Centimetres
 func (value Yards) ToCentimetres() float64 { 
 	return float64(value * 91.44)
 }
-/// Converts the supplied Yards value to Metres
+// ToMetres converts the supplied Yards value to Metres
 func (value Yards) ToMetres() float64 { 
 	return float64(value * 0.9144)
 }
-/// Converts the supplied Yards value to Kilometres
+// ToKilometres converts the supplied Yards value to Kilometres
 func (value Yards) ToKilometres() float64 { 
 	return float64(value * 0.0009144)
 }
-/// Converts the supplied Yards value to Inches
+// ToInches converts the supplied Yards value to Inches
 func (value Yards) ToInches() float64 { 
 	return float64(value * 36.0)
 }
-/// Converts the supplied Yards value to Feet
+// ToFeet converts the supplied Yards value to Feet
 func (value Yards) ToFeet() float64 { 
 	return float64(value * 3.0)
 }
-/// Converts the supplied Yards value to Miles
+// ToMiles converts the supplied Yards value to Miles
 func (value Yards) ToMiles() float64 { 
 	return float64(value / 1760.0)
 }
-/// Converts the supplied Yards value to Nautical Miles
+// ToNauticalMiles converts the supplied Yards value to Nautical Miles
 func (value Yards) ToNauticalMiles() float64 { 
 	return float64(value / 2025.37)
 }

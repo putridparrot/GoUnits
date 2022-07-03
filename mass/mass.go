@@ -6,258 +6,258 @@
 
 package mass
 
-/// Carats conversion functions
+// Carats (Carats) conversion functions
 type Carats float64
 
-/// Converts the supplied Carats value to Milligrams
+// ToMilligrams converts the supplied Carats value to Milligrams
 func (value Carats) ToMilligrams() float64 { 
 	return float64(value * 200.0)
 }
-/// Converts the supplied Carats value to Grams
+// ToGrams converts the supplied Carats value to Grams
 func (value Carats) ToGrams() float64 { 
 	return float64(value / 5.0)
 }
-/// Converts the supplied Carats value to Kilograms
+// ToKilograms converts the supplied Carats value to Kilograms
 func (value Carats) ToKilograms() float64 { 
 	return float64(value / 5000.0)
 }
-/// Converts the supplied Carats value to Tonnes
+// ToTonnes converts the supplied Carats value to Tonnes
 func (value Carats) ToTonnes() float64 { 
 	return float64(value / 5e+6)
 }
-/// Converts the supplied Carats value to Ounces
+// ToOunces converts the supplied Carats value to Ounces
 func (value Carats) ToOunces() float64 { 
 	return float64(value * 0.00705479)
 }
-/// Converts the supplied Carats value to Pounds
+// ToPounds converts the supplied Carats value to Pounds
 func (value Carats) ToPounds() float64 { 
 	return float64(value * 0.000440925)
 }
-/// Converts the supplied Carats value to Stones
+// ToStones converts the supplied Carats value to Stones
 func (value Carats) ToStones() float64 { 
 	return float64(value * 3.1495e-5)
 }
 
-/// Grams conversion functions
+// Grams (Grams) conversion functions
 type Grams float64
 
-/// Converts the supplied Grams value to Milligrams
+// ToMilligrams converts the supplied Grams value to Milligrams
 func (value Grams) ToMilligrams() float64 { 
 	return float64(value * 1000.0)
 }
-/// Converts the supplied Grams value to Kilograms
+// ToKilograms converts the supplied Grams value to Kilograms
 func (value Grams) ToKilograms() float64 { 
 	return float64(value / 1000.0)
 }
-/// Converts the supplied Grams value to Tonnes
+// ToTonnes converts the supplied Grams value to Tonnes
 func (value Grams) ToTonnes() float64 { 
 	return float64(value * 1e-6)
 }
-/// Converts the supplied Grams value to Ounces
+// ToOunces converts the supplied Grams value to Ounces
 func (value Grams) ToOunces() float64 { 
 	return float64(value / 28.3495231)
 }
-/// Converts the supplied Grams value to Pounds
+// ToPounds converts the supplied Grams value to Pounds
 func (value Grams) ToPounds() float64 { 
 	return float64(value / 453.59237)
 }
-/// Converts the supplied Grams value to Stones
+// ToStones converts the supplied Grams value to Stones
 func (value Grams) ToStones() float64 { 
 	return float64(value / 6350.29318)
 }
-/// Converts the supplied Grams value to Carats
+// ToCarats converts the supplied Grams value to Carats
 func (value Grams) ToCarats() float64 { 
 	return float64(value * 5.0)
 }
 
-/// Kilograms conversion functions
+// Kilograms (Kilograms) conversion functions
 type Kilograms float64
 
-/// Converts the supplied Kilograms value to Milligrams
+// ToMilligrams converts the supplied Kilograms value to Milligrams
 func (value Kilograms) ToMilligrams() float64 { 
 	return float64(value * 1e+6)
 }
-/// Converts the supplied Kilograms value to Grams
+// ToGrams converts the supplied Kilograms value to Grams
 func (value Kilograms) ToGrams() float64 { 
 	return float64(value * 1000.0)
 }
-/// Converts the supplied Kilograms value to Tonnes
+// ToTonnes converts the supplied Kilograms value to Tonnes
 func (value Kilograms) ToTonnes() float64 { 
 	return float64(value * 0.001)
 }
-/// Converts the supplied Kilograms value to Ounces
+// ToOunces converts the supplied Kilograms value to Ounces
 func (value Kilograms) ToOunces() float64 { 
 	return float64(value * 35.274)
 }
-/// Converts the supplied Kilograms value to Pounds
+// ToPounds converts the supplied Kilograms value to Pounds
 func (value Kilograms) ToPounds() float64 { 
 	return float64(value * 2.20462)
 }
-/// Converts the supplied Kilograms value to Stones
+// ToStones converts the supplied Kilograms value to Stones
 func (value Kilograms) ToStones() float64 { 
 	return float64(value / 6.35029)
 }
-/// Converts the supplied Kilograms value to Carats
+// ToCarats converts the supplied Kilograms value to Carats
 func (value Kilograms) ToCarats() float64 { 
 	return float64(value * 5000.0)
 }
 
-/// Milligrams conversion functions
+// Milligrams (Milligrams) conversion functions
 type Milligrams float64
 
-/// Converts the supplied Milligrams value to Grams
+// ToGrams converts the supplied Milligrams value to Grams
 func (value Milligrams) ToGrams() float64 { 
 	return float64(value / 1000.0)
 }
-/// Converts the supplied Milligrams value to Kilograms
+// ToKilograms converts the supplied Milligrams value to Kilograms
 func (value Milligrams) ToKilograms() float64 { 
 	return float64(value / 1e+6)
 }
-/// Converts the supplied Milligrams value to Tonnes
+// ToTonnes converts the supplied Milligrams value to Tonnes
 func (value Milligrams) ToTonnes() float64 { 
 	return float64(value / 1e+9)
 }
-/// Converts the supplied Milligrams value to Ounces
+// ToOunces converts the supplied Milligrams value to Ounces
 func (value Milligrams) ToOunces() float64 { 
 	return float64(value / 28349.5231)
 }
-/// Converts the supplied Milligrams value to Pounds
+// ToPounds converts the supplied Milligrams value to Pounds
 func (value Milligrams) ToPounds() float64 { 
 	return float64(value / 453592.37)
 }
-/// Converts the supplied Milligrams value to Stones
+// ToStones converts the supplied Milligrams value to Stones
 func (value Milligrams) ToStones() float64 { 
 	return float64(value / 6350293.18)
 }
-/// Converts the supplied Milligrams value to Carats
+// ToCarats converts the supplied Milligrams value to Carats
 func (value Milligrams) ToCarats() float64 { 
 	return float64(value / 200.0)
 }
 
-/// Ounces conversion functions
+// Ounces (Ounces) conversion functions
 type Ounces float64
 
-/// Converts the supplied Ounces value to Milligrams
+// ToMilligrams converts the supplied Ounces value to Milligrams
 func (value Ounces) ToMilligrams() float64 { 
 	return float64(value * 28349.5231)
 }
-/// Converts the supplied Ounces value to Grams
+// ToGrams converts the supplied Ounces value to Grams
 func (value Ounces) ToGrams() float64 { 
 	return float64(value * 28.3495231)
 }
-/// Converts the supplied Ounces value to Kilograms
+// ToKilograms converts the supplied Ounces value to Kilograms
 func (value Ounces) ToKilograms() float64 { 
 	return float64(value / 35.274)
 }
-/// Converts the supplied Ounces value to Tonnes
+// ToTonnes converts the supplied Ounces value to Tonnes
 func (value Ounces) ToTonnes() float64 { 
 	return float64(value * 0.0000283495231)
 }
-/// Converts the supplied Ounces value to Pounds
+// ToPounds converts the supplied Ounces value to Pounds
 func (value Ounces) ToPounds() float64 { 
 	return float64(value * 0.0625)
 }
-/// Converts the supplied Ounces value to Stones
+// ToStones converts the supplied Ounces value to Stones
 func (value Ounces) ToStones() float64 { 
 	return float64(value / 224.0)
 }
-/// Converts the supplied Ounces value to Carats
+// ToCarats converts the supplied Ounces value to Carats
 func (value Ounces) ToCarats() float64 { 
 	return float64(value / 0.00705479)
 }
 
-/// Pounds conversion functions
+// Pounds (Pounds) conversion functions
 type Pounds float64
 
-/// Converts the supplied Pounds value to Milligrams
+// ToMilligrams converts the supplied Pounds value to Milligrams
 func (value Pounds) ToMilligrams() float64 { 
 	return float64(value * 453592.37)
 }
-/// Converts the supplied Pounds value to Grams
+// ToGrams converts the supplied Pounds value to Grams
 func (value Pounds) ToGrams() float64 { 
 	return float64(value * 453.59237)
 }
-/// Converts the supplied Pounds value to Kilograms
+// ToKilograms converts the supplied Pounds value to Kilograms
 func (value Pounds) ToKilograms() float64 { 
 	return float64(value / 2.20462)
 }
-/// Converts the supplied Pounds value to Tonnes
+// ToTonnes converts the supplied Pounds value to Tonnes
 func (value Pounds) ToTonnes() float64 { 
 	return float64(value / 2204.62)
 }
-/// Converts the supplied Pounds value to Ounces
+// ToOunces converts the supplied Pounds value to Ounces
 func (value Pounds) ToOunces() float64 { 
 	return float64(value * 16.0)
 }
-/// Converts the supplied Pounds value to Stones
+// ToStones converts the supplied Pounds value to Stones
 func (value Pounds) ToStones() float64 { 
 	return float64(value / 14.0)
 }
-/// Converts the supplied Pounds value to Carats
+// ToCarats converts the supplied Pounds value to Carats
 func (value Pounds) ToCarats() float64 { 
 	return float64(value / 0.000440925)
 }
 
-/// Stones conversion functions
+// Stones (Stones) conversion functions
 type Stones float64
 
-/// Converts the supplied Stones value to Milligrams
+// ToMilligrams converts the supplied Stones value to Milligrams
 func (value Stones) ToMilligrams() float64 { 
 	return float64(value * 6350293.18)
 }
-/// Converts the supplied Stones value to Grams
+// ToGrams converts the supplied Stones value to Grams
 func (value Stones) ToGrams() float64 { 
 	return float64(value * 6350.29318)
 }
-/// Converts the supplied Stones value to Kilograms
+// ToKilograms converts the supplied Stones value to Kilograms
 func (value Stones) ToKilograms() float64 { 
 	return float64(value * 6.35029)
 }
-/// Converts the supplied Stones value to Tonnes
+// ToTonnes converts the supplied Stones value to Tonnes
 func (value Stones) ToTonnes() float64 { 
 	return float64(value / 157.473)
 }
-/// Converts the supplied Stones value to Ounces
+// ToOunces converts the supplied Stones value to Ounces
 func (value Stones) ToOunces() float64 { 
 	return float64(value * 224.0)
 }
-/// Converts the supplied Stones value to Pounds
+// ToPounds converts the supplied Stones value to Pounds
 func (value Stones) ToPounds() float64 { 
 	return float64(value * 14.0)
 }
-/// Converts the supplied Stones value to Carats
+// ToCarats converts the supplied Stones value to Carats
 func (value Stones) ToCarats() float64 { 
 	return float64(value / 3.1495e-5)
 }
 
-/// Tonnes conversion functions
+// Tonnes (Tonnes) conversion functions
 type Tonnes float64
 
-/// Converts the supplied Tonnes value to Milligrams
+// ToMilligrams converts the supplied Tonnes value to Milligrams
 func (value Tonnes) ToMilligrams() float64 { 
 	return float64(value * 1e+9)
 }
-/// Converts the supplied Tonnes value to Grams
+// ToGrams converts the supplied Tonnes value to Grams
 func (value Tonnes) ToGrams() float64 { 
 	return float64(value * 1e+6)
 }
-/// Converts the supplied Tonnes value to Kilograms
+// ToKilograms converts the supplied Tonnes value to Kilograms
 func (value Tonnes) ToKilograms() float64 { 
 	return float64(value * 1000.0)
 }
-/// Converts the supplied Tonnes value to Ounces
+// ToOunces converts the supplied Tonnes value to Ounces
 func (value Tonnes) ToOunces() float64 { 
 	return float64(value / 0.0000283495231)
 }
-/// Converts the supplied Tonnes value to Pounds
+// ToPounds converts the supplied Tonnes value to Pounds
 func (value Tonnes) ToPounds() float64 { 
 	return float64(value * 2204.62)
 }
-/// Converts the supplied Tonnes value to Stones
+// ToStones converts the supplied Tonnes value to Stones
 func (value Tonnes) ToStones() float64 { 
 	return float64(value * 157.473)
 }
-/// Converts the supplied Tonnes value to Carats
+// ToCarats converts the supplied Tonnes value to Carats
 func (value Tonnes) ToCarats() float64 { 
 	return float64(value * 5e+6)
 }

@@ -6,66 +6,66 @@
 
 package frequency
 
-/// Gigahertz conversion functions
+// Gigahertz (Gigahertz) conversion functions
 type Gigahertz float64
 
-/// Converts the supplied Gigahertz value to Hertz
+// ToHertz converts the supplied Gigahertz value to Hertz
 func (value Gigahertz) ToHertz() float64 { 
 	return float64(value * 1e+9)
 }
-/// Converts the supplied Gigahertz value to Kilohertz
+// ToKilohertz converts the supplied Gigahertz value to Kilohertz
 func (value Gigahertz) ToKilohertz() float64 { 
 	return float64(value * 1e+6)
 }
-/// Converts the supplied Gigahertz value to Megahertz
+// ToMegahertz converts the supplied Gigahertz value to Megahertz
 func (value Gigahertz) ToMegahertz() float64 { 
 	return float64(value * 1000.0)
 }
 
-/// Hertz conversion functions
+// Hertz (Hertz) conversion functions
 type Hertz float64
 
-/// Converts the supplied Hertz value to Kilohertz
+// ToKilohertz converts the supplied Hertz value to Kilohertz
 func (value Hertz) ToKilohertz() float64 { 
 	return float64(value / 1000.0)
 }
-/// Converts the supplied Hertz value to Megahertz
+// ToMegahertz converts the supplied Hertz value to Megahertz
 func (value Hertz) ToMegahertz() float64 { 
 	return float64(value / 1e+6)
 }
-/// Converts the supplied Hertz value to Gigahertz
+// ToGigahertz converts the supplied Hertz value to Gigahertz
 func (value Hertz) ToGigahertz() float64 { 
 	return float64(value / 1e+9)
 }
 
-/// Kilohertz conversion functions
+// Kilohertz (Kilohertz) conversion functions
 type Kilohertz float64
 
-/// Converts the supplied Kilohertz value to Hertz
+// ToHertz converts the supplied Kilohertz value to Hertz
 func (value Kilohertz) ToHertz() float64 { 
 	return float64(value * 1000.0)
 }
-/// Converts the supplied Kilohertz value to Megahertz
+// ToMegahertz converts the supplied Kilohertz value to Megahertz
 func (value Kilohertz) ToMegahertz() float64 { 
 	return float64(value / 1000.0)
 }
-/// Converts the supplied Kilohertz value to Gigahertz
+// ToGigahertz converts the supplied Kilohertz value to Gigahertz
 func (value Kilohertz) ToGigahertz() float64 { 
 	return float64(value / 1e+6)
 }
 
-/// Megahertz conversion functions
+// Megahertz (Megahertz) conversion functions
 type Megahertz float64
 
-/// Converts the supplied Megahertz value to Hertz
+// ToHertz converts the supplied Megahertz value to Hertz
 func (value Megahertz) ToHertz() float64 { 
 	return float64(value * 1e+6)
 }
-/// Converts the supplied Megahertz value to Kilohertz
+// ToKilohertz converts the supplied Megahertz value to Kilohertz
 func (value Megahertz) ToKilohertz() float64 { 
 	return float64(value * 1000.0)
 }
-/// Converts the supplied Megahertz value to Gigahertz
+// ToGigahertz converts the supplied Megahertz value to Gigahertz
 func (value Megahertz) ToGigahertz() float64 { 
 	return float64(value / 1000.0)
 }

@@ -4,488 +4,488 @@
 // Changes to this file will be lost if the code is regenerated
 // </auto-generated>
 
-package data_storage
+package datastorage
 
-/// Bits conversion functions
+// Bits (Bits) conversion functions
 type Bits float64
 
-/// Converts the supplied Bits value to Kilobits
+// ToKilobits converts the supplied Bits value to Kilobits
 func (value Bits) ToKilobits() float64 { 
 	return float64(value / 1000.0)
 }
-/// Converts the supplied Bits value to Megabits
+// ToMegabits converts the supplied Bits value to Megabits
 func (value Bits) ToMegabits() float64 { 
 	return float64(value / 1e+6)
 }
-/// Converts the supplied Bits value to Gigabits
+// ToGigabits converts the supplied Bits value to Gigabits
 func (value Bits) ToGigabits() float64 { 
 	return float64(value / 1e+9)
 }
-/// Converts the supplied Bits value to Terabits
+// ToTerabits converts the supplied Bits value to Terabits
 func (value Bits) ToTerabits() float64 { 
 	return float64(value / 1e+12)
 }
-/// Converts the supplied Bits value to Kilobytes
+// ToKilobytes converts the supplied Bits value to Kilobytes
 func (value Bits) ToKilobytes() float64 { 
 	return float64(value / 8000.0)
 }
-/// Converts the supplied Bits value to Megabytes
+// ToMegabytes converts the supplied Bits value to Megabytes
 func (value Bits) ToMegabytes() float64 { 
 	return float64(value / 8e+6)
 }
-/// Converts the supplied Bits value to Gigabytes
+// ToGigabytes converts the supplied Bits value to Gigabytes
 func (value Bits) ToGigabytes() float64 { 
 	return float64(value / 8e+9)
 }
-/// Converts the supplied Bits value to Terabytes
+// ToTerabytes converts the supplied Bits value to Terabytes
 func (value Bits) ToTerabytes() float64 { 
 	return float64(value / 8e+12)
 }
-/// Converts the supplied Bits value to Kibibits
+// ToKibibits converts the supplied Bits value to Kibibits
 func (value Bits) ToKibibits() float64 { 
 	return float64(value / 1024.0)
 }
-/// Converts the supplied Bits value to Mebibits
+// ToMebibits converts the supplied Bits value to Mebibits
 func (value Bits) ToMebibits() float64 { 
 	return float64(value / 1048576.0)
 }
 
-/// Gigabits conversion functions
+// Gigabits (Gigabits) conversion functions
 type Gigabits float64
 
-/// Converts the supplied Gigabits value to Bits
+// ToBits converts the supplied Gigabits value to Bits
 func (value Gigabits) ToBits() float64 { 
 	return float64(value * 1e+9)
 }
-/// Converts the supplied Gigabits value to Kilobits
+// ToKilobits converts the supplied Gigabits value to Kilobits
 func (value Gigabits) ToKilobits() float64 { 
 	return float64(value * 1e+6)
 }
-/// Converts the supplied Gigabits value to Megabits
+// ToMegabits converts the supplied Gigabits value to Megabits
 func (value Gigabits) ToMegabits() float64 { 
 	return float64(value * 1000.0)
 }
-/// Converts the supplied Gigabits value to Terabits
+// ToTerabits converts the supplied Gigabits value to Terabits
 func (value Gigabits) ToTerabits() float64 { 
 	return float64(value / 1000.0)
 }
-/// Converts the supplied Gigabits value to Kilobytes
+// ToKilobytes converts the supplied Gigabits value to Kilobytes
 func (value Gigabits) ToKilobytes() float64 { 
 	return float64(value * 125000.0)
 }
-/// Converts the supplied Gigabits value to Megabytes
+// ToMegabytes converts the supplied Gigabits value to Megabytes
 func (value Gigabits) ToMegabytes() float64 { 
 	return float64(value * 125.0)
 }
-/// Converts the supplied Gigabits value to Gigabytes
+// ToGigabytes converts the supplied Gigabits value to Gigabytes
 func (value Gigabits) ToGigabytes() float64 { 
 	return float64(value / 8.0)
 }
-/// Converts the supplied Gigabits value to Terabytes
+// ToTerabytes converts the supplied Gigabits value to Terabytes
 func (value Gigabits) ToTerabytes() float64 { 
 	return float64(value / 8000.0)
 }
-/// Converts the supplied Gigabits value to Kibibits
+// ToKibibits converts the supplied Gigabits value to Kibibits
 func (value Gigabits) ToKibibits() float64 { 
 	return float64(value * 976562.5)
 }
-/// Converts the supplied Gigabits value to Mebibits
+// ToMebibits converts the supplied Gigabits value to Mebibits
 func (value Gigabits) ToMebibits() float64 { 
 	return float64(value * 953.67431640625)
 }
 
-/// Gigabytes conversion functions
+// Gigabytes (Gigabytes) conversion functions
 type Gigabytes float64
 
-/// Converts the supplied Gigabytes value to Bits
+// ToBits converts the supplied Gigabytes value to Bits
 func (value Gigabytes) ToBits() float64 { 
 	return float64(value * 8e+9)
 }
-/// Converts the supplied Gigabytes value to Kilobits
+// ToKilobits converts the supplied Gigabytes value to Kilobits
 func (value Gigabytes) ToKilobits() float64 { 
 	return float64(value * 8e+6)
 }
-/// Converts the supplied Gigabytes value to Megabits
+// ToMegabits converts the supplied Gigabytes value to Megabits
 func (value Gigabytes) ToMegabits() float64 { 
 	return float64(value * 8000.0)
 }
-/// Converts the supplied Gigabytes value to Gigabits
+// ToGigabits converts the supplied Gigabytes value to Gigabits
 func (value Gigabytes) ToGigabits() float64 { 
 	return float64(value * 8.0)
 }
-/// Converts the supplied Gigabytes value to Terabits
+// ToTerabits converts the supplied Gigabytes value to Terabits
 func (value Gigabytes) ToTerabits() float64 { 
 	return float64(value / 125.0)
 }
-/// Converts the supplied Gigabytes value to Kilobytes
+// ToKilobytes converts the supplied Gigabytes value to Kilobytes
 func (value Gigabytes) ToKilobytes() float64 { 
 	return float64(value * 1e+6)
 }
-/// Converts the supplied Gigabytes value to Megabytes
+// ToMegabytes converts the supplied Gigabytes value to Megabytes
 func (value Gigabytes) ToMegabytes() float64 { 
 	return float64(value * 1000.0)
 }
-/// Converts the supplied Gigabytes value to Terabytes
+// ToTerabytes converts the supplied Gigabytes value to Terabytes
 func (value Gigabytes) ToTerabytes() float64 { 
 	return float64(value / 1000.0)
 }
-/// Converts the supplied Gigabytes value to Kibibits
+// ToKibibits converts the supplied Gigabytes value to Kibibits
 func (value Gigabytes) ToKibibits() float64 { 
 	return float64(value * 7812500.0)
 }
-/// Converts the supplied Gigabytes value to Mebibits
+// ToMebibits converts the supplied Gigabytes value to Mebibits
 func (value Gigabytes) ToMebibits() float64 { 
 	return float64(value * 7629.39)
 }
 
-/// Kibibits conversion functions
+// Kibibits (Kibibits) conversion functions
 type Kibibits float64
 
-/// Converts the supplied Kibibits value to Bits
+// ToBits converts the supplied Kibibits value to Bits
 func (value Kibibits) ToBits() float64 { 
 	return float64(value * 1024.0)
 }
-/// Converts the supplied Kibibits value to Kilobits
+// ToKilobits converts the supplied Kibibits value to Kilobits
 func (value Kibibits) ToKilobits() float64 { 
 	return float64(value * 1.024)
 }
-/// Converts the supplied Kibibits value to Megabits
+// ToMegabits converts the supplied Kibibits value to Megabits
 func (value Kibibits) ToMegabits() float64 { 
 	return float64(value / 976.563)
 }
-/// Converts the supplied Kibibits value to Gigabits
+// ToGigabits converts the supplied Kibibits value to Gigabits
 func (value Kibibits) ToGigabits() float64 { 
 	return float64(value / 976562.5)
 }
-/// Converts the supplied Kibibits value to Terabits
+// ToTerabits converts the supplied Kibibits value to Terabits
 func (value Kibibits) ToTerabits() float64 { 
 	return float64(value / 976562500.0)
 }
-/// Converts the supplied Kibibits value to Kilobytes
+// ToKilobytes converts the supplied Kibibits value to Kilobytes
 func (value Kibibits) ToKilobytes() float64 { 
 	return float64(value / 7.8125)
 }
-/// Converts the supplied Kibibits value to Megabytes
+// ToMegabytes converts the supplied Kibibits value to Megabytes
 func (value Kibibits) ToMegabytes() float64 { 
 	return float64(value / 7812.5)
 }
-/// Converts the supplied Kibibits value to Gigabytes
+// ToGigabytes converts the supplied Kibibits value to Gigabytes
 func (value Kibibits) ToGigabytes() float64 { 
 	return float64(value / 7812500.0)
 }
-/// Converts the supplied Kibibits value to Terabytes
+// ToTerabytes converts the supplied Kibibits value to Terabytes
 func (value Kibibits) ToTerabytes() float64 { 
 	return float64(value / 7812500000.0)
 }
-/// Converts the supplied Kibibits value to Mebibits
+// ToMebibits converts the supplied Kibibits value to Mebibits
 func (value Kibibits) ToMebibits() float64 { 
 	return float64(value / 1024.0)
 }
 
-/// Kilobits conversion functions
+// Kilobits (Kilobits) conversion functions
 type Kilobits float64
 
-/// Converts the supplied Kilobits value to Bits
+// ToBits converts the supplied Kilobits value to Bits
 func (value Kilobits) ToBits() float64 { 
 	return float64(value * 1000.0)
 }
-/// Converts the supplied Kilobits value to Megabits
+// ToMegabits converts the supplied Kilobits value to Megabits
 func (value Kilobits) ToMegabits() float64 { 
 	return float64(value / 1000.0)
 }
-/// Converts the supplied Kilobits value to Gigabits
+// ToGigabits converts the supplied Kilobits value to Gigabits
 func (value Kilobits) ToGigabits() float64 { 
 	return float64(value / 1e+6)
 }
-/// Converts the supplied Kilobits value to Terabits
+// ToTerabits converts the supplied Kilobits value to Terabits
 func (value Kilobits) ToTerabits() float64 { 
 	return float64(value / 1e+9)
 }
-/// Converts the supplied Kilobits value to Kilobytes
+// ToKilobytes converts the supplied Kilobits value to Kilobytes
 func (value Kilobits) ToKilobytes() float64 { 
 	return float64(value / 8.0)
 }
-/// Converts the supplied Kilobits value to Megabytes
+// ToMegabytes converts the supplied Kilobits value to Megabytes
 func (value Kilobits) ToMegabytes() float64 { 
 	return float64(value / 8000.0)
 }
-/// Converts the supplied Kilobits value to Gigabytes
+// ToGigabytes converts the supplied Kilobits value to Gigabytes
 func (value Kilobits) ToGigabytes() float64 { 
 	return float64(value / 8e+6)
 }
-/// Converts the supplied Kilobits value to Terabytes
+// ToTerabytes converts the supplied Kilobits value to Terabytes
 func (value Kilobits) ToTerabytes() float64 { 
 	return float64(value / 8e+9)
 }
-/// Converts the supplied Kilobits value to Kibibits
+// ToKibibits converts the supplied Kilobits value to Kibibits
 func (value Kilobits) ToKibibits() float64 { 
 	return float64(value / 1.024)
 }
-/// Converts the supplied Kilobits value to Mebibits
+// ToMebibits converts the supplied Kilobits value to Mebibits
 func (value Kilobits) ToMebibits() float64 { 
 	return float64(value / 1048.58)
 }
 
-/// Kilobytes conversion functions
+// Kilobytes (Kilobytes) conversion functions
 type Kilobytes float64
 
-/// Converts the supplied Kilobytes value to Bits
+// ToBits converts the supplied Kilobytes value to Bits
 func (value Kilobytes) ToBits() float64 { 
 	return float64(value * 8000.0)
 }
-/// Converts the supplied Kilobytes value to Kilobits
+// ToKilobits converts the supplied Kilobytes value to Kilobits
 func (value Kilobytes) ToKilobits() float64 { 
 	return float64(value * 8.0)
 }
-/// Converts the supplied Kilobytes value to Megabits
+// ToMegabits converts the supplied Kilobytes value to Megabits
 func (value Kilobytes) ToMegabits() float64 { 
 	return float64(value / 125.0)
 }
-/// Converts the supplied Kilobytes value to Gigabits
+// ToGigabits converts the supplied Kilobytes value to Gigabits
 func (value Kilobytes) ToGigabits() float64 { 
 	return float64(value / 125000.0)
 }
-/// Converts the supplied Kilobytes value to Terabits
+// ToTerabits converts the supplied Kilobytes value to Terabits
 func (value Kilobytes) ToTerabits() float64 { 
 	return float64(value / 1.25e+8)
 }
-/// Converts the supplied Kilobytes value to Megabytes
+// ToMegabytes converts the supplied Kilobytes value to Megabytes
 func (value Kilobytes) ToMegabytes() float64 { 
 	return float64(value / 1000.0)
 }
-/// Converts the supplied Kilobytes value to Gigabytes
+// ToGigabytes converts the supplied Kilobytes value to Gigabytes
 func (value Kilobytes) ToGigabytes() float64 { 
 	return float64(value / 1e+6)
 }
-/// Converts the supplied Kilobytes value to Terabytes
+// ToTerabytes converts the supplied Kilobytes value to Terabytes
 func (value Kilobytes) ToTerabytes() float64 { 
 	return float64(value / 1e+9)
 }
-/// Converts the supplied Kilobytes value to Kibibits
+// ToKibibits converts the supplied Kilobytes value to Kibibits
 func (value Kilobytes) ToKibibits() float64 { 
 	return float64(value * 7.8125)
 }
-/// Converts the supplied Kilobytes value to Mebibits
+// ToMebibits converts the supplied Kilobytes value to Mebibits
 func (value Kilobytes) ToMebibits() float64 { 
 	return float64(value * 0.00762939)
 }
 
-/// Mebibits conversion functions
+// Mebibits (Mebibits) conversion functions
 type Mebibits float64
 
-/// Converts the supplied Mebibits value to Bits
+// ToBits converts the supplied Mebibits value to Bits
 func (value Mebibits) ToBits() float64 { 
 	return float64(value * 1048576.0)
 }
-/// Converts the supplied Mebibits value to Kilobits
+// ToKilobits converts the supplied Mebibits value to Kilobits
 func (value Mebibits) ToKilobits() float64 { 
 	return float64(value * 1048.58)
 }
-/// Converts the supplied Mebibits value to Megabits
+// ToMegabits converts the supplied Mebibits value to Megabits
 func (value Mebibits) ToMegabits() float64 { 
 	return float64(value * 1.04858)
 }
-/// Converts the supplied Mebibits value to Gigabits
+// ToGigabits converts the supplied Mebibits value to Gigabits
 func (value Mebibits) ToGigabits() float64 { 
 	return float64(value / 953.67431640625)
 }
-/// Converts the supplied Mebibits value to Terabits
+// ToTerabits converts the supplied Mebibits value to Terabits
 func (value Mebibits) ToTerabits() float64 { 
 	return float64(value / 953674.0)
 }
-/// Converts the supplied Mebibits value to Kilobytes
+// ToKilobytes converts the supplied Mebibits value to Kilobytes
 func (value Mebibits) ToKilobytes() float64 { 
 	return float64(value / 0.00762939)
 }
-/// Converts the supplied Mebibits value to Megabytes
+// ToMegabytes converts the supplied Mebibits value to Megabytes
 func (value Mebibits) ToMegabytes() float64 { 
 	return float64(value / 7.62939)
 }
-/// Converts the supplied Mebibits value to Gigabytes
+// ToGigabytes converts the supplied Mebibits value to Gigabytes
 func (value Mebibits) ToGigabytes() float64 { 
 	return float64(value / 7629.39)
 }
-/// Converts the supplied Mebibits value to Terabytes
+// ToTerabytes converts the supplied Mebibits value to Terabytes
 func (value Mebibits) ToTerabytes() float64 { 
 	return float64(value * 0.000000131072)
 }
-/// Converts the supplied Mebibits value to Kibibits
+// ToKibibits converts the supplied Mebibits value to Kibibits
 func (value Mebibits) ToKibibits() float64 { 
 	return float64(value * 1024.0)
 }
 
-/// Megabits conversion functions
+// Megabits (Megabits) conversion functions
 type Megabits float64
 
-/// Converts the supplied Megabits value to Bits
+// ToBits converts the supplied Megabits value to Bits
 func (value Megabits) ToBits() float64 { 
 	return float64(value * 1e+6)
 }
-/// Converts the supplied Megabits value to Kilobits
+// ToKilobits converts the supplied Megabits value to Kilobits
 func (value Megabits) ToKilobits() float64 { 
 	return float64(value * 1000.0)
 }
-/// Converts the supplied Megabits value to Gigabits
+// ToGigabits converts the supplied Megabits value to Gigabits
 func (value Megabits) ToGigabits() float64 { 
 	return float64(value / 1000.0)
 }
-/// Converts the supplied Megabits value to Terabits
+// ToTerabits converts the supplied Megabits value to Terabits
 func (value Megabits) ToTerabits() float64 { 
 	return float64(value / 1e+6)
 }
-/// Converts the supplied Megabits value to Kilobytes
+// ToKilobytes converts the supplied Megabits value to Kilobytes
 func (value Megabits) ToKilobytes() float64 { 
 	return float64(value * 125.0)
 }
-/// Converts the supplied Megabits value to Megabytes
+// ToMegabytes converts the supplied Megabits value to Megabytes
 func (value Megabits) ToMegabytes() float64 { 
 	return float64(value / 8.0)
 }
-/// Converts the supplied Megabits value to Gigabytes
+// ToGigabytes converts the supplied Megabits value to Gigabytes
 func (value Megabits) ToGigabytes() float64 { 
 	return float64(value / 8000.0)
 }
-/// Converts the supplied Megabits value to Terabytes
+// ToTerabytes converts the supplied Megabits value to Terabytes
 func (value Megabits) ToTerabytes() float64 { 
 	return float64(value / 8e+6)
 }
-/// Converts the supplied Megabits value to Kibibits
+// ToKibibits converts the supplied Megabits value to Kibibits
 func (value Megabits) ToKibibits() float64 { 
 	return float64(value * 976.563)
 }
-/// Converts the supplied Megabits value to Mebibits
+// ToMebibits converts the supplied Megabits value to Mebibits
 func (value Megabits) ToMebibits() float64 { 
 	return float64(value / 1.04858)
 }
 
-/// Megabytes conversion functions
+// Megabytes (Megabytes) conversion functions
 type Megabytes float64
 
-/// Converts the supplied Megabytes value to Bits
+// ToBits converts the supplied Megabytes value to Bits
 func (value Megabytes) ToBits() float64 { 
 	return float64(value * 8e+6)
 }
-/// Converts the supplied Megabytes value to Kilobits
+// ToKilobits converts the supplied Megabytes value to Kilobits
 func (value Megabytes) ToKilobits() float64 { 
 	return float64(value * 8000.0)
 }
-/// Converts the supplied Megabytes value to Megabits
+// ToMegabits converts the supplied Megabytes value to Megabits
 func (value Megabytes) ToMegabits() float64 { 
 	return float64(value * 8.0)
 }
-/// Converts the supplied Megabytes value to Gigabits
+// ToGigabits converts the supplied Megabytes value to Gigabits
 func (value Megabytes) ToGigabits() float64 { 
 	return float64(value / 125.0)
 }
-/// Converts the supplied Megabytes value to Terabits
+// ToTerabits converts the supplied Megabytes value to Terabits
 func (value Megabytes) ToTerabits() float64 { 
 	return float64(value / 125000.0)
 }
-/// Converts the supplied Megabytes value to Kilobytes
+// ToKilobytes converts the supplied Megabytes value to Kilobytes
 func (value Megabytes) ToKilobytes() float64 { 
 	return float64(value * 1000.0)
 }
-/// Converts the supplied Megabytes value to Gigabytes
+// ToGigabytes converts the supplied Megabytes value to Gigabytes
 func (value Megabytes) ToGigabytes() float64 { 
 	return float64(value / 1000.0)
 }
-/// Converts the supplied Megabytes value to Terabytes
+// ToTerabytes converts the supplied Megabytes value to Terabytes
 func (value Megabytes) ToTerabytes() float64 { 
 	return float64(value / 1e+6)
 }
-/// Converts the supplied Megabytes value to Kibibits
+// ToKibibits converts the supplied Megabytes value to Kibibits
 func (value Megabytes) ToKibibits() float64 { 
 	return float64(value * 7812.5)
 }
-/// Converts the supplied Megabytes value to Mebibits
+// ToMebibits converts the supplied Megabytes value to Mebibits
 func (value Megabytes) ToMebibits() float64 { 
 	return float64(value * 7.62939)
 }
 
-/// Terabits conversion functions
+// Terabits (Terabits) conversion functions
 type Terabits float64
 
-/// Converts the supplied Terabits value to Bits
+// ToBits converts the supplied Terabits value to Bits
 func (value Terabits) ToBits() float64 { 
 	return float64(value * 1e+12)
 }
-/// Converts the supplied Terabits value to Kilobits
+// ToKilobits converts the supplied Terabits value to Kilobits
 func (value Terabits) ToKilobits() float64 { 
 	return float64(value * 1e+9)
 }
-/// Converts the supplied Terabits value to Megabits
+// ToMegabits converts the supplied Terabits value to Megabits
 func (value Terabits) ToMegabits() float64 { 
 	return float64(value * 1e+6)
 }
-/// Converts the supplied Terabits value to Gigabits
+// ToGigabits converts the supplied Terabits value to Gigabits
 func (value Terabits) ToGigabits() float64 { 
 	return float64(value * 1000.0)
 }
-/// Converts the supplied Terabits value to Kilobytes
+// ToKilobytes converts the supplied Terabits value to Kilobytes
 func (value Terabits) ToKilobytes() float64 { 
 	return float64(value * 1.25e+8)
 }
-/// Converts the supplied Terabits value to Megabytes
+// ToMegabytes converts the supplied Terabits value to Megabytes
 func (value Terabits) ToMegabytes() float64 { 
 	return float64(value * 125000.0)
 }
-/// Converts the supplied Terabits value to Gigabytes
+// ToGigabytes converts the supplied Terabits value to Gigabytes
 func (value Terabits) ToGigabytes() float64 { 
 	return float64(value * 125.0)
 }
-/// Converts the supplied Terabits value to Terabytes
+// ToTerabytes converts the supplied Terabits value to Terabytes
 func (value Terabits) ToTerabytes() float64 { 
 	return float64(value / 8.0)
 }
-/// Converts the supplied Terabits value to Kibibits
+// ToKibibits converts the supplied Terabits value to Kibibits
 func (value Terabits) ToKibibits() float64 { 
 	return float64(value * 976562500.0)
 }
-/// Converts the supplied Terabits value to Mebibits
+// ToMebibits converts the supplied Terabits value to Mebibits
 func (value Terabits) ToMebibits() float64 { 
 	return float64(value * 953674.0)
 }
 
-/// Terabytes conversion functions
+// Terabytes (Terabytes) conversion functions
 type Terabytes float64
 
-/// Converts the supplied Terabytes value to Bits
+// ToBits converts the supplied Terabytes value to Bits
 func (value Terabytes) ToBits() float64 { 
 	return float64(value * 8e+12)
 }
-/// Converts the supplied Terabytes value to Kilobits
+// ToKilobits converts the supplied Terabytes value to Kilobits
 func (value Terabytes) ToKilobits() float64 { 
 	return float64(value * 8e+9)
 }
-/// Converts the supplied Terabytes value to Megabits
+// ToMegabits converts the supplied Terabytes value to Megabits
 func (value Terabytes) ToMegabits() float64 { 
 	return float64(value * 8e+6)
 }
-/// Converts the supplied Terabytes value to Gigabits
+// ToGigabits converts the supplied Terabytes value to Gigabits
 func (value Terabytes) ToGigabits() float64 { 
 	return float64(value * 8000.0)
 }
-/// Converts the supplied Terabytes value to Terabits
+// ToTerabits converts the supplied Terabytes value to Terabits
 func (value Terabytes) ToTerabits() float64 { 
 	return float64(value * 8.0)
 }
-/// Converts the supplied Terabytes value to Kilobytes
+// ToKilobytes converts the supplied Terabytes value to Kilobytes
 func (value Terabytes) ToKilobytes() float64 { 
 	return float64(value * 1e+9)
 }
-/// Converts the supplied Terabytes value to Megabytes
+// ToMegabytes converts the supplied Terabytes value to Megabytes
 func (value Terabytes) ToMegabytes() float64 { 
 	return float64(value * 1e+6)
 }
-/// Converts the supplied Terabytes value to Gigabytes
+// ToGigabytes converts the supplied Terabytes value to Gigabytes
 func (value Terabytes) ToGigabytes() float64 { 
 	return float64(value * 1000.0)
 }
-/// Converts the supplied Terabytes value to Kibibits
+// ToKibibits converts the supplied Terabytes value to Kibibits
 func (value Terabytes) ToKibibits() float64 { 
 	return float64(value * 7812500000.0)
 }
-/// Converts the supplied Terabytes value to Mebibits
+// ToMebibits converts the supplied Terabytes value to Mebibits
 func (value Terabytes) ToMebibits() float64 { 
 	return float64(value / 0.000000131072)
 }
