@@ -1,4 +1,4 @@
-name: Build FSharp.Units
+name: Build GoUnits
 
 on:
   push:
