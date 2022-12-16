@@ -407,8 +407,8 @@ func TestConvertKnownCubicInchesToUSGallons(t * testing.T) {
     if !cmp.Equal(CubicInches.ToUSGallons(600.0), 2.5974, withinTolerance()) {
         t.Fatalf("Expected %f, was %f", 2.5974, CubicInches.ToUSGallons(600.0));
     }
-    if !cmp.Equal(CubicInches.ToUSGallons(462), 2.0, withinTolerance()) {
-        t.Fatalf("Expected %f, was %f", 2.0, CubicInches.ToUSGallons(462));
+    if !cmp.Equal(CubicInches.ToUSGallons(462.0), 2.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 2.0, CubicInches.ToUSGallons(462.0));
     }
     if !cmp.Equal(CubicInches.ToUSGallons(899.0), 3.89177, withinTolerance()) {
         t.Fatalf("Expected %f, was %f", 3.89177, CubicInches.ToUSGallons(899.0));
@@ -446,8 +446,8 @@ func TestConvertKnownCubicInchesToCubicMetres(t * testing.T) {
     if !cmp.Equal(CubicInches.ToCubicMetres(7777.0), 0.1274422, withinTolerance()) {
         t.Fatalf("Expected %f, was %f", 0.1274422, CubicInches.ToCubicMetres(7777.0));
     }
-    if !cmp.Equal(CubicInches.ToCubicMetres(366142), 6.0, withinTolerance()) {
-        t.Fatalf("Expected %f, was %f", 6.0, CubicInches.ToCubicMetres(366142));
+    if !cmp.Equal(CubicInches.ToCubicMetres(366142.0), 6.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 6.0, CubicInches.ToCubicMetres(366142.0));
     }
 }
 
@@ -587,8 +587,8 @@ func TestConvertKnownCubicMetresToUSTeaspoons(t * testing.T) {
     if !cmp.Equal(CubicMetres.ToUSTeaspoons(0.5), 101442.0, withinTolerance()) {
         t.Fatalf("Expected %f, was %f", 101442.0, CubicMetres.ToUSTeaspoons(0.5));
     }
-    if !cmp.Equal(CubicMetres.ToUSTeaspoons(2), 405768.0, withinTolerance()) {
-        t.Fatalf("Expected %f, was %f", 405768.0, CubicMetres.ToUSTeaspoons(2));
+    if !cmp.Equal(CubicMetres.ToUSTeaspoons(2.0), 405768.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 405768.0, CubicMetres.ToUSTeaspoons(2.0));
     }
     if !cmp.Equal(CubicMetres.ToUSTeaspoons(0.3), 60865.199, withinTolerance()) {
         t.Fatalf("Expected %f, was %f", 60865.199, CubicMetres.ToUSTeaspoons(0.3));
@@ -887,8 +887,8 @@ func TestConvertKnownFluidOuncesToCubicMetres(t * testing.T) {
     if !cmp.Equal(FluidOunces.ToCubicMetres(316756.0), 9.00000284, withinTolerance()) {
         t.Fatalf("Expected %f, was %f", 9.00000284, FluidOunces.ToCubicMetres(316756.0));
     }
-    if !cmp.Equal(FluidOunces.ToCubicMetres(8000.0), 0.2365882, withinTolerance()) {
-        t.Fatalf("Expected %f, was %f", 0.2365882, FluidOunces.ToCubicMetres(8000.0));
+    if !cmp.Equal(FluidOunces.ToCubicMetres(8000.0), 0.2273043690, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.2273043690, FluidOunces.ToCubicMetres(8000.0));
     }
     if !cmp.Equal(FluidOunces.ToCubicMetres(123456.0), 3.5077610, withinTolerance()) {
         t.Fatalf("Expected %f, was %f", 3.5077610, FluidOunces.ToCubicMetres(123456.0));
@@ -911,8 +911,8 @@ func TestConvertKnownFluidOuncesToCubicInches(t * testing.T) {
     if !cmp.Equal(FluidOunces.ToCubicInches(7.0), 12.1371, withinTolerance()) {
         t.Fatalf("Expected %f, was %f", 12.1371, FluidOunces.ToCubicInches(7.0));
     }
-    if !cmp.Equal(FluidOunces.ToCubicInches(900), 1560.48, withinTolerance()) {
-        t.Fatalf("Expected %f, was %f", 1560.48, FluidOunces.ToCubicInches(900));
+    if !cmp.Equal(FluidOunces.ToCubicInches(900.0), 1560.48, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1560.48, FluidOunces.ToCubicInches(900.0));
     }
     if !cmp.Equal(FluidOunces.ToCubicInches(6.0), 10.4032, withinTolerance()) {
         t.Fatalf("Expected %f, was %f", 10.4032, FluidOunces.ToCubicInches(6.0));
@@ -2894,8 +2894,8 @@ func TestConvertKnownTeaspoonsToUSPints(t * testing.T) {
     if !cmp.Equal(Teaspoons.ToUSPints(34.0), 0.425337, withinTolerance()) {
         t.Fatalf("Expected %f, was %f", 0.425337, Teaspoons.ToUSPints(34.0));
     }
-    if !cmp.Equal(Teaspoons.ToUSPints(6.21), 0.07656059, withinTolerance()) {
-        t.Fatalf("Expected %f, was %f", 0.07656059, Teaspoons.ToUSPints(6.21));
+    if !cmp.Equal(Teaspoons.ToUSPints(6.21), 0.07768648, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.07768648, Teaspoons.ToUSPints(6.21));
     }
 }
 
@@ -4340,8 +4340,8 @@ func TestConvertKnownUSTablespoonsToCubicInches(t * testing.T) {
 }
 
 func TestConvertKnownUSTablespoonsToOilBarrels(t * testing.T) {
-    if !cmp.Equal(USTablespoons.ToOilBarrels(591360), 55.0, withinTolerance()) {
-        t.Fatalf("Expected %f, was %f", 55.0, USTablespoons.ToOilBarrels(591360));
+    if !cmp.Equal(USTablespoons.ToOilBarrels(591360.0), 55.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 55.0, USTablespoons.ToOilBarrels(591360.0));
     }
     if !cmp.Equal(USTablespoons.ToOilBarrels(4300.8), 0.4, withinTolerance()) {
         t.Fatalf("Expected %f, was %f", 0.4, USTablespoons.ToOilBarrels(4300.8));
