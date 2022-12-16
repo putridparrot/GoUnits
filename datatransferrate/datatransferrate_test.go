@@ -7,1335 +7,1335 @@
 package datatransferrate
 
 import (
-	"math"
 	"testing"
-
+	"math"
 	"github.com/google/go-cmp/cmp"
 )
 
 func withinTolerance() cmp.Option {
 	return cmp.Comparer(func(x, y float64) bool {
 		delta := math.Abs(x - y)
-		mean := math.Abs(x+y) / 2.0
-		return delta/mean < 0.01
+		mean := math.Abs(x + y) / 2.0
+		return delta / mean < 0.01
 	})
 }
-func TestConvertKnownBitsPerSecondToKiloBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(BitsPerSecond.ToKiloBitsPerSecond(100.0), 0.1, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.1, BitsPerSecond.ToKiloBitsPerSecond(100.0))
-	}
-	if !cmp.Equal(BitsPerSecond.ToKiloBitsPerSecond(6021.0), 6.021, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 6.021, BitsPerSecond.ToKiloBitsPerSecond(6021.0))
-	}
-	if !cmp.Equal(BitsPerSecond.ToKiloBitsPerSecond(9100.0), 9.1, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 9.1, BitsPerSecond.ToKiloBitsPerSecond(9100.0))
-	}
-}
-
-func TestConvertKnownBitsPerSecondToMegaBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(BitsPerSecond.ToMegaBitsPerSecond(9000000.0), 9.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 9.0, BitsPerSecond.ToMegaBitsPerSecond(9000000.0))
-	}
-	if !cmp.Equal(BitsPerSecond.ToMegaBitsPerSecond(123456.0), 0.123456, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.123456, BitsPerSecond.ToMegaBitsPerSecond(123456.0))
-	}
-	if !cmp.Equal(BitsPerSecond.ToMegaBitsPerSecond(1900000.0), 1.9, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.9, BitsPerSecond.ToMegaBitsPerSecond(1900000.0))
-	}
-}
-
-func TestConvertKnownBitsPerSecondToGigaBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(BitsPerSecond.ToGigaBitsPerSecond(190000000.0), 0.19, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.19, BitsPerSecond.ToGigaBitsPerSecond(190000000.0))
-	}
-	if !cmp.Equal(BitsPerSecond.ToGigaBitsPerSecond(8009.0), 8.009e-6, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 8.009e-6, BitsPerSecond.ToGigaBitsPerSecond(8009.0))
-	}
-	if !cmp.Equal(BitsPerSecond.ToGigaBitsPerSecond(987654321.0), 0.987654321, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.987654321, BitsPerSecond.ToGigaBitsPerSecond(987654321.0))
-	}
-}
-
-func TestConvertKnownBitsPerSecondToTeraBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(BitsPerSecond.ToTeraBitsPerSecond(987654321234.0), 0.987654321234, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.987654321234, BitsPerSecond.ToTeraBitsPerSecond(987654321234.0))
-	}
-	if !cmp.Equal(BitsPerSecond.ToTeraBitsPerSecond(1234567890123456.0), 1234.567890123455982, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1234.567890123455982, BitsPerSecond.ToTeraBitsPerSecond(1234567890123456.0))
-	}
-	if !cmp.Equal(BitsPerSecond.ToTeraBitsPerSecond(999888777666555.0), 999.888777666555029, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 999.888777666555029, BitsPerSecond.ToTeraBitsPerSecond(999888777666555.0))
-	}
-}
-
-func TestConvertKnownBitsPerSecondToKiloBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(BitsPerSecond.ToKiloBytesPerSecond(900.0), 0.1125, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.1125, BitsPerSecond.ToKiloBytesPerSecond(900.0))
-	}
-	if !cmp.Equal(BitsPerSecond.ToKiloBytesPerSecond(12345.0), 1.543125, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.543125, BitsPerSecond.ToKiloBytesPerSecond(12345.0))
-	}
-	if !cmp.Equal(BitsPerSecond.ToKiloBytesPerSecond(6000.9), 0.7501125, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.7501125, BitsPerSecond.ToKiloBytesPerSecond(6000.9))
-	}
-}
-
-func TestConvertKnownBitsPerSecondToMegaBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(BitsPerSecond.ToMegaBytesPerSecond(123456.0), 0.015432, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.015432, BitsPerSecond.ToMegaBytesPerSecond(123456.0))
-	}
-	if !cmp.Equal(BitsPerSecond.ToMegaBytesPerSecond(900800.0), 0.1126, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.1126, BitsPerSecond.ToMegaBytesPerSecond(900800.0))
-	}
-	if !cmp.Equal(BitsPerSecond.ToMegaBytesPerSecond(999888777.0), 124.986097125, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 124.986097125, BitsPerSecond.ToMegaBytesPerSecond(999888777.0))
-	}
-}
-
-func TestConvertKnownBitsPerSecondToGigaBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(BitsPerSecond.ToGigaBytesPerSecond(999888777.0), 0.124986097125, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.124986097125, BitsPerSecond.ToGigaBytesPerSecond(999888777.0))
-	}
-	if !cmp.Equal(BitsPerSecond.ToGigaBytesPerSecond(1.9e+9), 0.2375, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.2375, BitsPerSecond.ToGigaBytesPerSecond(1.9e+9))
-	}
-	if !cmp.Equal(BitsPerSecond.ToGigaBytesPerSecond(80090077.0), 0.010011259625, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.010011259625, BitsPerSecond.ToGigaBytesPerSecond(80090077.0))
-	}
-}
-
-func TestConvertKnownBitsPerSecondToTeraBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(BitsPerSecond.ToTeraBytesPerSecond(999888777666.0), 0.12498609720825, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.12498609720825, BitsPerSecond.ToTeraBytesPerSecond(999888777666.0))
-	}
-	if !cmp.Equal(BitsPerSecond.ToTeraBytesPerSecond(12345678912345.0), 1.5432098640431251, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.5432098640431251, BitsPerSecond.ToTeraBytesPerSecond(12345678912345.0))
-	}
-	if !cmp.Equal(BitsPerSecond.ToTeraBytesPerSecond(111999222888333.0), 13.9999028610416243, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 13.9999028610416243, BitsPerSecond.ToTeraBytesPerSecond(111999222888333.0))
-	}
-}
-
-func TestConvertKnownBitsPerSecondToKibibitsPerSecond(t *testing.T) {
-	if !cmp.Equal(BitsPerSecond.ToKibibitsPerSecond(1800.0), 1.757813, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.757813, BitsPerSecond.ToKibibitsPerSecond(1800.0))
-	}
-	if !cmp.Equal(BitsPerSecond.ToKibibitsPerSecond(888.0), 0.867188, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.867188, BitsPerSecond.ToKibibitsPerSecond(888.0))
-	}
-	if !cmp.Equal(BitsPerSecond.ToKibibitsPerSecond(7687.0), 7.506836, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 7.506836, BitsPerSecond.ToKibibitsPerSecond(7687.0))
-	}
-}
-
-func TestConvertKnownBitsPerSecondToMebibitsPerSecond(t *testing.T) {
-	if !cmp.Equal(BitsPerSecond.ToMebibitsPerSecond(999888.0), 0.953567505, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.953567505, BitsPerSecond.ToMebibitsPerSecond(999888.0))
-	}
-	if !cmp.Equal(BitsPerSecond.ToMebibitsPerSecond(1234567.0), 1.17737484, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.17737484, BitsPerSecond.ToMebibitsPerSecond(1234567.0))
-	}
-	if !cmp.Equal(BitsPerSecond.ToMebibitsPerSecond(900800.0), 0.859069824, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.859069824, BitsPerSecond.ToMebibitsPerSecond(900800.0))
-	}
-}
-
-func TestConvertKnownGigaBitsPerSecondToBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(GigaBitsPerSecond.ToBitsPerSecond(0.0009), 900000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 900000.0, GigaBitsPerSecond.ToBitsPerSecond(0.0009))
-	}
-	if !cmp.Equal(GigaBitsPerSecond.ToBitsPerSecond(0.00007), 70000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 70000.0, GigaBitsPerSecond.ToBitsPerSecond(0.00007))
-	}
-	if !cmp.Equal(GigaBitsPerSecond.ToBitsPerSecond(1.2e-5), 12000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 12000.0, GigaBitsPerSecond.ToBitsPerSecond(1.2e-5))
-	}
-}
-
-func TestConvertKnownGigaBitsPerSecondToKiloBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(GigaBitsPerSecond.ToKiloBitsPerSecond(0.01), 10000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 10000.0, GigaBitsPerSecond.ToKiloBitsPerSecond(0.01))
-	}
-	if !cmp.Equal(GigaBitsPerSecond.ToKiloBitsPerSecond(0.91), 910000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 910000.0, GigaBitsPerSecond.ToKiloBitsPerSecond(0.91))
-	}
-	if !cmp.Equal(GigaBitsPerSecond.ToKiloBitsPerSecond(6.1), 6.1e+6, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 6.1e+6, GigaBitsPerSecond.ToKiloBitsPerSecond(6.1))
-	}
-}
-
-func TestConvertKnownGigaBitsPerSecondToMegaBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(GigaBitsPerSecond.ToMegaBitsPerSecond(6.1), 6100.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 6100.0, GigaBitsPerSecond.ToMegaBitsPerSecond(6.1))
-	}
-	if !cmp.Equal(GigaBitsPerSecond.ToMegaBitsPerSecond(0.961), 961.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 961.0, GigaBitsPerSecond.ToMegaBitsPerSecond(0.961))
-	}
-	if !cmp.Equal(GigaBitsPerSecond.ToMegaBitsPerSecond(1.2e-3), 1.2, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.2, GigaBitsPerSecond.ToMegaBitsPerSecond(1.2e-3))
-	}
-}
-
-func TestConvertKnownGigaBitsPerSecondToTeraBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(GigaBitsPerSecond.ToTeraBitsPerSecond(1200.0), 1.2, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.2, GigaBitsPerSecond.ToTeraBitsPerSecond(1200.0))
-	}
-	if !cmp.Equal(GigaBitsPerSecond.ToTeraBitsPerSecond(90012.0), 90.012, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 90.012, GigaBitsPerSecond.ToTeraBitsPerSecond(90012.0))
-	}
-	if !cmp.Equal(GigaBitsPerSecond.ToTeraBitsPerSecond(8000.0), 8.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 8.0, GigaBitsPerSecond.ToTeraBitsPerSecond(8000.0))
-	}
-}
-
-func TestConvertKnownGigaBitsPerSecondToKiloBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(GigaBitsPerSecond.ToKiloBytesPerSecond(1.2), 150000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 150000.0, GigaBitsPerSecond.ToKiloBytesPerSecond(1.2))
-	}
-	if !cmp.Equal(GigaBitsPerSecond.ToKiloBytesPerSecond(0.9), 112500.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 112500.0, GigaBitsPerSecond.ToKiloBytesPerSecond(0.9))
-	}
-	if !cmp.Equal(GigaBitsPerSecond.ToKiloBytesPerSecond(0.001), 125.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 125.0, GigaBitsPerSecond.ToKiloBytesPerSecond(0.001))
-	}
-}
-
-func TestConvertKnownGigaBitsPerSecondToMegaBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(GigaBitsPerSecond.ToMegaBytesPerSecond(0.9), 112.5, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 112.5, GigaBitsPerSecond.ToMegaBytesPerSecond(0.9))
-	}
-	if !cmp.Equal(GigaBitsPerSecond.ToMegaBytesPerSecond(1.2), 150.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 150.0, GigaBitsPerSecond.ToMegaBytesPerSecond(1.2))
-	}
-	if !cmp.Equal(GigaBitsPerSecond.ToMegaBytesPerSecond(80.1), 10012.5, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 10012.5, GigaBitsPerSecond.ToMegaBytesPerSecond(80.1))
-	}
-}
-
-func TestConvertKnownGigaBitsPerSecondToGigaBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(GigaBitsPerSecond.ToGigaBytesPerSecond(99.0), 12.375, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 12.375, GigaBitsPerSecond.ToGigaBytesPerSecond(99.0))
-	}
-	if !cmp.Equal(GigaBitsPerSecond.ToGigaBytesPerSecond(123.123), 15.390375, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 15.390375, GigaBitsPerSecond.ToGigaBytesPerSecond(123.123))
-	}
-	if !cmp.Equal(GigaBitsPerSecond.ToGigaBytesPerSecond(8000.9), 1000.1125, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1000.1125, GigaBitsPerSecond.ToGigaBytesPerSecond(8000.9))
-	}
-}
-
-func TestConvertKnownGigaBitsPerSecondToTeraBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(GigaBitsPerSecond.ToTeraBytesPerSecond(9000.0), 1.125, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.125, GigaBitsPerSecond.ToTeraBytesPerSecond(9000.0))
-	}
-	if !cmp.Equal(GigaBitsPerSecond.ToTeraBytesPerSecond(1234567.0), 154.320875, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 154.320875, GigaBitsPerSecond.ToTeraBytesPerSecond(1234567.0))
-	}
-	if !cmp.Equal(GigaBitsPerSecond.ToTeraBytesPerSecond(613.0), 0.076625, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.076625, GigaBitsPerSecond.ToTeraBytesPerSecond(613.0))
-	}
-}
-
-func TestConvertKnownGigaBitsPerSecondToKibibitsPerSecond(t *testing.T) {
-	if !cmp.Equal(GigaBitsPerSecond.ToKibibitsPerSecond(0.8), 781250.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 781250.0, GigaBitsPerSecond.ToKibibitsPerSecond(0.8))
-	}
-	if !cmp.Equal(GigaBitsPerSecond.ToKibibitsPerSecond(0.012), 11718.75, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 11718.75, GigaBitsPerSecond.ToKibibitsPerSecond(0.012))
-	}
-	if !cmp.Equal(GigaBitsPerSecond.ToKibibitsPerSecond(0.002), 1953.125, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1953.125, GigaBitsPerSecond.ToKibibitsPerSecond(0.002))
-	}
-}
-
-func TestConvertKnownGigaBitsPerSecondToMebibitsPerSecond(t *testing.T) {
-	if !cmp.Equal(GigaBitsPerSecond.ToMebibitsPerSecond(0.002), 1.9073486, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.9073486, GigaBitsPerSecond.ToMebibitsPerSecond(0.002))
-	}
-	if !cmp.Equal(GigaBitsPerSecond.ToMebibitsPerSecond(0.9), 858.3068847656, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 858.3068847656, GigaBitsPerSecond.ToMebibitsPerSecond(0.9))
-	}
-	if !cmp.Equal(GigaBitsPerSecond.ToMebibitsPerSecond(6.1), 5817.413330078, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 5817.413330078, GigaBitsPerSecond.ToMebibitsPerSecond(6.1))
-	}
-}
-
-func TestConvertKnownGigaBytesPerSecondToBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(GigaBytesPerSecond.ToBitsPerSecond(0.004), 32000000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 32000000.0, GigaBytesPerSecond.ToBitsPerSecond(0.004))
-	}
-	if !cmp.Equal(GigaBytesPerSecond.ToBitsPerSecond(0.012), 96000000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 96000000.0, GigaBytesPerSecond.ToBitsPerSecond(0.012))
-	}
-	if !cmp.Equal(GigaBytesPerSecond.ToBitsPerSecond(3e-9), 24.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 24.0, GigaBytesPerSecond.ToBitsPerSecond(3e-9))
-	}
-}
-
-func TestConvertKnownGigaBytesPerSecondToKiloBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(GigaBytesPerSecond.ToKiloBitsPerSecond(0.009), 72000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 72000.0, GigaBytesPerSecond.ToKiloBitsPerSecond(0.009))
-	}
-	if !cmp.Equal(GigaBytesPerSecond.ToKiloBitsPerSecond(1.2e-4), 960.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 960.0, GigaBytesPerSecond.ToKiloBitsPerSecond(1.2e-4))
-	}
-	if !cmp.Equal(GigaBytesPerSecond.ToKiloBitsPerSecond(0.0078), 62400.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 62400.0, GigaBytesPerSecond.ToKiloBitsPerSecond(0.0078))
-	}
-}
-
-func TestConvertKnownGigaBytesPerSecondToMegaBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(GigaBytesPerSecond.ToMegaBitsPerSecond(0.0078), 62.4, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 62.4, GigaBytesPerSecond.ToMegaBitsPerSecond(0.0078))
-	}
-	if !cmp.Equal(GigaBytesPerSecond.ToMegaBitsPerSecond(0.01), 80.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 80.0, GigaBytesPerSecond.ToMegaBitsPerSecond(0.01))
-	}
-	if !cmp.Equal(GigaBytesPerSecond.ToMegaBitsPerSecond(0.001234), 9.872, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 9.872, GigaBytesPerSecond.ToMegaBitsPerSecond(0.001234))
-	}
-}
-
-func TestConvertKnownGigaBytesPerSecondToGigaBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(GigaBytesPerSecond.ToGigaBitsPerSecond(5.0), 40.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 40.0, GigaBytesPerSecond.ToGigaBitsPerSecond(5.0))
-	}
-	if !cmp.Equal(GigaBytesPerSecond.ToGigaBitsPerSecond(1.2), 9.6, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 9.6, GigaBytesPerSecond.ToGigaBitsPerSecond(1.2))
-	}
-	if !cmp.Equal(GigaBytesPerSecond.ToGigaBitsPerSecond(0.01), 0.08, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.08, GigaBytesPerSecond.ToGigaBitsPerSecond(0.01))
-	}
-}
-
-func TestConvertKnownGigaBytesPerSecondToTeraBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(GigaBytesPerSecond.ToTeraBitsPerSecond(70.0), 0.56, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.56, GigaBytesPerSecond.ToTeraBitsPerSecond(70.0))
-	}
-	if !cmp.Equal(GigaBytesPerSecond.ToTeraBitsPerSecond(9001.0), 72.008, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 72.008, GigaBytesPerSecond.ToTeraBitsPerSecond(9001.0))
-	}
-	if !cmp.Equal(GigaBytesPerSecond.ToTeraBitsPerSecond(768123.9), 6144.9912, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 6144.9912, GigaBytesPerSecond.ToTeraBitsPerSecond(768123.9))
-	}
-}
-
-func TestConvertKnownGigaBytesPerSecondToKiloBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(GigaBytesPerSecond.ToKiloBytesPerSecond(0.2), 200000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 200000.0, GigaBytesPerSecond.ToKiloBytesPerSecond(0.2))
-	}
-	if !cmp.Equal(GigaBytesPerSecond.ToKiloBytesPerSecond(0.009), 9000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 9000.0, GigaBytesPerSecond.ToKiloBytesPerSecond(0.009))
-	}
-	if !cmp.Equal(GigaBytesPerSecond.ToKiloBytesPerSecond(0.00123), 1230.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1230.0, GigaBytesPerSecond.ToKiloBytesPerSecond(0.00123))
-	}
-}
-
-func TestConvertKnownGigaBytesPerSecondToMegaBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(GigaBytesPerSecond.ToMegaBytesPerSecond(0.9), 900.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 900.0, GigaBytesPerSecond.ToMegaBytesPerSecond(0.9))
-	}
-	if !cmp.Equal(GigaBytesPerSecond.ToMegaBytesPerSecond(12.0), 12000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 12000.0, GigaBytesPerSecond.ToMegaBytesPerSecond(12.0))
-	}
-	if !cmp.Equal(GigaBytesPerSecond.ToMegaBytesPerSecond(35.6), 35600.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 35600.0, GigaBytesPerSecond.ToMegaBytesPerSecond(35.6))
-	}
-}
-
-func TestConvertKnownGigaBytesPerSecondToTeraBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(GigaBytesPerSecond.ToTeraBytesPerSecond(35.6), 0.0356, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.0356, GigaBytesPerSecond.ToTeraBytesPerSecond(35.6))
-	}
-	if !cmp.Equal(GigaBytesPerSecond.ToTeraBytesPerSecond(100.23), 0.10023, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.10023, GigaBytesPerSecond.ToTeraBytesPerSecond(100.23))
-	}
-	if !cmp.Equal(GigaBytesPerSecond.ToTeraBytesPerSecond(900100.0), 900.1, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 900.1, GigaBytesPerSecond.ToTeraBytesPerSecond(900100.0))
-	}
-}
-
-func TestConvertKnownGigaBytesPerSecondToKibibitsPerSecond(t *testing.T) {
-	if !cmp.Equal(GigaBytesPerSecond.ToKibibitsPerSecond(0.05), 390625.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 390625.0, GigaBytesPerSecond.ToKibibitsPerSecond(0.05))
-	}
-	if !cmp.Equal(GigaBytesPerSecond.ToKibibitsPerSecond(0.008), 62500.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 62500.0, GigaBytesPerSecond.ToKibibitsPerSecond(0.008))
-	}
-	if !cmp.Equal(GigaBytesPerSecond.ToKibibitsPerSecond(0.00123), 9609.375, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 9609.375, GigaBytesPerSecond.ToKibibitsPerSecond(0.00123))
-	}
-}
-
-func TestConvertKnownGigaBytesPerSecondToMebibitsPerSecond(t *testing.T) {
-	if !cmp.Equal(GigaBytesPerSecond.ToMebibitsPerSecond(0.009), 68.66451, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 68.66451, GigaBytesPerSecond.ToMebibitsPerSecond(0.009))
-	}
-	if !cmp.Equal(GigaBytesPerSecond.ToMebibitsPerSecond(1.2), 9155.268, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 9155.268, GigaBytesPerSecond.ToMebibitsPerSecond(1.2))
-	}
-	if !cmp.Equal(GigaBytesPerSecond.ToMebibitsPerSecond(19.2), 146484.288, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 146484.288, GigaBytesPerSecond.ToMebibitsPerSecond(19.2))
-	}
-}
-
-func TestConvertKnownKibibitsPerSecondToBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(KibibitsPerSecond.ToBitsPerSecond(2.0), 2048.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 2048.0, KibibitsPerSecond.ToBitsPerSecond(2.0))
-	}
-	if !cmp.Equal(KibibitsPerSecond.ToBitsPerSecond(9.0), 9216.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 9216.0, KibibitsPerSecond.ToBitsPerSecond(9.0))
-	}
-	if !cmp.Equal(KibibitsPerSecond.ToBitsPerSecond(17.8), 18227.2, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 18227.2, KibibitsPerSecond.ToBitsPerSecond(17.8))
-	}
-}
-
-func TestConvertKnownKibibitsPerSecondToKiloBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(KibibitsPerSecond.ToKiloBitsPerSecond(6.2), 6.3488, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 6.3488, KibibitsPerSecond.ToKiloBitsPerSecond(6.2))
-	}
-	if !cmp.Equal(KibibitsPerSecond.ToKiloBitsPerSecond(0.9), 0.9216, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.9216, KibibitsPerSecond.ToKiloBitsPerSecond(0.9))
-	}
-	if !cmp.Equal(KibibitsPerSecond.ToKiloBitsPerSecond(87.0), 89.088, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 89.088, KibibitsPerSecond.ToKiloBitsPerSecond(87.0))
-	}
-}
-
-func TestConvertKnownKibibitsPerSecondToMegaBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(KibibitsPerSecond.ToMegaBitsPerSecond(87.0), 0.089088, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.089088, KibibitsPerSecond.ToMegaBitsPerSecond(87.0))
-	}
-	if !cmp.Equal(KibibitsPerSecond.ToMegaBitsPerSecond(12.34), 0.01263616, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.01263616, KibibitsPerSecond.ToMegaBitsPerSecond(12.34))
-	}
-	if !cmp.Equal(KibibitsPerSecond.ToMegaBitsPerSecond(123456.0), 126.418879, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 126.418879, KibibitsPerSecond.ToMegaBitsPerSecond(123456.0))
-	}
-}
-
-func TestConvertKnownKibibitsPerSecondToGigaBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(KibibitsPerSecond.ToGigaBitsPerSecond(123456.0), 0.126418944, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.126418944, KibibitsPerSecond.ToGigaBitsPerSecond(123456.0))
-	}
-	if !cmp.Equal(KibibitsPerSecond.ToGigaBitsPerSecond(8000000.0), 8.192, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 8.192, KibibitsPerSecond.ToGigaBitsPerSecond(8000000.0))
-	}
-	if !cmp.Equal(KibibitsPerSecond.ToGigaBitsPerSecond(1276876.0), 1.307521024, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.307521024, KibibitsPerSecond.ToGigaBitsPerSecond(1276876.0))
-	}
-}
-
-func TestConvertKnownKibibitsPerSecondToTeraBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(KibibitsPerSecond.ToTeraBitsPerSecond(800000000.0), 0.8192, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.8192, KibibitsPerSecond.ToTeraBitsPerSecond(800000000.0))
-	}
-	if !cmp.Equal(KibibitsPerSecond.ToTeraBitsPerSecond(1.5e12), 1536.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1536.0, KibibitsPerSecond.ToTeraBitsPerSecond(1.5e12))
-	}
-	if !cmp.Equal(KibibitsPerSecond.ToTeraBitsPerSecond(9999999.0), 0.01023999898, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.01023999898, KibibitsPerSecond.ToTeraBitsPerSecond(9999999.0))
-	}
-}
-
-func TestConvertKnownKibibitsPerSecondToKiloBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(KibibitsPerSecond.ToKiloBytesPerSecond(919.0), 117.632, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 117.632, KibibitsPerSecond.ToKiloBytesPerSecond(919.0))
-	}
-	if !cmp.Equal(KibibitsPerSecond.ToKiloBytesPerSecond(77.4), 9.9072, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 9.9072, KibibitsPerSecond.ToKiloBytesPerSecond(77.4))
-	}
-	if !cmp.Equal(KibibitsPerSecond.ToKiloBytesPerSecond(109.109), 13.965952, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 13.965952, KibibitsPerSecond.ToKiloBytesPerSecond(109.109))
-	}
-}
-
-func TestConvertKnownKibibitsPerSecondToMegaBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(KibibitsPerSecond.ToMegaBytesPerSecond(1000.0), 0.128, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.128, KibibitsPerSecond.ToMegaBytesPerSecond(1000.0))
-	}
-	if !cmp.Equal(KibibitsPerSecond.ToMegaBytesPerSecond(800.123), 0.102415744, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.102415744, KibibitsPerSecond.ToMegaBytesPerSecond(800.123))
-	}
-	if !cmp.Equal(KibibitsPerSecond.ToMegaBytesPerSecond(123456.0), 15.802368, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 15.802368, KibibitsPerSecond.ToMegaBytesPerSecond(123456.0))
-	}
-}
-
-func TestConvertKnownKibibitsPerSecondToGigaBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(KibibitsPerSecond.ToGigaBytesPerSecond(12345678.0), 1.580347926, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.580347926, KibibitsPerSecond.ToGigaBytesPerSecond(12345678.0))
-	}
-	if !cmp.Equal(KibibitsPerSecond.ToGigaBytesPerSecond(8e12), 1024000.00, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1024000.00, KibibitsPerSecond.ToGigaBytesPerSecond(8e12))
-	}
-	if !cmp.Equal(KibibitsPerSecond.ToGigaBytesPerSecond(1.2e5), 0.01536, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.01536, KibibitsPerSecond.ToGigaBytesPerSecond(1.2e5))
-	}
-}
-
-func TestConvertKnownKibibitsPerSecondToTeraBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(KibibitsPerSecond.ToTeraBytesPerSecond(120000000.0), 0.01536, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.01536, KibibitsPerSecond.ToTeraBytesPerSecond(120000000.0))
-	}
-	if !cmp.Equal(KibibitsPerSecond.ToTeraBytesPerSecond(88e12), 11264.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 11264.0, KibibitsPerSecond.ToTeraBytesPerSecond(88e12))
-	}
-	// if !cmp.Equal(KibibitsPerSecond.ToTeraBytesPerSecond(9000000.0), 0.009216, withinTolerance()) {
-	//     t.Fatalf("Expected %f, was %f", 0.009216, KibibitsPerSecond.ToTeraBytesPerSecond(9000000.0));
-	// }
-}
-
-func TestConvertKnownKibibitsPerSecondToMebibitsPerSecond(t *testing.T) {
-	if !cmp.Equal(KibibitsPerSecond.ToMebibitsPerSecond(600.0), 0.5859375, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.5859375, KibibitsPerSecond.ToMebibitsPerSecond(600.0))
-	}
-	if !cmp.Equal(KibibitsPerSecond.ToMebibitsPerSecond(12345.0), 12.055664, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 12.055664, KibibitsPerSecond.ToMebibitsPerSecond(12345.0))
-	}
-	if !cmp.Equal(KibibitsPerSecond.ToMebibitsPerSecond(101.0), 0.0986328, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.0986328, KibibitsPerSecond.ToMebibitsPerSecond(101.0))
-	}
-}
-
-func TestConvertKnownKiloBitsPerSecondToBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(KiloBitsPerSecond.ToBitsPerSecond(9.0), 9000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 9000.0, KiloBitsPerSecond.ToBitsPerSecond(9.0))
-	}
-	if !cmp.Equal(KiloBitsPerSecond.ToBitsPerSecond(6.7), 6700.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 6700.0, KiloBitsPerSecond.ToBitsPerSecond(6.7))
-	}
-	if !cmp.Equal(KiloBitsPerSecond.ToBitsPerSecond(1.2345), 1234.5, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1234.5, KiloBitsPerSecond.ToBitsPerSecond(1.2345))
-	}
-}
-
-func TestConvertKnownKiloBitsPerSecondToMegaBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(KiloBitsPerSecond.ToMegaBitsPerSecond(900.0), 0.9, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.9, KiloBitsPerSecond.ToMegaBitsPerSecond(900.0))
-	}
-	if !cmp.Equal(KiloBitsPerSecond.ToMegaBitsPerSecond(12345.0), 12.345, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 12.345, KiloBitsPerSecond.ToMegaBitsPerSecond(12345.0))
-	}
-	if !cmp.Equal(KiloBitsPerSecond.ToMegaBitsPerSecond(9988.0), 9.988, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 9.988, KiloBitsPerSecond.ToMegaBitsPerSecond(9988.0))
-	}
-}
-
-func TestConvertKnownKiloBitsPerSecondToGigaBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(KiloBitsPerSecond.ToGigaBitsPerSecond(123456.0), 0.123456, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.123456, KiloBitsPerSecond.ToGigaBitsPerSecond(123456.0))
-	}
-	if !cmp.Equal(KiloBitsPerSecond.ToGigaBitsPerSecond(8000700.0), 8.0007, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 8.0007, KiloBitsPerSecond.ToGigaBitsPerSecond(8000700.0))
-	}
-	if !cmp.Equal(KiloBitsPerSecond.ToGigaBitsPerSecond(191987578.0), 191.987578, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 191.987578, KiloBitsPerSecond.ToGigaBitsPerSecond(191987578.0))
-	}
-}
-
-func TestConvertKnownKiloBitsPerSecondToTeraBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(KiloBitsPerSecond.ToTeraBitsPerSecond(191987578.0), 0.191987578, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.191987578, KiloBitsPerSecond.ToTeraBitsPerSecond(191987578.0))
-	}
-	if !cmp.Equal(KiloBitsPerSecond.ToTeraBitsPerSecond(9010081903.0), 9.010081903, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 9.010081903, KiloBitsPerSecond.ToTeraBitsPerSecond(9010081903.0))
-	}
-	if !cmp.Equal(KiloBitsPerSecond.ToTeraBitsPerSecond(123456789.0), 0.123456789, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.123456789, KiloBitsPerSecond.ToTeraBitsPerSecond(123456789.0))
-	}
-}
-
-func TestConvertKnownKiloBitsPerSecondToKiloBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(KiloBitsPerSecond.ToKiloBytesPerSecond(80.0), 10.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 10.0, KiloBitsPerSecond.ToKiloBytesPerSecond(80.0))
-	}
-	if !cmp.Equal(KiloBitsPerSecond.ToKiloBytesPerSecond(15.67), 1.95875, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.95875, KiloBitsPerSecond.ToKiloBytesPerSecond(15.67))
-	}
-	if !cmp.Equal(KiloBitsPerSecond.ToKiloBytesPerSecond(8007.09), 1000.88625, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1000.88625, KiloBitsPerSecond.ToKiloBytesPerSecond(8007.09))
-	}
-}
-
-func TestConvertKnownKiloBitsPerSecondToMegaBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(KiloBitsPerSecond.ToMegaBytesPerSecond(123456.0), 15.432, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 15.432, KiloBitsPerSecond.ToMegaBytesPerSecond(123456.0))
-	}
-	if !cmp.Equal(KiloBitsPerSecond.ToMegaBytesPerSecond(998877.0), 124.859625, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 124.859625, KiloBitsPerSecond.ToMegaBytesPerSecond(998877.0))
-	}
-	if !cmp.Equal(KiloBitsPerSecond.ToMegaBytesPerSecond(10090.0), 1.26125, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.26125, KiloBitsPerSecond.ToMegaBytesPerSecond(10090.0))
-	}
-}
-
-func TestConvertKnownKiloBitsPerSecondToGigaBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(KiloBitsPerSecond.ToGigaBytesPerSecond(1828972.0), 0.2286215, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.2286215, KiloBitsPerSecond.ToGigaBytesPerSecond(1828972.0))
-	}
-	if !cmp.Equal(KiloBitsPerSecond.ToGigaBytesPerSecond(879860.8), 0.1099826, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.1099826, KiloBitsPerSecond.ToGigaBytesPerSecond(879860.8))
-	}
-	if !cmp.Equal(KiloBitsPerSecond.ToGigaBytesPerSecond(78178971.0), 9.772371375, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 9.772371375, KiloBitsPerSecond.ToGigaBytesPerSecond(78178971.0))
-	}
-}
-
-func TestConvertKnownKiloBitsPerSecondToTeraBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(KiloBitsPerSecond.ToTeraBytesPerSecond(1234567891.0), 0.154320986375, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.154320986375, KiloBitsPerSecond.ToTeraBytesPerSecond(1234567891.0))
-	}
-	if !cmp.Equal(KiloBitsPerSecond.ToTeraBytesPerSecond(999999098.0), 0.12499988725, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.12499988725, KiloBitsPerSecond.ToTeraBytesPerSecond(999999098.0))
-	}
-	if !cmp.Equal(KiloBitsPerSecond.ToTeraBytesPerSecond(84618364142.0), 10.57729551775, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 10.57729551775, KiloBitsPerSecond.ToTeraBytesPerSecond(84618364142.0))
-	}
-}
-
-func TestConvertKnownKiloBitsPerSecondToKibibitsPerSecond(t *testing.T) {
-	if !cmp.Equal(KiloBitsPerSecond.ToKibibitsPerSecond(89.1), 87.01172, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 87.01172, KiloBitsPerSecond.ToKibibitsPerSecond(89.1))
-	}
-	if !cmp.Equal(KiloBitsPerSecond.ToKibibitsPerSecond(7.1), 6.93359, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 6.93359, KiloBitsPerSecond.ToKibibitsPerSecond(7.1))
-	}
-	if !cmp.Equal(KiloBitsPerSecond.ToKibibitsPerSecond(438.0), 427.734, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 427.734, KiloBitsPerSecond.ToKibibitsPerSecond(438.0))
-	}
-}
-
-func TestConvertKnownKiloBitsPerSecondToMebibitsPerSecond(t *testing.T) {
-	if !cmp.Equal(KiloBitsPerSecond.ToMebibitsPerSecond(77790.0), 74.186325, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 74.186325, KiloBitsPerSecond.ToMebibitsPerSecond(77790.0))
-	}
-	if !cmp.Equal(KiloBitsPerSecond.ToMebibitsPerSecond(123456.0), 117.736816, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 117.736816, KiloBitsPerSecond.ToMebibitsPerSecond(123456.0))
-	}
-	if !cmp.Equal(KiloBitsPerSecond.ToMebibitsPerSecond(23972.0), 22.861481, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 22.861481, KiloBitsPerSecond.ToMebibitsPerSecond(23972.0))
-	}
-}
-
-func TestConvertKnownKiloBytesPerSecondToBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(KiloBytesPerSecond.ToBitsPerSecond(123.456), 987648.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 987648.0, KiloBytesPerSecond.ToBitsPerSecond(123.456))
-	}
-	if !cmp.Equal(KiloBytesPerSecond.ToBitsPerSecond(900.0), 7.2e+6, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 7.2e+6, KiloBytesPerSecond.ToBitsPerSecond(900.0))
-	}
-	if !cmp.Equal(KiloBytesPerSecond.ToBitsPerSecond(100200.0), 801600000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 801600000.0, KiloBytesPerSecond.ToBitsPerSecond(100200.0))
-	}
-}
-
-func TestConvertKnownKiloBytesPerSecondToKiloBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(KiloBytesPerSecond.ToKiloBitsPerSecond(4.0), 32.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 32.0, KiloBytesPerSecond.ToKiloBitsPerSecond(4.0))
-	}
-	if !cmp.Equal(KiloBytesPerSecond.ToKiloBitsPerSecond(1.2), 9.6, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 9.6, KiloBytesPerSecond.ToKiloBitsPerSecond(1.2))
-	}
-	if !cmp.Equal(KiloBytesPerSecond.ToKiloBitsPerSecond(88.1), 704.8, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 704.8, KiloBytesPerSecond.ToKiloBitsPerSecond(88.1))
-	}
-}
-
-func TestConvertKnownKiloBytesPerSecondToMegaBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(KiloBytesPerSecond.ToMegaBitsPerSecond(88.1), 0.7048, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.7048, KiloBytesPerSecond.ToMegaBitsPerSecond(88.1))
-	}
-	if !cmp.Equal(KiloBytesPerSecond.ToMegaBitsPerSecond(7.1), 0.0568, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.0568, KiloBytesPerSecond.ToMegaBitsPerSecond(7.1))
-	}
-	if !cmp.Equal(KiloBytesPerSecond.ToMegaBitsPerSecond(12.8), 0.1024, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.1024, KiloBytesPerSecond.ToMegaBitsPerSecond(12.8))
-	}
-}
-
-func TestConvertKnownKiloBytesPerSecondToGigaBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(KiloBytesPerSecond.ToGigaBitsPerSecond(10080.0), 0.08064, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.08064, KiloBytesPerSecond.ToGigaBitsPerSecond(10080.0))
-	}
-	if !cmp.Equal(KiloBytesPerSecond.ToGigaBitsPerSecond(4.5e+9), 36000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 36000.0, KiloBytesPerSecond.ToGigaBitsPerSecond(4.5e+9))
-	}
-	if !cmp.Equal(KiloBytesPerSecond.ToGigaBitsPerSecond(271279.0), 2.170232, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 2.170232, KiloBytesPerSecond.ToGigaBitsPerSecond(271279.0))
-	}
-}
-
-func TestConvertKnownKiloBytesPerSecondToTeraBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(KiloBytesPerSecond.ToTeraBitsPerSecond(9009000.0), 0.072072, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.072072, KiloBytesPerSecond.ToTeraBitsPerSecond(9009000.0))
-	}
-	if !cmp.Equal(KiloBytesPerSecond.ToTeraBitsPerSecond(7.2e9), 57.6, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 57.6, KiloBytesPerSecond.ToTeraBitsPerSecond(7.2e9))
-	}
-	if !cmp.Equal(KiloBytesPerSecond.ToTeraBitsPerSecond(100100100900.0), 800.8008072, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 800.8008072, KiloBytesPerSecond.ToTeraBitsPerSecond(100100100900.0))
-	}
-}
-
-func TestConvertKnownKiloBytesPerSecondToMegaBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(KiloBytesPerSecond.ToMegaBytesPerSecond(1009.0), 1.009, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.009, KiloBytesPerSecond.ToMegaBytesPerSecond(1009.0))
-	}
-	if !cmp.Equal(KiloBytesPerSecond.ToMegaBytesPerSecond(8899.0), 8.899, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 8.899, KiloBytesPerSecond.ToMegaBytesPerSecond(8899.0))
-	}
-	if !cmp.Equal(KiloBytesPerSecond.ToMegaBytesPerSecond(619.0), 0.619, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.619, KiloBytesPerSecond.ToMegaBytesPerSecond(619.0))
-	}
-}
-
-func TestConvertKnownKiloBytesPerSecondToGigaBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(KiloBytesPerSecond.ToGigaBytesPerSecond(900800.0), 0.9008, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.9008, KiloBytesPerSecond.ToGigaBytesPerSecond(900800.0))
-	}
-	if !cmp.Equal(KiloBytesPerSecond.ToGigaBytesPerSecond(1234567.0), 1.234567, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.234567, KiloBytesPerSecond.ToGigaBytesPerSecond(1234567.0))
-	}
-	if !cmp.Equal(KiloBytesPerSecond.ToGigaBytesPerSecond(7.9e9), 7900.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 7900.0, KiloBytesPerSecond.ToGigaBytesPerSecond(7.9e9))
-	}
-}
-
-func TestConvertKnownKiloBytesPerSecondToTeraBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(KiloBytesPerSecond.ToTeraBytesPerSecond(0.9), 9e-10, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 9e-10, KiloBytesPerSecond.ToTeraBytesPerSecond(0.9))
-	}
-	if !cmp.Equal(KiloBytesPerSecond.ToTeraBytesPerSecond(140000000.0), 0.14, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.14, KiloBytesPerSecond.ToTeraBytesPerSecond(140000000.0))
-	}
-	if !cmp.Equal(KiloBytesPerSecond.ToTeraBytesPerSecond(7.0), 7e-9, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 7e-9, KiloBytesPerSecond.ToTeraBytesPerSecond(7.0))
-	}
-}
-
-func TestConvertKnownKiloBytesPerSecondToKibibitsPerSecond(t *testing.T) {
-	if !cmp.Equal(KiloBytesPerSecond.ToKibibitsPerSecond(0.009), 0.0703125, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.0703125, KiloBytesPerSecond.ToKibibitsPerSecond(0.009))
-	}
-	if !cmp.Equal(KiloBytesPerSecond.ToKibibitsPerSecond(6e+3), 46875.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 46875.0, KiloBytesPerSecond.ToKibibitsPerSecond(6e+3))
-	}
-	if !cmp.Equal(KiloBytesPerSecond.ToKibibitsPerSecond(1.23), 9.609375, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 9.609375, KiloBytesPerSecond.ToKibibitsPerSecond(1.23))
-	}
-}
-
-func TestConvertKnownKiloBytesPerSecondToMebibitsPerSecond(t *testing.T) {
-	if !cmp.Equal(KiloBytesPerSecond.ToMebibitsPerSecond(70.0), 0.534058, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.534058, KiloBytesPerSecond.ToMebibitsPerSecond(70.0))
-	}
-	if !cmp.Equal(KiloBytesPerSecond.ToMebibitsPerSecond(9.0), 0.0686646, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.0686646, KiloBytesPerSecond.ToMebibitsPerSecond(9.0))
-	}
-	if !cmp.Equal(KiloBytesPerSecond.ToMebibitsPerSecond(10022.0), 76.461792, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 76.461792, KiloBytesPerSecond.ToMebibitsPerSecond(10022.0))
-	}
-}
-
-func TestConvertKnownMebibitsPerSecondToBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(MebibitsPerSecond.ToBitsPerSecond(0.9), 943718.4, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 943718.4, MebibitsPerSecond.ToBitsPerSecond(0.9))
-	}
-	if !cmp.Equal(MebibitsPerSecond.ToBitsPerSecond(0.006), 6291.456, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 6291.456, MebibitsPerSecond.ToBitsPerSecond(0.006))
-	}
-	if !cmp.Equal(MebibitsPerSecond.ToBitsPerSecond(2.0), 2097152.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 2097152.0, MebibitsPerSecond.ToBitsPerSecond(2.0))
-	}
-}
-
-func TestConvertKnownMebibitsPerSecondToKiloBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(MebibitsPerSecond.ToKiloBitsPerSecond(0.8), 838.861, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 838.861, MebibitsPerSecond.ToKiloBitsPerSecond(0.8))
-	}
-	if !cmp.Equal(MebibitsPerSecond.ToKiloBitsPerSecond(2.0), 2097.15, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 2097.15, MebibitsPerSecond.ToKiloBitsPerSecond(2.0))
-	}
-	if !cmp.Equal(MebibitsPerSecond.ToKiloBitsPerSecond(0.23), 241.1725, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 241.1725, MebibitsPerSecond.ToKiloBitsPerSecond(0.23))
-	}
-}
-
-func TestConvertKnownMebibitsPerSecondToMegaBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(MebibitsPerSecond.ToMegaBitsPerSecond(0.9), 0.943718, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.943718, MebibitsPerSecond.ToMegaBitsPerSecond(0.9))
-	}
-	if !cmp.Equal(MebibitsPerSecond.ToMegaBitsPerSecond(12.3), 12.89748, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 12.89748, MebibitsPerSecond.ToMegaBitsPerSecond(12.3))
-	}
-	if !cmp.Equal(MebibitsPerSecond.ToMegaBitsPerSecond(8.1), 8.49347, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 8.49347, MebibitsPerSecond.ToMegaBitsPerSecond(8.1))
-	}
-}
-
-func TestConvertKnownMebibitsPerSecondToGigaBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(MebibitsPerSecond.ToGigaBitsPerSecond(12345.0), 12.944671, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 12.944671, MebibitsPerSecond.ToGigaBitsPerSecond(12345.0))
-	}
-	if !cmp.Equal(MebibitsPerSecond.ToGigaBitsPerSecond(100.0), 0.104858, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.104858, MebibitsPerSecond.ToGigaBitsPerSecond(100.0))
-	}
-	if !cmp.Equal(MebibitsPerSecond.ToGigaBitsPerSecond(999.9), 1.0484711, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.0484711, MebibitsPerSecond.ToGigaBitsPerSecond(999.9))
-	}
-}
-
-func TestConvertKnownMebibitsPerSecondToTeraBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(MebibitsPerSecond.ToTeraBitsPerSecond(100009.0), 0.104867037, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.104867037, MebibitsPerSecond.ToTeraBitsPerSecond(100009.0))
-	}
-	if !cmp.Equal(MebibitsPerSecond.ToTeraBitsPerSecond(9876543.0), 10.35630595, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 10.35630595, MebibitsPerSecond.ToTeraBitsPerSecond(9876543.0))
-	}
-	if !cmp.Equal(MebibitsPerSecond.ToTeraBitsPerSecond(1000900.0), 1.049519718, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.049519718, MebibitsPerSecond.ToTeraBitsPerSecond(1000900.0))
-	}
-}
-
-func TestConvertKnownMebibitsPerSecondToKiloBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(MebibitsPerSecond.ToKiloBytesPerSecond(4.0), 524.288, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 524.288, MebibitsPerSecond.ToKiloBytesPerSecond(4.0))
-	}
-	if !cmp.Equal(MebibitsPerSecond.ToKiloBytesPerSecond(1.45), 190.0544, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 190.0544, MebibitsPerSecond.ToKiloBytesPerSecond(1.45))
-	}
-	if !cmp.Equal(MebibitsPerSecond.ToKiloBytesPerSecond(88.11), 11548.754, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 11548.754, MebibitsPerSecond.ToKiloBytesPerSecond(88.11))
-	}
-}
-
-func TestConvertKnownMebibitsPerSecondToMegaBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(MebibitsPerSecond.ToMegaBytesPerSecond(109.0), 14.2868, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 14.2868, MebibitsPerSecond.ToMegaBytesPerSecond(109.0))
-	}
-	if !cmp.Equal(MebibitsPerSecond.ToMegaBytesPerSecond(55.67), 7.2967782, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 7.2967782, MebibitsPerSecond.ToMegaBytesPerSecond(55.67))
-	}
-	if !cmp.Equal(MebibitsPerSecond.ToMegaBytesPerSecond(45678.0), 5987.1068, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 5987.1068, MebibitsPerSecond.ToMegaBytesPerSecond(45678.0))
-	}
-}
-
-func TestConvertKnownMebibitsPerSecondToGigaBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(MebibitsPerSecond.ToGigaBytesPerSecond(4000.0), 0.524288311, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.524288311, MebibitsPerSecond.ToGigaBytesPerSecond(4000.0))
-	}
-	if !cmp.Equal(MebibitsPerSecond.ToGigaBytesPerSecond(90100.0), 11.80959421, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 11.80959421, MebibitsPerSecond.ToGigaBytesPerSecond(90100.0))
-	}
-	if !cmp.Equal(MebibitsPerSecond.ToGigaBytesPerSecond(1009.0), 0.132251727, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.132251727, MebibitsPerSecond.ToGigaBytesPerSecond(1009.0))
-	}
-}
-
-func TestConvertKnownMebibitsPerSecondToTeraBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(MebibitsPerSecond.ToTeraBytesPerSecond(1000009.0), 0.1310731796, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.1310731796, MebibitsPerSecond.ToTeraBytesPerSecond(1000009.0))
-	}
-	if !cmp.Equal(MebibitsPerSecond.ToTeraBytesPerSecond(90808080.0), 11.902396662, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 11.902396662, MebibitsPerSecond.ToTeraBytesPerSecond(90808080.0))
-	}
-	if !cmp.Equal(MebibitsPerSecond.ToTeraBytesPerSecond(5.2e12), 681574.4, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 681574.4, MebibitsPerSecond.ToTeraBytesPerSecond(5.2e12))
-	}
-}
-
-func TestConvertKnownMebibitsPerSecondToKibibitsPerSecond(t *testing.T) {
-	if !cmp.Equal(MebibitsPerSecond.ToKibibitsPerSecond(5.0), 5120.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 5120.0, MebibitsPerSecond.ToKibibitsPerSecond(5.0))
-	}
-	if !cmp.Equal(MebibitsPerSecond.ToKibibitsPerSecond(1234.56), 1264189.44, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1264189.44, MebibitsPerSecond.ToKibibitsPerSecond(1234.56))
-	}
-	if !cmp.Equal(MebibitsPerSecond.ToKibibitsPerSecond(505.0), 517120.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 517120.0, MebibitsPerSecond.ToKibibitsPerSecond(505.0))
-	}
-}
-
-func TestConvertKnownMegaBitsPerSecondToBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(MegaBitsPerSecond.ToBitsPerSecond(0.34), 340000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 340000.0, MegaBitsPerSecond.ToBitsPerSecond(0.34))
-	}
-	if !cmp.Equal(MegaBitsPerSecond.ToBitsPerSecond(9.12), 9120000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 9120000.0, MegaBitsPerSecond.ToBitsPerSecond(9.12))
-	}
-	if !cmp.Equal(MegaBitsPerSecond.ToBitsPerSecond(0.987), 987000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 987000.0, MegaBitsPerSecond.ToBitsPerSecond(0.987))
-	}
-}
-
-func TestConvertKnownMegaBitsPerSecondToKiloBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(MegaBitsPerSecond.ToKiloBitsPerSecond(0.77), 770.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 770.0, MegaBitsPerSecond.ToKiloBitsPerSecond(0.77))
-	}
-	if !cmp.Equal(MegaBitsPerSecond.ToKiloBitsPerSecond(5.0), 5000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 5000.0, MegaBitsPerSecond.ToKiloBitsPerSecond(5.0))
-	}
-	if !cmp.Equal(MegaBitsPerSecond.ToKiloBitsPerSecond(0.987), 987.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 987.0, MegaBitsPerSecond.ToKiloBitsPerSecond(0.987))
-	}
-}
-
-func TestConvertKnownMegaBitsPerSecondToGigaBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(MegaBitsPerSecond.ToGigaBitsPerSecond(900.0), 0.9, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.9, MegaBitsPerSecond.ToGigaBitsPerSecond(900.0))
-	}
-	if !cmp.Equal(MegaBitsPerSecond.ToGigaBitsPerSecond(12345.0), 12.345, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 12.345, MegaBitsPerSecond.ToGigaBitsPerSecond(12345.0))
-	}
-	if !cmp.Equal(MegaBitsPerSecond.ToGigaBitsPerSecond(189.1), 0.1891, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.1891, MegaBitsPerSecond.ToGigaBitsPerSecond(189.1))
-	}
-}
-
-func TestConvertKnownMegaBitsPerSecondToTeraBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(MegaBitsPerSecond.ToTeraBitsPerSecond(100200300.0), 100.2003, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 100.2003, MegaBitsPerSecond.ToTeraBitsPerSecond(100200300.0))
-	}
-	if !cmp.Equal(MegaBitsPerSecond.ToTeraBitsPerSecond(99887777.0), 99.887777, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 99.887777, MegaBitsPerSecond.ToTeraBitsPerSecond(99887777.0))
-	}
-	if !cmp.Equal(MegaBitsPerSecond.ToTeraBitsPerSecond(80009.0), 0.080009, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.080009, MegaBitsPerSecond.ToTeraBitsPerSecond(80009.0))
-	}
-}
-
-func TestConvertKnownMegaBitsPerSecondToKiloBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(MegaBitsPerSecond.ToKiloBytesPerSecond(9.0), 1125.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1125.0, MegaBitsPerSecond.ToKiloBytesPerSecond(9.0))
-	}
-	if !cmp.Equal(MegaBitsPerSecond.ToKiloBytesPerSecond(1.23), 153.75, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 153.75, MegaBitsPerSecond.ToKiloBytesPerSecond(1.23))
-	}
-	if !cmp.Equal(MegaBitsPerSecond.ToKiloBytesPerSecond(98.1), 12262.5, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 12262.5, MegaBitsPerSecond.ToKiloBytesPerSecond(98.1))
-	}
-}
-
-func TestConvertKnownMegaBitsPerSecondToMegaBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(MegaBitsPerSecond.ToMegaBytesPerSecond(98.1), 12.2625, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 12.2625, MegaBitsPerSecond.ToMegaBytesPerSecond(98.1))
-	}
-	if !cmp.Equal(MegaBitsPerSecond.ToMegaBytesPerSecond(10.9), 1.3625, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.3625, MegaBitsPerSecond.ToMegaBytesPerSecond(10.9))
-	}
-	if !cmp.Equal(MegaBitsPerSecond.ToMegaBytesPerSecond(888.123), 111.015375, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 111.015375, MegaBitsPerSecond.ToMegaBytesPerSecond(888.123))
-	}
-}
-
-func TestConvertKnownMegaBitsPerSecondToGigaBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(MegaBitsPerSecond.ToGigaBytesPerSecond(900.0), 0.1125, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.1125, MegaBitsPerSecond.ToGigaBytesPerSecond(900.0))
-	}
-	if !cmp.Equal(MegaBitsPerSecond.ToGigaBytesPerSecond(10123.0), 1.265375, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.265375, MegaBitsPerSecond.ToGigaBytesPerSecond(10123.0))
-	}
-	if !cmp.Equal(MegaBitsPerSecond.ToGigaBytesPerSecond(9988.0), 1.2485, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.2485, MegaBitsPerSecond.ToGigaBytesPerSecond(9988.0))
-	}
-}
-
-func TestConvertKnownMegaBitsPerSecondToTeraBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(MegaBitsPerSecond.ToTeraBytesPerSecond(998877.0), 0.124859625, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.124859625, MegaBitsPerSecond.ToTeraBytesPerSecond(998877.0))
-	}
-	if !cmp.Equal(MegaBitsPerSecond.ToTeraBytesPerSecond(100200400.0), 12.5250375, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 12.5250375, MegaBitsPerSecond.ToTeraBytesPerSecond(100200400.0))
-	}
-	if !cmp.Equal(MegaBitsPerSecond.ToTeraBytesPerSecond(9008877.0), 1.126109625, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.126109625, MegaBitsPerSecond.ToTeraBytesPerSecond(9008877.0))
-	}
-}
-
-func TestConvertKnownMegaBitsPerSecondToKibibitsPerSecond(t *testing.T) {
-	if !cmp.Equal(MegaBitsPerSecond.ToKibibitsPerSecond(12.0), 11718.756, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 11718.756, MegaBitsPerSecond.ToKibibitsPerSecond(12.0))
-	}
-	if !cmp.Equal(MegaBitsPerSecond.ToKibibitsPerSecond(0.9), 878.906, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 878.906, MegaBitsPerSecond.ToKibibitsPerSecond(0.9))
-	}
-	if !cmp.Equal(MegaBitsPerSecond.ToKibibitsPerSecond(1.23), 1201.172, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1201.172, MegaBitsPerSecond.ToKibibitsPerSecond(1.23))
-	}
-}
-
-func TestConvertKnownMegaBitsPerSecondToMebibitsPerSecond(t *testing.T) {
-	if !cmp.Equal(MegaBitsPerSecond.ToMebibitsPerSecond(4.5), 4.29153, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 4.29153, MegaBitsPerSecond.ToMebibitsPerSecond(4.5))
-	}
-	if !cmp.Equal(MegaBitsPerSecond.ToMebibitsPerSecond(0.8), 0.762939, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.762939, MegaBitsPerSecond.ToMebibitsPerSecond(0.8))
-	}
-	if !cmp.Equal(MegaBitsPerSecond.ToMebibitsPerSecond(900.0), 858.307, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 858.307, MegaBitsPerSecond.ToMebibitsPerSecond(900.0))
-	}
-}
-
-func TestConvertKnownMegaBytesPerSecondToBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(MegaBytesPerSecond.ToBitsPerSecond(0.04), 320000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 320000.0, MegaBytesPerSecond.ToBitsPerSecond(0.04))
-	}
-	if !cmp.Equal(MegaBytesPerSecond.ToBitsPerSecond(0.0091), 72800.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 72800.0, MegaBytesPerSecond.ToBitsPerSecond(0.0091))
-	}
-	if !cmp.Equal(MegaBytesPerSecond.ToBitsPerSecond(3e-5), 240.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 240.0, MegaBytesPerSecond.ToBitsPerSecond(3e-5))
-	}
-}
-
-func TestConvertKnownMegaBytesPerSecondToKiloBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(MegaBytesPerSecond.ToKiloBitsPerSecond(6.0), 48000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 48000.0, MegaBytesPerSecond.ToKiloBitsPerSecond(6.0))
-	}
-	if !cmp.Equal(MegaBytesPerSecond.ToKiloBitsPerSecond(0.3), 2400.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 2400.0, MegaBytesPerSecond.ToKiloBitsPerSecond(0.3))
-	}
-	if !cmp.Equal(MegaBytesPerSecond.ToKiloBitsPerSecond(0.009), 72.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 72.0, MegaBytesPerSecond.ToKiloBitsPerSecond(0.009))
-	}
-}
-
-func TestConvertKnownMegaBytesPerSecondToMegaBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(MegaBytesPerSecond.ToMegaBitsPerSecond(3.0), 24.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 24.0, MegaBytesPerSecond.ToMegaBitsPerSecond(3.0))
-	}
-	if !cmp.Equal(MegaBytesPerSecond.ToMegaBitsPerSecond(0.9), 7.2, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 7.2, MegaBytesPerSecond.ToMegaBitsPerSecond(0.9))
-	}
-	if !cmp.Equal(MegaBytesPerSecond.ToMegaBitsPerSecond(13.0), 104.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 104.0, MegaBytesPerSecond.ToMegaBitsPerSecond(13.0))
-	}
-}
-
-func TestConvertKnownMegaBytesPerSecondToGigaBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(MegaBytesPerSecond.ToGigaBitsPerSecond(13.0), 0.104, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.104, MegaBytesPerSecond.ToGigaBitsPerSecond(13.0))
-	}
-	if !cmp.Equal(MegaBytesPerSecond.ToGigaBitsPerSecond(900.0), 7.2, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 7.2, MegaBytesPerSecond.ToGigaBitsPerSecond(900.0))
-	}
-	if !cmp.Equal(MegaBytesPerSecond.ToGigaBitsPerSecond(18000.0), 144.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 144.0, MegaBytesPerSecond.ToGigaBitsPerSecond(18000.0))
-	}
-}
-
-func TestConvertKnownMegaBytesPerSecondToTeraBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(MegaBytesPerSecond.ToTeraBitsPerSecond(18000.0), 0.144, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.144, MegaBytesPerSecond.ToTeraBitsPerSecond(18000.0))
-	}
-	if !cmp.Equal(MegaBytesPerSecond.ToTeraBitsPerSecond(9718290.0), 77.74632, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 77.74632, MegaBytesPerSecond.ToTeraBitsPerSecond(9718290.0))
-	}
-	if !cmp.Equal(MegaBytesPerSecond.ToTeraBitsPerSecond(9e12), 72000000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 72000000.0, MegaBytesPerSecond.ToTeraBitsPerSecond(9e12))
-	}
-}
-
-func TestConvertKnownMegaBytesPerSecondToKiloBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(MegaBytesPerSecond.ToKiloBytesPerSecond(6.0), 6000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 6000.0, MegaBytesPerSecond.ToKiloBytesPerSecond(6.0))
-	}
-	if !cmp.Equal(MegaBytesPerSecond.ToKiloBytesPerSecond(0.9), 900.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 900.0, MegaBytesPerSecond.ToKiloBytesPerSecond(0.9))
-	}
-	if !cmp.Equal(MegaBytesPerSecond.ToKiloBytesPerSecond(123.4), 123400.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 123400.0, MegaBytesPerSecond.ToKiloBytesPerSecond(123.4))
-	}
-}
-
-func TestConvertKnownMegaBytesPerSecondToGigaBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(MegaBytesPerSecond.ToGigaBytesPerSecond(123.4), 0.1234, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.1234, MegaBytesPerSecond.ToGigaBytesPerSecond(123.4))
-	}
-	if !cmp.Equal(MegaBytesPerSecond.ToGigaBytesPerSecond(900.0), 0.9, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.9, MegaBytesPerSecond.ToGigaBytesPerSecond(900.0))
-	}
-	if !cmp.Equal(MegaBytesPerSecond.ToGigaBytesPerSecond(8e6), 8000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 8000.0, MegaBytesPerSecond.ToGigaBytesPerSecond(8e6))
-	}
-}
-
-func TestConvertKnownMegaBytesPerSecondToTeraBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(MegaBytesPerSecond.ToTeraBytesPerSecond(80000.0), 0.08, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.08, MegaBytesPerSecond.ToTeraBytesPerSecond(80000.0))
-	}
-	if !cmp.Equal(MegaBytesPerSecond.ToTeraBytesPerSecond(12345678.0), 12.345678, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 12.345678, MegaBytesPerSecond.ToTeraBytesPerSecond(12345678.0))
-	}
-	if !cmp.Equal(MegaBytesPerSecond.ToTeraBytesPerSecond(900800.0), 0.9008, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.9008, MegaBytesPerSecond.ToTeraBytesPerSecond(900800.0))
-	}
-}
-
-func TestConvertKnownMegaBytesPerSecondToKibibitsPerSecond(t *testing.T) {
-	if !cmp.Equal(MegaBytesPerSecond.ToKibibitsPerSecond(6.0), 46875.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 46875.0, MegaBytesPerSecond.ToKibibitsPerSecond(6.0))
-	}
-	if !cmp.Equal(MegaBytesPerSecond.ToKibibitsPerSecond(0.9), 7031.25, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 7031.25, MegaBytesPerSecond.ToKibibitsPerSecond(0.9))
-	}
-	if !cmp.Equal(MegaBytesPerSecond.ToKibibitsPerSecond(0.03), 234.375, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 234.375, MegaBytesPerSecond.ToKibibitsPerSecond(0.03))
-	}
-}
-
-func TestConvertKnownMegaBytesPerSecondToMebibitsPerSecond(t *testing.T) {
-	if !cmp.Equal(MegaBytesPerSecond.ToMebibitsPerSecond(0.03), 0.2288818, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.2288818, MegaBytesPerSecond.ToMebibitsPerSecond(0.03))
-	}
-	if !cmp.Equal(MegaBytesPerSecond.ToMebibitsPerSecond(4.5), 34.3323, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 34.3323, MegaBytesPerSecond.ToMebibitsPerSecond(4.5))
-	}
-	if !cmp.Equal(MegaBytesPerSecond.ToMebibitsPerSecond(80.1), 611.1145, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 611.1145, MegaBytesPerSecond.ToMebibitsPerSecond(80.1))
-	}
-}
-
-func TestConvertKnownTeraBitsPerSecondToBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(TeraBitsPerSecond.ToBitsPerSecond(0.0007), 700000000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 700000000.0, TeraBitsPerSecond.ToBitsPerSecond(0.0007))
-	}
-	if !cmp.Equal(TeraBitsPerSecond.ToBitsPerSecond(1.23e-6), 1230000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1230000.0, TeraBitsPerSecond.ToBitsPerSecond(1.23e-6))
-	}
-	if !cmp.Equal(TeraBitsPerSecond.ToBitsPerSecond(0.00098), 980000000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 980000000.0, TeraBitsPerSecond.ToBitsPerSecond(0.00098))
-	}
-}
-
-func TestConvertKnownTeraBitsPerSecondToKiloBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(TeraBitsPerSecond.ToKiloBitsPerSecond(0.001), 1000000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1000000.0, TeraBitsPerSecond.ToKiloBitsPerSecond(0.001))
-	}
-	if !cmp.Equal(TeraBitsPerSecond.ToKiloBitsPerSecond(6.1e-6), 6100.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 6100.0, TeraBitsPerSecond.ToKiloBitsPerSecond(6.1e-6))
-	}
-	if !cmp.Equal(TeraBitsPerSecond.ToKiloBitsPerSecond(0.00009), 90000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 90000.0, TeraBitsPerSecond.ToKiloBitsPerSecond(0.00009))
-	}
-}
-
-func TestConvertKnownTeraBitsPerSecondToMegaBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(TeraBitsPerSecond.ToMegaBitsPerSecond(0.09), 90000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 90000.0, TeraBitsPerSecond.ToMegaBitsPerSecond(0.09))
-	}
-	if !cmp.Equal(TeraBitsPerSecond.ToMegaBitsPerSecond(3.5e-4), 350.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 350.0, TeraBitsPerSecond.ToMegaBitsPerSecond(3.5e-4))
-	}
-	if !cmp.Equal(TeraBitsPerSecond.ToMegaBitsPerSecond(0.0123), 12300.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 12300.0, TeraBitsPerSecond.ToMegaBitsPerSecond(0.0123))
-	}
-}
-
-func TestConvertKnownTeraBitsPerSecondToGigaBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(TeraBitsPerSecond.ToGigaBitsPerSecond(0.9), 900.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 900.0, TeraBitsPerSecond.ToGigaBitsPerSecond(0.9))
-	}
-	if !cmp.Equal(TeraBitsPerSecond.ToGigaBitsPerSecond(1.45), 1450.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1450.0, TeraBitsPerSecond.ToGigaBitsPerSecond(1.45))
-	}
-	if !cmp.Equal(TeraBitsPerSecond.ToGigaBitsPerSecond(8.19), 8190.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 8190.0, TeraBitsPerSecond.ToGigaBitsPerSecond(8.19))
-	}
-}
-
-func TestConvertKnownTeraBitsPerSecondToKiloBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(TeraBitsPerSecond.ToKiloBytesPerSecond(0.0009), 112500.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 112500.0, TeraBitsPerSecond.ToKiloBytesPerSecond(0.0009))
-	}
-	if !cmp.Equal(TeraBitsPerSecond.ToKiloBytesPerSecond(3.14e-6), 392.5, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 392.5, TeraBitsPerSecond.ToKiloBytesPerSecond(3.14e-6))
-	}
-	if !cmp.Equal(TeraBitsPerSecond.ToKiloBytesPerSecond(0.001), 125000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 125000.0, TeraBitsPerSecond.ToKiloBytesPerSecond(0.001))
-	}
-}
-
-func TestConvertKnownTeraBitsPerSecondToMegaBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(TeraBitsPerSecond.ToMegaBytesPerSecond(0.4), 50000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 50000.0, TeraBitsPerSecond.ToMegaBytesPerSecond(0.4))
-	}
-	if !cmp.Equal(TeraBitsPerSecond.ToMegaBytesPerSecond(3.9e-3), 487.5, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 487.5, TeraBitsPerSecond.ToMegaBytesPerSecond(3.9e-3))
-	}
-	if !cmp.Equal(TeraBitsPerSecond.ToMegaBytesPerSecond(0.007), 875.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 875.0, TeraBitsPerSecond.ToMegaBytesPerSecond(0.007))
-	}
-}
-
-func TestConvertKnownTeraBitsPerSecondToGigaBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(TeraBitsPerSecond.ToGigaBytesPerSecond(0.009), 1.125, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.125, TeraBitsPerSecond.ToGigaBytesPerSecond(0.009))
-	}
-	if !cmp.Equal(TeraBitsPerSecond.ToGigaBytesPerSecond(0.00123), 0.15375, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.15375, TeraBitsPerSecond.ToGigaBytesPerSecond(0.00123))
-	}
-	if !cmp.Equal(TeraBitsPerSecond.ToGigaBytesPerSecond(8.1e-3), 1.0125, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.0125, TeraBitsPerSecond.ToGigaBytesPerSecond(8.1e-3))
-	}
-}
-
-func TestConvertKnownTeraBitsPerSecondToTeraBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(TeraBitsPerSecond.ToTeraBytesPerSecond(0.3), 0.0375, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.0375, TeraBitsPerSecond.ToTeraBytesPerSecond(0.3))
-	}
-	if !cmp.Equal(TeraBitsPerSecond.ToTeraBytesPerSecond(14.0), 1.75, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.75, TeraBitsPerSecond.ToTeraBytesPerSecond(14.0))
-	}
-	if !cmp.Equal(TeraBitsPerSecond.ToTeraBytesPerSecond(0.8), 0.1, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.1, TeraBitsPerSecond.ToTeraBytesPerSecond(0.8))
-	}
-}
-
-func TestConvertKnownTeraBitsPerSecondToKibibitsPerSecond(t *testing.T) {
-	if !cmp.Equal(TeraBitsPerSecond.ToKibibitsPerSecond(0.0009), 878906.25, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 878906.25, TeraBitsPerSecond.ToKibibitsPerSecond(0.0009))
-	}
-	if !cmp.Equal(TeraBitsPerSecond.ToKibibitsPerSecond(6.1e-6), 5957.031, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 5957.031, TeraBitsPerSecond.ToKibibitsPerSecond(6.1e-6))
-	}
-	if !cmp.Equal(TeraBitsPerSecond.ToKibibitsPerSecond(12e-9), 11.71875, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 11.71875, TeraBitsPerSecond.ToKibibitsPerSecond(12e-9))
-	}
-}
-
-func TestConvertKnownTeraBitsPerSecondToMebibitsPerSecond(t *testing.T) {
-	if !cmp.Equal(TeraBitsPerSecond.ToMebibitsPerSecond(0.9), 858306.59999, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 858306.59999, TeraBitsPerSecond.ToMebibitsPerSecond(0.9))
-	}
-	if !cmp.Equal(TeraBitsPerSecond.ToMebibitsPerSecond(4.6e-3), 4386.9, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 4386.9, TeraBitsPerSecond.ToMebibitsPerSecond(4.6e-3))
-	}
-	if !cmp.Equal(TeraBitsPerSecond.ToMebibitsPerSecond(0.00123), 1173.0194092, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1173.0194092, TeraBitsPerSecond.ToMebibitsPerSecond(0.00123))
-	}
-}
-
-func TestConvertKnownTeraBytesPerSecondToBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(TeraBytesPerSecond.ToBitsPerSecond(0.00008), 640000000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 640000000.0, TeraBytesPerSecond.ToBitsPerSecond(0.00008))
-	}
-	if !cmp.Equal(TeraBytesPerSecond.ToBitsPerSecond(1.2e-12), 9.6, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 9.6, TeraBytesPerSecond.ToBitsPerSecond(1.2e-12))
-	}
-	if !cmp.Equal(TeraBytesPerSecond.ToBitsPerSecond(9.0), 7.2e+13, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 7.2e+13, TeraBytesPerSecond.ToBitsPerSecond(9.0))
-	}
-}
-
-func TestConvertKnownTeraBytesPerSecondToKiloBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(TeraBytesPerSecond.ToKiloBitsPerSecond(0.009), 72000000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 72000000.0, TeraBytesPerSecond.ToKiloBitsPerSecond(0.009))
-	}
-	if !cmp.Equal(TeraBytesPerSecond.ToKiloBitsPerSecond(1.4e-6), 11200.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 11200.0, TeraBytesPerSecond.ToKiloBitsPerSecond(1.4e-6))
-	}
-	if !cmp.Equal(TeraBytesPerSecond.ToKiloBitsPerSecond(6.1e-5), 488000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 488000.0, TeraBytesPerSecond.ToKiloBitsPerSecond(6.1e-5))
-	}
-}
-
-func TestConvertKnownTeraBytesPerSecondToMegaBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(TeraBytesPerSecond.ToMegaBitsPerSecond(0.005), 40000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 40000.0, TeraBytesPerSecond.ToMegaBitsPerSecond(0.005))
-	}
-	if !cmp.Equal(TeraBytesPerSecond.ToMegaBitsPerSecond(0.000123), 984.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 984.0, TeraBytesPerSecond.ToMegaBitsPerSecond(0.000123))
-	}
-	if !cmp.Equal(TeraBytesPerSecond.ToMegaBitsPerSecond(0.00006), 480.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 480.0, TeraBytesPerSecond.ToMegaBitsPerSecond(0.00006))
-	}
-}
-
-func TestConvertKnownTeraBytesPerSecondToGigaBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(TeraBytesPerSecond.ToGigaBitsPerSecond(0.008), 64.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 64.0, TeraBytesPerSecond.ToGigaBitsPerSecond(0.008))
-	}
-	if !cmp.Equal(TeraBytesPerSecond.ToGigaBitsPerSecond(3e-7), 0.0024, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 0.0024, TeraBytesPerSecond.ToGigaBitsPerSecond(3e-7))
-	}
-	if !cmp.Equal(TeraBytesPerSecond.ToGigaBitsPerSecond(0.00023), 1.84, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 1.84, TeraBytesPerSecond.ToGigaBitsPerSecond(0.00023))
-	}
-}
-
-func TestConvertKnownTeraBytesPerSecondToTeraBitsPerSecond(t *testing.T) {
-	if !cmp.Equal(TeraBytesPerSecond.ToTeraBitsPerSecond(5.0), 40.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 40.0, TeraBytesPerSecond.ToTeraBitsPerSecond(5.0))
-	}
-	if !cmp.Equal(TeraBytesPerSecond.ToTeraBitsPerSecond(1.23), 9.84, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 9.84, TeraBytesPerSecond.ToTeraBitsPerSecond(1.23))
-	}
-	if !cmp.Equal(TeraBytesPerSecond.ToTeraBitsPerSecond(800.0), 6400.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 6400.0, TeraBytesPerSecond.ToTeraBitsPerSecond(800.0))
-	}
-}
-
-func TestConvertKnownTeraBytesPerSecondToKiloBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(TeraBytesPerSecond.ToKiloBytesPerSecond(0.0009), 900000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 900000.0, TeraBytesPerSecond.ToKiloBytesPerSecond(0.0009))
-	}
-	if !cmp.Equal(TeraBytesPerSecond.ToKiloBytesPerSecond(3.14e-7), 314.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 314.0, TeraBytesPerSecond.ToKiloBytesPerSecond(3.14e-7))
-	}
-	if !cmp.Equal(TeraBytesPerSecond.ToKiloBytesPerSecond(0.00063), 630000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 630000.0, TeraBytesPerSecond.ToKiloBytesPerSecond(0.00063))
-	}
-}
-
-func TestConvertKnownTeraBytesPerSecondToMegaBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(TeraBytesPerSecond.ToMegaBytesPerSecond(0.009), 9000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 9000.0, TeraBytesPerSecond.ToMegaBytesPerSecond(0.009))
-	}
-	if !cmp.Equal(TeraBytesPerSecond.ToMegaBytesPerSecond(0.234), 234000.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 234000.0, TeraBytesPerSecond.ToMegaBytesPerSecond(0.234))
-	}
-	if !cmp.Equal(TeraBytesPerSecond.ToMegaBytesPerSecond(2.0), 2e+6, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 2e+6, TeraBytesPerSecond.ToMegaBytesPerSecond(2.0))
-	}
-}
-
-func TestConvertKnownTeraBytesPerSecondToGigaBytesPerSecond(t *testing.T) {
-	if !cmp.Equal(TeraBytesPerSecond.ToGigaBytesPerSecond(2.7), 2700.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 2700.0, TeraBytesPerSecond.ToGigaBytesPerSecond(2.7))
-	}
-	if !cmp.Equal(TeraBytesPerSecond.ToGigaBytesPerSecond(0.9), 900.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 900.0, TeraBytesPerSecond.ToGigaBytesPerSecond(0.9))
-	}
-	if !cmp.Equal(TeraBytesPerSecond.ToGigaBytesPerSecond(0.0123), 12.3, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 12.3, TeraBytesPerSecond.ToGigaBytesPerSecond(0.0123))
-	}
-}
-
-func TestConvertKnownTeraBytesPerSecondToKibibitsPerSecond(t *testing.T) {
-	if !cmp.Equal(TeraBytesPerSecond.ToKibibitsPerSecond(0.0009), 7031250.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 7031250.0, TeraBytesPerSecond.ToKibibitsPerSecond(0.0009))
-	}
-	if !cmp.Equal(TeraBytesPerSecond.ToKibibitsPerSecond(1.23e-5), 96093.75, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 96093.75, TeraBytesPerSecond.ToKibibitsPerSecond(1.23e-5))
-	}
-	if !cmp.Equal(TeraBytesPerSecond.ToKibibitsPerSecond(0.0001), 781250.0, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 781250.0, TeraBytesPerSecond.ToKibibitsPerSecond(0.0001))
-	}
-}
-
-func TestConvertKnownTeraBytesPerSecondToMebibitsPerSecond(t *testing.T) {
-	if !cmp.Equal(TeraBytesPerSecond.ToMebibitsPerSecond(0.01), 76293.95, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 76293.95, TeraBytesPerSecond.ToMebibitsPerSecond(0.01))
-	}
-	if !cmp.Equal(TeraBytesPerSecond.ToMebibitsPerSecond(0.008), 61035.156, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 61035.156, TeraBytesPerSecond.ToMebibitsPerSecond(0.008))
-	}
-	if !cmp.Equal(TeraBytesPerSecond.ToMebibitsPerSecond(2.0), 15258789.0625, withinTolerance()) {
-		t.Fatalf("Expected %f, was %f", 15258789.0625, TeraBytesPerSecond.ToMebibitsPerSecond(2.0))
-	}
+func TestConvertKnownBitsPerSecondToKiloBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(BitsPerSecond.ToKiloBitsPerSecond(100.0), 0.1, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.1, BitsPerSecond.ToKiloBitsPerSecond(100.0));
+    }
+    if !cmp.Equal(BitsPerSecond.ToKiloBitsPerSecond(6021.0), 6.021, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 6.021, BitsPerSecond.ToKiloBitsPerSecond(6021.0));
+    }
+    if !cmp.Equal(BitsPerSecond.ToKiloBitsPerSecond(9100.0), 9.1, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 9.1, BitsPerSecond.ToKiloBitsPerSecond(9100.0));
+    }
+}
+
+func TestConvertKnownBitsPerSecondToMegaBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(BitsPerSecond.ToMegaBitsPerSecond(9000000.0), 9.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 9.0, BitsPerSecond.ToMegaBitsPerSecond(9000000.0));
+    }
+    if !cmp.Equal(BitsPerSecond.ToMegaBitsPerSecond(123456.0), 0.123456, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.123456, BitsPerSecond.ToMegaBitsPerSecond(123456.0));
+    }
+    if !cmp.Equal(BitsPerSecond.ToMegaBitsPerSecond(1900000.0), 1.9, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.9, BitsPerSecond.ToMegaBitsPerSecond(1900000.0));
+    }
+}
+
+func TestConvertKnownBitsPerSecondToGigaBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(BitsPerSecond.ToGigaBitsPerSecond(190000000.0), 0.19, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.19, BitsPerSecond.ToGigaBitsPerSecond(190000000.0));
+    }
+    if !cmp.Equal(BitsPerSecond.ToGigaBitsPerSecond(8009.0), 8.009e-6, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 8.009e-6, BitsPerSecond.ToGigaBitsPerSecond(8009.0));
+    }
+    if !cmp.Equal(BitsPerSecond.ToGigaBitsPerSecond(987654321.0), 0.987654321, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.987654321, BitsPerSecond.ToGigaBitsPerSecond(987654321.0));
+    }
+}
+
+func TestConvertKnownBitsPerSecondToTeraBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(BitsPerSecond.ToTeraBitsPerSecond(987654321234.0), 0.987654321234, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.987654321234, BitsPerSecond.ToTeraBitsPerSecond(987654321234.0));
+    }
+    if !cmp.Equal(BitsPerSecond.ToTeraBitsPerSecond(1234567890123456.0), 1234.567890123455982, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1234.567890123455982, BitsPerSecond.ToTeraBitsPerSecond(1234567890123456.0));
+    }
+    if !cmp.Equal(BitsPerSecond.ToTeraBitsPerSecond(999888777666555.0), 999.888777666555029, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 999.888777666555029, BitsPerSecond.ToTeraBitsPerSecond(999888777666555.0));
+    }
+}
+
+func TestConvertKnownBitsPerSecondToKiloBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(BitsPerSecond.ToKiloBytesPerSecond(900.0), 0.1125, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.1125, BitsPerSecond.ToKiloBytesPerSecond(900.0));
+    }
+    if !cmp.Equal(BitsPerSecond.ToKiloBytesPerSecond(12345.0), 1.543125, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.543125, BitsPerSecond.ToKiloBytesPerSecond(12345.0));
+    }
+    if !cmp.Equal(BitsPerSecond.ToKiloBytesPerSecond(6000.9), 0.7501125, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.7501125, BitsPerSecond.ToKiloBytesPerSecond(6000.9));
+    }
+}
+
+func TestConvertKnownBitsPerSecondToMegaBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(BitsPerSecond.ToMegaBytesPerSecond(123456.0), 0.015432, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.015432, BitsPerSecond.ToMegaBytesPerSecond(123456.0));
+    }
+    if !cmp.Equal(BitsPerSecond.ToMegaBytesPerSecond(900800.0), 0.1126, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.1126, BitsPerSecond.ToMegaBytesPerSecond(900800.0));
+    }
+    if !cmp.Equal(BitsPerSecond.ToMegaBytesPerSecond(999888777.0), 124.986097125, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 124.986097125, BitsPerSecond.ToMegaBytesPerSecond(999888777.0));
+    }
+}
+
+func TestConvertKnownBitsPerSecondToGigaBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(BitsPerSecond.ToGigaBytesPerSecond(999888777.0), 0.124986097125, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.124986097125, BitsPerSecond.ToGigaBytesPerSecond(999888777.0));
+    }
+    if !cmp.Equal(BitsPerSecond.ToGigaBytesPerSecond(1.9e+9), 0.2375, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.2375, BitsPerSecond.ToGigaBytesPerSecond(1.9e+9));
+    }
+    if !cmp.Equal(BitsPerSecond.ToGigaBytesPerSecond(80090077.0), 0.010011259625, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.010011259625, BitsPerSecond.ToGigaBytesPerSecond(80090077.0));
+    }
+}
+
+func TestConvertKnownBitsPerSecondToTeraBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(BitsPerSecond.ToTeraBytesPerSecond(999888777666.0), 0.12498609720825, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.12498609720825, BitsPerSecond.ToTeraBytesPerSecond(999888777666.0));
+    }
+    if !cmp.Equal(BitsPerSecond.ToTeraBytesPerSecond(12345678912345.0), 1.5432098640431251, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.5432098640431251, BitsPerSecond.ToTeraBytesPerSecond(12345678912345.0));
+    }
+    if !cmp.Equal(BitsPerSecond.ToTeraBytesPerSecond(111999222888333.0), 13.9999028610416243, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 13.9999028610416243, BitsPerSecond.ToTeraBytesPerSecond(111999222888333.0));
+    }
+}
+
+func TestConvertKnownBitsPerSecondToKibibitsPerSecond(t * testing.T) {
+    if !cmp.Equal(BitsPerSecond.ToKibibitsPerSecond(1800.0), 1.757813, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.757813, BitsPerSecond.ToKibibitsPerSecond(1800.0));
+    }
+    if !cmp.Equal(BitsPerSecond.ToKibibitsPerSecond(888.0), 0.867188, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.867188, BitsPerSecond.ToKibibitsPerSecond(888.0));
+    }
+    if !cmp.Equal(BitsPerSecond.ToKibibitsPerSecond(7687.0), 7.506836, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 7.506836, BitsPerSecond.ToKibibitsPerSecond(7687.0));
+    }
+}
+
+func TestConvertKnownBitsPerSecondToMebibitsPerSecond(t * testing.T) {
+    if !cmp.Equal(BitsPerSecond.ToMebibitsPerSecond(999888.0), 0.953567505, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.953567505, BitsPerSecond.ToMebibitsPerSecond(999888.0));
+    }
+    if !cmp.Equal(BitsPerSecond.ToMebibitsPerSecond(1234567.0), 1.17737484, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.17737484, BitsPerSecond.ToMebibitsPerSecond(1234567.0));
+    }
+    if !cmp.Equal(BitsPerSecond.ToMebibitsPerSecond(900800.0), 0.859069824, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.859069824, BitsPerSecond.ToMebibitsPerSecond(900800.0));
+    }
+}
+
+func TestConvertKnownGigaBitsPerSecondToBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(GigaBitsPerSecond.ToBitsPerSecond(0.0009), 900000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 900000.0, GigaBitsPerSecond.ToBitsPerSecond(0.0009));
+    }
+    if !cmp.Equal(GigaBitsPerSecond.ToBitsPerSecond(0.00007), 70000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 70000.0, GigaBitsPerSecond.ToBitsPerSecond(0.00007));
+    }
+    if !cmp.Equal(GigaBitsPerSecond.ToBitsPerSecond(1.2e-5), 12000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 12000.0, GigaBitsPerSecond.ToBitsPerSecond(1.2e-5));
+    }
+}
+
+func TestConvertKnownGigaBitsPerSecondToKiloBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(GigaBitsPerSecond.ToKiloBitsPerSecond(0.01), 10000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 10000.0, GigaBitsPerSecond.ToKiloBitsPerSecond(0.01));
+    }
+    if !cmp.Equal(GigaBitsPerSecond.ToKiloBitsPerSecond(0.91), 910000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 910000.0, GigaBitsPerSecond.ToKiloBitsPerSecond(0.91));
+    }
+    if !cmp.Equal(GigaBitsPerSecond.ToKiloBitsPerSecond(6.1), 6.1e+6, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 6.1e+6, GigaBitsPerSecond.ToKiloBitsPerSecond(6.1));
+    }
+}
+
+func TestConvertKnownGigaBitsPerSecondToMegaBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(GigaBitsPerSecond.ToMegaBitsPerSecond(6.1), 6100.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 6100.0, GigaBitsPerSecond.ToMegaBitsPerSecond(6.1));
+    }
+    if !cmp.Equal(GigaBitsPerSecond.ToMegaBitsPerSecond(0.961), 961.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 961.0, GigaBitsPerSecond.ToMegaBitsPerSecond(0.961));
+    }
+    if !cmp.Equal(GigaBitsPerSecond.ToMegaBitsPerSecond(1.2e-3), 1.2, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.2, GigaBitsPerSecond.ToMegaBitsPerSecond(1.2e-3));
+    }
+}
+
+func TestConvertKnownGigaBitsPerSecondToTeraBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(GigaBitsPerSecond.ToTeraBitsPerSecond(1200.0), 1.2, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.2, GigaBitsPerSecond.ToTeraBitsPerSecond(1200.0));
+    }
+    if !cmp.Equal(GigaBitsPerSecond.ToTeraBitsPerSecond(90012.0), 90.012, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 90.012, GigaBitsPerSecond.ToTeraBitsPerSecond(90012.0));
+    }
+    if !cmp.Equal(GigaBitsPerSecond.ToTeraBitsPerSecond(8000.0), 8.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 8.0, GigaBitsPerSecond.ToTeraBitsPerSecond(8000.0));
+    }
+}
+
+func TestConvertKnownGigaBitsPerSecondToKiloBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(GigaBitsPerSecond.ToKiloBytesPerSecond(1.2), 150000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 150000.0, GigaBitsPerSecond.ToKiloBytesPerSecond(1.2));
+    }
+    if !cmp.Equal(GigaBitsPerSecond.ToKiloBytesPerSecond(0.9), 112500.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 112500.0, GigaBitsPerSecond.ToKiloBytesPerSecond(0.9));
+    }
+    if !cmp.Equal(GigaBitsPerSecond.ToKiloBytesPerSecond(0.001), 125.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 125.0, GigaBitsPerSecond.ToKiloBytesPerSecond(0.001));
+    }
+}
+
+func TestConvertKnownGigaBitsPerSecondToMegaBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(GigaBitsPerSecond.ToMegaBytesPerSecond(0.9), 112.5, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 112.5, GigaBitsPerSecond.ToMegaBytesPerSecond(0.9));
+    }
+    if !cmp.Equal(GigaBitsPerSecond.ToMegaBytesPerSecond(1.2), 150.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 150.0, GigaBitsPerSecond.ToMegaBytesPerSecond(1.2));
+    }
+    if !cmp.Equal(GigaBitsPerSecond.ToMegaBytesPerSecond(80.1), 10012.5, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 10012.5, GigaBitsPerSecond.ToMegaBytesPerSecond(80.1));
+    }
+}
+
+func TestConvertKnownGigaBitsPerSecondToGigaBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(GigaBitsPerSecond.ToGigaBytesPerSecond(99.0), 12.375, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 12.375, GigaBitsPerSecond.ToGigaBytesPerSecond(99.0));
+    }
+    if !cmp.Equal(GigaBitsPerSecond.ToGigaBytesPerSecond(123.123), 15.390375, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 15.390375, GigaBitsPerSecond.ToGigaBytesPerSecond(123.123));
+    }
+    if !cmp.Equal(GigaBitsPerSecond.ToGigaBytesPerSecond(8000.9), 1000.1125, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1000.1125, GigaBitsPerSecond.ToGigaBytesPerSecond(8000.9));
+    }
+}
+
+func TestConvertKnownGigaBitsPerSecondToTeraBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(GigaBitsPerSecond.ToTeraBytesPerSecond(9000.0), 1.125, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.125, GigaBitsPerSecond.ToTeraBytesPerSecond(9000.0));
+    }
+    if !cmp.Equal(GigaBitsPerSecond.ToTeraBytesPerSecond(1234567.0), 154.320875, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 154.320875, GigaBitsPerSecond.ToTeraBytesPerSecond(1234567.0));
+    }
+    if !cmp.Equal(GigaBitsPerSecond.ToTeraBytesPerSecond(613.0), 0.076625, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.076625, GigaBitsPerSecond.ToTeraBytesPerSecond(613.0));
+    }
+}
+
+func TestConvertKnownGigaBitsPerSecondToKibibitsPerSecond(t * testing.T) {
+    if !cmp.Equal(GigaBitsPerSecond.ToKibibitsPerSecond(0.8), 781250.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 781250.0, GigaBitsPerSecond.ToKibibitsPerSecond(0.8));
+    }
+    if !cmp.Equal(GigaBitsPerSecond.ToKibibitsPerSecond(0.012), 11718.75, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 11718.75, GigaBitsPerSecond.ToKibibitsPerSecond(0.012));
+    }
+    if !cmp.Equal(GigaBitsPerSecond.ToKibibitsPerSecond(0.002), 1953.125, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1953.125, GigaBitsPerSecond.ToKibibitsPerSecond(0.002));
+    }
+}
+
+func TestConvertKnownGigaBitsPerSecondToMebibitsPerSecond(t * testing.T) {
+    if !cmp.Equal(GigaBitsPerSecond.ToMebibitsPerSecond(0.002), 1.9073486, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.9073486, GigaBitsPerSecond.ToMebibitsPerSecond(0.002));
+    }
+    if !cmp.Equal(GigaBitsPerSecond.ToMebibitsPerSecond(0.9), 858.3068847656, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 858.3068847656, GigaBitsPerSecond.ToMebibitsPerSecond(0.9));
+    }
+    if !cmp.Equal(GigaBitsPerSecond.ToMebibitsPerSecond(6.1), 5817.413330078, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 5817.413330078, GigaBitsPerSecond.ToMebibitsPerSecond(6.1));
+    }
+}
+
+func TestConvertKnownGigaBytesPerSecondToBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(GigaBytesPerSecond.ToBitsPerSecond(0.004), 32000000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 32000000.0, GigaBytesPerSecond.ToBitsPerSecond(0.004));
+    }
+    if !cmp.Equal(GigaBytesPerSecond.ToBitsPerSecond(0.012), 96000000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 96000000.0, GigaBytesPerSecond.ToBitsPerSecond(0.012));
+    }
+    if !cmp.Equal(GigaBytesPerSecond.ToBitsPerSecond(3e-9), 24.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 24.0, GigaBytesPerSecond.ToBitsPerSecond(3e-9));
+    }
+}
+
+func TestConvertKnownGigaBytesPerSecondToKiloBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(GigaBytesPerSecond.ToKiloBitsPerSecond(0.009), 72000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 72000.0, GigaBytesPerSecond.ToKiloBitsPerSecond(0.009));
+    }
+    if !cmp.Equal(GigaBytesPerSecond.ToKiloBitsPerSecond(1.2e-4), 960.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 960.0, GigaBytesPerSecond.ToKiloBitsPerSecond(1.2e-4));
+    }
+    if !cmp.Equal(GigaBytesPerSecond.ToKiloBitsPerSecond(0.0078), 62400.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 62400.0, GigaBytesPerSecond.ToKiloBitsPerSecond(0.0078));
+    }
+}
+
+func TestConvertKnownGigaBytesPerSecondToMegaBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(GigaBytesPerSecond.ToMegaBitsPerSecond(0.0078), 62.4, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 62.4, GigaBytesPerSecond.ToMegaBitsPerSecond(0.0078));
+    }
+    if !cmp.Equal(GigaBytesPerSecond.ToMegaBitsPerSecond(0.01), 80.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 80.0, GigaBytesPerSecond.ToMegaBitsPerSecond(0.01));
+    }
+    if !cmp.Equal(GigaBytesPerSecond.ToMegaBitsPerSecond(0.001234), 9.872, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 9.872, GigaBytesPerSecond.ToMegaBitsPerSecond(0.001234));
+    }
+}
+
+func TestConvertKnownGigaBytesPerSecondToGigaBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(GigaBytesPerSecond.ToGigaBitsPerSecond(5.0), 40.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 40.0, GigaBytesPerSecond.ToGigaBitsPerSecond(5.0));
+    }
+    if !cmp.Equal(GigaBytesPerSecond.ToGigaBitsPerSecond(1.2), 9.6, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 9.6, GigaBytesPerSecond.ToGigaBitsPerSecond(1.2));
+    }
+    if !cmp.Equal(GigaBytesPerSecond.ToGigaBitsPerSecond(0.01), 0.08, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.08, GigaBytesPerSecond.ToGigaBitsPerSecond(0.01));
+    }
+}
+
+func TestConvertKnownGigaBytesPerSecondToTeraBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(GigaBytesPerSecond.ToTeraBitsPerSecond(70.0), 0.56, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.56, GigaBytesPerSecond.ToTeraBitsPerSecond(70.0));
+    }
+    if !cmp.Equal(GigaBytesPerSecond.ToTeraBitsPerSecond(9001.0), 72.008, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 72.008, GigaBytesPerSecond.ToTeraBitsPerSecond(9001.0));
+    }
+    if !cmp.Equal(GigaBytesPerSecond.ToTeraBitsPerSecond(768123.9), 6144.9912, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 6144.9912, GigaBytesPerSecond.ToTeraBitsPerSecond(768123.9));
+    }
+}
+
+func TestConvertKnownGigaBytesPerSecondToKiloBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(GigaBytesPerSecond.ToKiloBytesPerSecond(0.2), 200000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 200000.0, GigaBytesPerSecond.ToKiloBytesPerSecond(0.2));
+    }
+    if !cmp.Equal(GigaBytesPerSecond.ToKiloBytesPerSecond(0.009), 9000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 9000.0, GigaBytesPerSecond.ToKiloBytesPerSecond(0.009));
+    }
+    if !cmp.Equal(GigaBytesPerSecond.ToKiloBytesPerSecond(0.00123), 1230.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1230.0, GigaBytesPerSecond.ToKiloBytesPerSecond(0.00123));
+    }
+}
+
+func TestConvertKnownGigaBytesPerSecondToMegaBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(GigaBytesPerSecond.ToMegaBytesPerSecond(0.9), 900.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 900.0, GigaBytesPerSecond.ToMegaBytesPerSecond(0.9));
+    }
+    if !cmp.Equal(GigaBytesPerSecond.ToMegaBytesPerSecond(12.0), 12000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 12000.0, GigaBytesPerSecond.ToMegaBytesPerSecond(12.0));
+    }
+    if !cmp.Equal(GigaBytesPerSecond.ToMegaBytesPerSecond(35.6), 35600.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 35600.0, GigaBytesPerSecond.ToMegaBytesPerSecond(35.6));
+    }
+}
+
+func TestConvertKnownGigaBytesPerSecondToTeraBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(GigaBytesPerSecond.ToTeraBytesPerSecond(35.6), 0.0356, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.0356, GigaBytesPerSecond.ToTeraBytesPerSecond(35.6));
+    }
+    if !cmp.Equal(GigaBytesPerSecond.ToTeraBytesPerSecond(100.23), 0.10023, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.10023, GigaBytesPerSecond.ToTeraBytesPerSecond(100.23));
+    }
+    if !cmp.Equal(GigaBytesPerSecond.ToTeraBytesPerSecond(900100.0), 900.1, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 900.1, GigaBytesPerSecond.ToTeraBytesPerSecond(900100.0));
+    }
+}
+
+func TestConvertKnownGigaBytesPerSecondToKibibitsPerSecond(t * testing.T) {
+    if !cmp.Equal(GigaBytesPerSecond.ToKibibitsPerSecond(0.05), 390625.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 390625.0, GigaBytesPerSecond.ToKibibitsPerSecond(0.05));
+    }
+    if !cmp.Equal(GigaBytesPerSecond.ToKibibitsPerSecond(0.008), 62500.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 62500.0, GigaBytesPerSecond.ToKibibitsPerSecond(0.008));
+    }
+    if !cmp.Equal(GigaBytesPerSecond.ToKibibitsPerSecond(0.00123), 9609.375, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 9609.375, GigaBytesPerSecond.ToKibibitsPerSecond(0.00123));
+    }
+}
+
+func TestConvertKnownGigaBytesPerSecondToMebibitsPerSecond(t * testing.T) {
+    if !cmp.Equal(GigaBytesPerSecond.ToMebibitsPerSecond(0.009), 68.66451, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 68.66451, GigaBytesPerSecond.ToMebibitsPerSecond(0.009));
+    }
+    if !cmp.Equal(GigaBytesPerSecond.ToMebibitsPerSecond(1.2), 9155.268, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 9155.268, GigaBytesPerSecond.ToMebibitsPerSecond(1.2));
+    }
+    if !cmp.Equal(GigaBytesPerSecond.ToMebibitsPerSecond(19.2), 146484.288, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 146484.288, GigaBytesPerSecond.ToMebibitsPerSecond(19.2));
+    }
+}
+
+func TestConvertKnownKibibitsPerSecondToBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(KibibitsPerSecond.ToBitsPerSecond(2.0), 2048.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 2048.0, KibibitsPerSecond.ToBitsPerSecond(2.0));
+    }
+    if !cmp.Equal(KibibitsPerSecond.ToBitsPerSecond(9.0), 9216.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 9216.0, KibibitsPerSecond.ToBitsPerSecond(9.0));
+    }
+    if !cmp.Equal(KibibitsPerSecond.ToBitsPerSecond(17.8), 18227.2, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 18227.2, KibibitsPerSecond.ToBitsPerSecond(17.8));
+    }
+}
+
+func TestConvertKnownKibibitsPerSecondToKiloBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(KibibitsPerSecond.ToKiloBitsPerSecond(6.2), 6.3488, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 6.3488, KibibitsPerSecond.ToKiloBitsPerSecond(6.2));
+    }
+    if !cmp.Equal(KibibitsPerSecond.ToKiloBitsPerSecond(0.9), 0.9216, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.9216, KibibitsPerSecond.ToKiloBitsPerSecond(0.9));
+    }
+    if !cmp.Equal(KibibitsPerSecond.ToKiloBitsPerSecond(87.0), 89.088, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 89.088, KibibitsPerSecond.ToKiloBitsPerSecond(87.0));
+    }
+}
+
+func TestConvertKnownKibibitsPerSecondToMegaBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(KibibitsPerSecond.ToMegaBitsPerSecond(87.0), 0.089088, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.089088, KibibitsPerSecond.ToMegaBitsPerSecond(87.0));
+    }
+    if !cmp.Equal(KibibitsPerSecond.ToMegaBitsPerSecond(12.34), 0.01263616, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.01263616, KibibitsPerSecond.ToMegaBitsPerSecond(12.34));
+    }
+    if !cmp.Equal(KibibitsPerSecond.ToMegaBitsPerSecond(123456.0), 126.418879, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 126.418879, KibibitsPerSecond.ToMegaBitsPerSecond(123456.0));
+    }
+}
+
+func TestConvertKnownKibibitsPerSecondToGigaBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(KibibitsPerSecond.ToGigaBitsPerSecond(123456.0), 0.126418944, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.126418944, KibibitsPerSecond.ToGigaBitsPerSecond(123456.0));
+    }
+    if !cmp.Equal(KibibitsPerSecond.ToGigaBitsPerSecond(8000000.0), 8.192, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 8.192, KibibitsPerSecond.ToGigaBitsPerSecond(8000000.0));
+    }
+    if !cmp.Equal(KibibitsPerSecond.ToGigaBitsPerSecond(1276876.0), 1.307521024, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.307521024, KibibitsPerSecond.ToGigaBitsPerSecond(1276876.0));
+    }
+}
+
+func TestConvertKnownKibibitsPerSecondToTeraBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(KibibitsPerSecond.ToTeraBitsPerSecond(800000000.0), 0.8192, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.8192, KibibitsPerSecond.ToTeraBitsPerSecond(800000000.0));
+    }
+    if !cmp.Equal(KibibitsPerSecond.ToTeraBitsPerSecond(1.5e12), 1536.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1536.0, KibibitsPerSecond.ToTeraBitsPerSecond(1.5e12));
+    }
+    if !cmp.Equal(KibibitsPerSecond.ToTeraBitsPerSecond(9999999.0), 0.01023999898, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.01023999898, KibibitsPerSecond.ToTeraBitsPerSecond(9999999.0));
+    }
+}
+
+func TestConvertKnownKibibitsPerSecondToKiloBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(KibibitsPerSecond.ToKiloBytesPerSecond(919.0), 117.632, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 117.632, KibibitsPerSecond.ToKiloBytesPerSecond(919.0));
+    }
+    if !cmp.Equal(KibibitsPerSecond.ToKiloBytesPerSecond(77.4), 9.9072, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 9.9072, KibibitsPerSecond.ToKiloBytesPerSecond(77.4));
+    }
+    if !cmp.Equal(KibibitsPerSecond.ToKiloBytesPerSecond(109.109), 13.965952, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 13.965952, KibibitsPerSecond.ToKiloBytesPerSecond(109.109));
+    }
+}
+
+func TestConvertKnownKibibitsPerSecondToMegaBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(KibibitsPerSecond.ToMegaBytesPerSecond(1000.0), 0.128, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.128, KibibitsPerSecond.ToMegaBytesPerSecond(1000.0));
+    }
+    if !cmp.Equal(KibibitsPerSecond.ToMegaBytesPerSecond(800.123), 0.102415744, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.102415744, KibibitsPerSecond.ToMegaBytesPerSecond(800.123));
+    }
+    if !cmp.Equal(KibibitsPerSecond.ToMegaBytesPerSecond(123456.0), 15.802368, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 15.802368, KibibitsPerSecond.ToMegaBytesPerSecond(123456.0));
+    }
+}
+
+func TestConvertKnownKibibitsPerSecondToGigaBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(KibibitsPerSecond.ToGigaBytesPerSecond(12345678.0), 1.580347926, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.580347926, KibibitsPerSecond.ToGigaBytesPerSecond(12345678.0));
+    }
+    if !cmp.Equal(KibibitsPerSecond.ToGigaBytesPerSecond(8e12), 1024000.00, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1024000.00, KibibitsPerSecond.ToGigaBytesPerSecond(8e12));
+    }
+    if !cmp.Equal(KibibitsPerSecond.ToGigaBytesPerSecond(1.2e5), 0.01536, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.01536, KibibitsPerSecond.ToGigaBytesPerSecond(1.2e5));
+    }
+}
+
+func TestConvertKnownKibibitsPerSecondToTeraBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(KibibitsPerSecond.ToTeraBytesPerSecond(120000000.0), 0.01536, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.01536, KibibitsPerSecond.ToTeraBytesPerSecond(120000000.0));
+    }
+    if !cmp.Equal(KibibitsPerSecond.ToTeraBytesPerSecond(88e12), 11264.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 11264.0, KibibitsPerSecond.ToTeraBytesPerSecond(88e12));
+    }
+    if !cmp.Equal(KibibitsPerSecond.ToTeraBytesPerSecond(9000000.0), 0.001152, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.001152, KibibitsPerSecond.ToTeraBytesPerSecond(9000000.0));
+    }
+}
+
+func TestConvertKnownKibibitsPerSecondToMebibitsPerSecond(t * testing.T) {
+    if !cmp.Equal(KibibitsPerSecond.ToMebibitsPerSecond(600.0), 0.5859375, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.5859375, KibibitsPerSecond.ToMebibitsPerSecond(600.0));
+    }
+    if !cmp.Equal(KibibitsPerSecond.ToMebibitsPerSecond(12345.0), 12.055664, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 12.055664, KibibitsPerSecond.ToMebibitsPerSecond(12345.0));
+    }
+    if !cmp.Equal(KibibitsPerSecond.ToMebibitsPerSecond(101.0), 0.0986328, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.0986328, KibibitsPerSecond.ToMebibitsPerSecond(101.0));
+    }
+}
+
+func TestConvertKnownKiloBitsPerSecondToBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(KiloBitsPerSecond.ToBitsPerSecond(9.0), 9000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 9000.0, KiloBitsPerSecond.ToBitsPerSecond(9.0));
+    }
+    if !cmp.Equal(KiloBitsPerSecond.ToBitsPerSecond(6.7), 6700.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 6700.0, KiloBitsPerSecond.ToBitsPerSecond(6.7));
+    }
+    if !cmp.Equal(KiloBitsPerSecond.ToBitsPerSecond(1.2345), 1234.5, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1234.5, KiloBitsPerSecond.ToBitsPerSecond(1.2345));
+    }
+}
+
+func TestConvertKnownKiloBitsPerSecondToMegaBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(KiloBitsPerSecond.ToMegaBitsPerSecond(900.0), 0.9, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.9, KiloBitsPerSecond.ToMegaBitsPerSecond(900.0));
+    }
+    if !cmp.Equal(KiloBitsPerSecond.ToMegaBitsPerSecond(12345.0), 12.345, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 12.345, KiloBitsPerSecond.ToMegaBitsPerSecond(12345.0));
+    }
+    if !cmp.Equal(KiloBitsPerSecond.ToMegaBitsPerSecond(9988.0), 9.988, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 9.988, KiloBitsPerSecond.ToMegaBitsPerSecond(9988.0));
+    }
+}
+
+func TestConvertKnownKiloBitsPerSecondToGigaBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(KiloBitsPerSecond.ToGigaBitsPerSecond(123456.0), 0.123456, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.123456, KiloBitsPerSecond.ToGigaBitsPerSecond(123456.0));
+    }
+    if !cmp.Equal(KiloBitsPerSecond.ToGigaBitsPerSecond(8000700.0), 8.0007, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 8.0007, KiloBitsPerSecond.ToGigaBitsPerSecond(8000700.0));
+    }
+    if !cmp.Equal(KiloBitsPerSecond.ToGigaBitsPerSecond(191987578.0), 191.987578, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 191.987578, KiloBitsPerSecond.ToGigaBitsPerSecond(191987578.0));
+    }
+}
+
+func TestConvertKnownKiloBitsPerSecondToTeraBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(KiloBitsPerSecond.ToTeraBitsPerSecond(191987578.0), 0.191987578, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.191987578, KiloBitsPerSecond.ToTeraBitsPerSecond(191987578.0));
+    }
+    if !cmp.Equal(KiloBitsPerSecond.ToTeraBitsPerSecond(9010081903.0), 9.010081903, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 9.010081903, KiloBitsPerSecond.ToTeraBitsPerSecond(9010081903.0));
+    }
+    if !cmp.Equal(KiloBitsPerSecond.ToTeraBitsPerSecond(123456789.0), 0.123456789, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.123456789, KiloBitsPerSecond.ToTeraBitsPerSecond(123456789.0));
+    }
+}
+
+func TestConvertKnownKiloBitsPerSecondToKiloBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(KiloBitsPerSecond.ToKiloBytesPerSecond(80.0), 10.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 10.0, KiloBitsPerSecond.ToKiloBytesPerSecond(80.0));
+    }
+    if !cmp.Equal(KiloBitsPerSecond.ToKiloBytesPerSecond(15.67), 1.95875, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.95875, KiloBitsPerSecond.ToKiloBytesPerSecond(15.67));
+    }
+    if !cmp.Equal(KiloBitsPerSecond.ToKiloBytesPerSecond(8007.09), 1000.88625, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1000.88625, KiloBitsPerSecond.ToKiloBytesPerSecond(8007.09));
+    }
+}
+
+func TestConvertKnownKiloBitsPerSecondToMegaBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(KiloBitsPerSecond.ToMegaBytesPerSecond(123456.0), 15.432, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 15.432, KiloBitsPerSecond.ToMegaBytesPerSecond(123456.0));
+    }
+    if !cmp.Equal(KiloBitsPerSecond.ToMegaBytesPerSecond(998877.0), 124.859625, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 124.859625, KiloBitsPerSecond.ToMegaBytesPerSecond(998877.0));
+    }
+    if !cmp.Equal(KiloBitsPerSecond.ToMegaBytesPerSecond(10090.0), 1.26125, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.26125, KiloBitsPerSecond.ToMegaBytesPerSecond(10090.0));
+    }
+}
+
+func TestConvertKnownKiloBitsPerSecondToGigaBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(KiloBitsPerSecond.ToGigaBytesPerSecond(1828972.0), 0.2286215, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.2286215, KiloBitsPerSecond.ToGigaBytesPerSecond(1828972.0));
+    }
+    if !cmp.Equal(KiloBitsPerSecond.ToGigaBytesPerSecond(879860.8), 0.1099826, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.1099826, KiloBitsPerSecond.ToGigaBytesPerSecond(879860.8));
+    }
+    if !cmp.Equal(KiloBitsPerSecond.ToGigaBytesPerSecond(78178971.0), 9.772371375, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 9.772371375, KiloBitsPerSecond.ToGigaBytesPerSecond(78178971.0));
+    }
+}
+
+func TestConvertKnownKiloBitsPerSecondToTeraBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(KiloBitsPerSecond.ToTeraBytesPerSecond(1234567891.0), 0.154320986375, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.154320986375, KiloBitsPerSecond.ToTeraBytesPerSecond(1234567891.0));
+    }
+    if !cmp.Equal(KiloBitsPerSecond.ToTeraBytesPerSecond(999999098.0), 0.12499988725, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.12499988725, KiloBitsPerSecond.ToTeraBytesPerSecond(999999098.0));
+    }
+    if !cmp.Equal(KiloBitsPerSecond.ToTeraBytesPerSecond(84618364142.0), 10.57729551775, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 10.57729551775, KiloBitsPerSecond.ToTeraBytesPerSecond(84618364142.0));
+    }
+}
+
+func TestConvertKnownKiloBitsPerSecondToKibibitsPerSecond(t * testing.T) {
+    if !cmp.Equal(KiloBitsPerSecond.ToKibibitsPerSecond(89.1), 87.01172, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 87.01172, KiloBitsPerSecond.ToKibibitsPerSecond(89.1));
+    }
+    if !cmp.Equal(KiloBitsPerSecond.ToKibibitsPerSecond(7.1), 6.93359, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 6.93359, KiloBitsPerSecond.ToKibibitsPerSecond(7.1));
+    }
+    if !cmp.Equal(KiloBitsPerSecond.ToKibibitsPerSecond(438.0), 427.734, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 427.734, KiloBitsPerSecond.ToKibibitsPerSecond(438.0));
+    }
+}
+
+func TestConvertKnownKiloBitsPerSecondToMebibitsPerSecond(t * testing.T) {
+    if !cmp.Equal(KiloBitsPerSecond.ToMebibitsPerSecond(77790.0), 74.186325, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 74.186325, KiloBitsPerSecond.ToMebibitsPerSecond(77790.0));
+    }
+    if !cmp.Equal(KiloBitsPerSecond.ToMebibitsPerSecond(123456.0), 117.736816, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 117.736816, KiloBitsPerSecond.ToMebibitsPerSecond(123456.0));
+    }
+    if !cmp.Equal(KiloBitsPerSecond.ToMebibitsPerSecond(23972.0), 22.861481, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 22.861481, KiloBitsPerSecond.ToMebibitsPerSecond(23972.0));
+    }
+}
+
+func TestConvertKnownKiloBytesPerSecondToBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(KiloBytesPerSecond.ToBitsPerSecond(123.456), 987648.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 987648.0, KiloBytesPerSecond.ToBitsPerSecond(123.456));
+    }
+    if !cmp.Equal(KiloBytesPerSecond.ToBitsPerSecond(900.0), 7.2e+6, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 7.2e+6, KiloBytesPerSecond.ToBitsPerSecond(900.0));
+    }
+    if !cmp.Equal(KiloBytesPerSecond.ToBitsPerSecond(100200.0), 801600000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 801600000.0, KiloBytesPerSecond.ToBitsPerSecond(100200.0));
+    }
+}
+
+func TestConvertKnownKiloBytesPerSecondToKiloBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(KiloBytesPerSecond.ToKiloBitsPerSecond(4.0), 32.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 32.0, KiloBytesPerSecond.ToKiloBitsPerSecond(4.0));
+    }
+    if !cmp.Equal(KiloBytesPerSecond.ToKiloBitsPerSecond(1.2), 9.6, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 9.6, KiloBytesPerSecond.ToKiloBitsPerSecond(1.2));
+    }
+    if !cmp.Equal(KiloBytesPerSecond.ToKiloBitsPerSecond(88.1), 704.8, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 704.8, KiloBytesPerSecond.ToKiloBitsPerSecond(88.1));
+    }
+}
+
+func TestConvertKnownKiloBytesPerSecondToMegaBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(KiloBytesPerSecond.ToMegaBitsPerSecond(88.1), 0.7048, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.7048, KiloBytesPerSecond.ToMegaBitsPerSecond(88.1));
+    }
+    if !cmp.Equal(KiloBytesPerSecond.ToMegaBitsPerSecond(7.1), 0.0568, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.0568, KiloBytesPerSecond.ToMegaBitsPerSecond(7.1));
+    }
+    if !cmp.Equal(KiloBytesPerSecond.ToMegaBitsPerSecond(12.8), 0.1024, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.1024, KiloBytesPerSecond.ToMegaBitsPerSecond(12.8));
+    }
+}
+
+func TestConvertKnownKiloBytesPerSecondToGigaBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(KiloBytesPerSecond.ToGigaBitsPerSecond(10080.0), 0.08064, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.08064, KiloBytesPerSecond.ToGigaBitsPerSecond(10080.0));
+    }
+    if !cmp.Equal(KiloBytesPerSecond.ToGigaBitsPerSecond(4.5e+9), 36000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 36000.0, KiloBytesPerSecond.ToGigaBitsPerSecond(4.5e+9));
+    }
+    if !cmp.Equal(KiloBytesPerSecond.ToGigaBitsPerSecond(271279.0), 2.170232, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 2.170232, KiloBytesPerSecond.ToGigaBitsPerSecond(271279.0));
+    }
+}
+
+func TestConvertKnownKiloBytesPerSecondToTeraBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(KiloBytesPerSecond.ToTeraBitsPerSecond(9009000.0), 0.072072, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.072072, KiloBytesPerSecond.ToTeraBitsPerSecond(9009000.0));
+    }
+    if !cmp.Equal(KiloBytesPerSecond.ToTeraBitsPerSecond(7.2e9), 57.6, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 57.6, KiloBytesPerSecond.ToTeraBitsPerSecond(7.2e9));
+    }
+    if !cmp.Equal(KiloBytesPerSecond.ToTeraBitsPerSecond(100100100900.0), 800.8008072, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 800.8008072, KiloBytesPerSecond.ToTeraBitsPerSecond(100100100900.0));
+    }
+}
+
+func TestConvertKnownKiloBytesPerSecondToMegaBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(KiloBytesPerSecond.ToMegaBytesPerSecond(1009.0), 1.009, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.009, KiloBytesPerSecond.ToMegaBytesPerSecond(1009.0));
+    }
+    if !cmp.Equal(KiloBytesPerSecond.ToMegaBytesPerSecond(8899.0), 8.899, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 8.899, KiloBytesPerSecond.ToMegaBytesPerSecond(8899.0));
+    }
+    if !cmp.Equal(KiloBytesPerSecond.ToMegaBytesPerSecond(619.0), 0.619, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.619, KiloBytesPerSecond.ToMegaBytesPerSecond(619.0));
+    }
+}
+
+func TestConvertKnownKiloBytesPerSecondToGigaBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(KiloBytesPerSecond.ToGigaBytesPerSecond(900800.0), 0.9008, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.9008, KiloBytesPerSecond.ToGigaBytesPerSecond(900800.0));
+    }
+    if !cmp.Equal(KiloBytesPerSecond.ToGigaBytesPerSecond(1234567.0), 1.234567, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.234567, KiloBytesPerSecond.ToGigaBytesPerSecond(1234567.0));
+    }
+    if !cmp.Equal(KiloBytesPerSecond.ToGigaBytesPerSecond(7.9e9), 7900.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 7900.0, KiloBytesPerSecond.ToGigaBytesPerSecond(7.9e9));
+    }
+}
+
+func TestConvertKnownKiloBytesPerSecondToTeraBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(KiloBytesPerSecond.ToTeraBytesPerSecond(0.9), 9e-10, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 9e-10, KiloBytesPerSecond.ToTeraBytesPerSecond(0.9));
+    }
+    if !cmp.Equal(KiloBytesPerSecond.ToTeraBytesPerSecond(140000000.0), 0.14, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.14, KiloBytesPerSecond.ToTeraBytesPerSecond(140000000.0));
+    }
+    if !cmp.Equal(KiloBytesPerSecond.ToTeraBytesPerSecond(7.0), 7e-9, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 7e-9, KiloBytesPerSecond.ToTeraBytesPerSecond(7.0));
+    }
+}
+
+func TestConvertKnownKiloBytesPerSecondToKibibitsPerSecond(t * testing.T) {
+    if !cmp.Equal(KiloBytesPerSecond.ToKibibitsPerSecond(0.009), 0.0703125, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.0703125, KiloBytesPerSecond.ToKibibitsPerSecond(0.009));
+    }
+    if !cmp.Equal(KiloBytesPerSecond.ToKibibitsPerSecond(6e+3), 46875.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 46875.0, KiloBytesPerSecond.ToKibibitsPerSecond(6e+3));
+    }
+    if !cmp.Equal(KiloBytesPerSecond.ToKibibitsPerSecond(1.23), 9.609375, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 9.609375, KiloBytesPerSecond.ToKibibitsPerSecond(1.23));
+    }
+}
+
+func TestConvertKnownKiloBytesPerSecondToMebibitsPerSecond(t * testing.T) {
+    if !cmp.Equal(KiloBytesPerSecond.ToMebibitsPerSecond(70.0), 0.534058, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.534058, KiloBytesPerSecond.ToMebibitsPerSecond(70.0));
+    }
+    if !cmp.Equal(KiloBytesPerSecond.ToMebibitsPerSecond(9.0), 0.0686646, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.0686646, KiloBytesPerSecond.ToMebibitsPerSecond(9.0));
+    }
+    if !cmp.Equal(KiloBytesPerSecond.ToMebibitsPerSecond(10022.0), 76.461792, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 76.461792, KiloBytesPerSecond.ToMebibitsPerSecond(10022.0));
+    }
+}
+
+func TestConvertKnownMebibitsPerSecondToBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(MebibitsPerSecond.ToBitsPerSecond(0.9), 943718.4, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 943718.4, MebibitsPerSecond.ToBitsPerSecond(0.9));
+    }
+    if !cmp.Equal(MebibitsPerSecond.ToBitsPerSecond(0.006), 6291.456, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 6291.456, MebibitsPerSecond.ToBitsPerSecond(0.006));
+    }
+    if !cmp.Equal(MebibitsPerSecond.ToBitsPerSecond(2.0), 2097152.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 2097152.0, MebibitsPerSecond.ToBitsPerSecond(2.0));
+    }
+}
+
+func TestConvertKnownMebibitsPerSecondToKiloBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(MebibitsPerSecond.ToKiloBitsPerSecond(0.8), 838.861, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 838.861, MebibitsPerSecond.ToKiloBitsPerSecond(0.8));
+    }
+    if !cmp.Equal(MebibitsPerSecond.ToKiloBitsPerSecond(2.0), 2097.15, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 2097.15, MebibitsPerSecond.ToKiloBitsPerSecond(2.0));
+    }
+    if !cmp.Equal(MebibitsPerSecond.ToKiloBitsPerSecond(0.23), 241.1725, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 241.1725, MebibitsPerSecond.ToKiloBitsPerSecond(0.23));
+    }
+}
+
+func TestConvertKnownMebibitsPerSecondToMegaBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(MebibitsPerSecond.ToMegaBitsPerSecond(0.9), 0.943718, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.943718, MebibitsPerSecond.ToMegaBitsPerSecond(0.9));
+    }
+    if !cmp.Equal(MebibitsPerSecond.ToMegaBitsPerSecond(12.3), 12.89748, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 12.89748, MebibitsPerSecond.ToMegaBitsPerSecond(12.3));
+    }
+    if !cmp.Equal(MebibitsPerSecond.ToMegaBitsPerSecond(8.1), 8.49347, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 8.49347, MebibitsPerSecond.ToMegaBitsPerSecond(8.1));
+    }
+}
+
+func TestConvertKnownMebibitsPerSecondToGigaBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(MebibitsPerSecond.ToGigaBitsPerSecond(12345.0), 12.944671, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 12.944671, MebibitsPerSecond.ToGigaBitsPerSecond(12345.0));
+    }
+    if !cmp.Equal(MebibitsPerSecond.ToGigaBitsPerSecond(100.0), 0.104858, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.104858, MebibitsPerSecond.ToGigaBitsPerSecond(100.0));
+    }
+    if !cmp.Equal(MebibitsPerSecond.ToGigaBitsPerSecond(999.9), 1.0484711, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.0484711, MebibitsPerSecond.ToGigaBitsPerSecond(999.9));
+    }
+}
+
+func TestConvertKnownMebibitsPerSecondToTeraBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(MebibitsPerSecond.ToTeraBitsPerSecond(100009.0), 0.104867037, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.104867037, MebibitsPerSecond.ToTeraBitsPerSecond(100009.0));
+    }
+    if !cmp.Equal(MebibitsPerSecond.ToTeraBitsPerSecond(9876543.0), 10.35630595, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 10.35630595, MebibitsPerSecond.ToTeraBitsPerSecond(9876543.0));
+    }
+    if !cmp.Equal(MebibitsPerSecond.ToTeraBitsPerSecond(1000900.0), 1.049519718, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.049519718, MebibitsPerSecond.ToTeraBitsPerSecond(1000900.0));
+    }
+}
+
+func TestConvertKnownMebibitsPerSecondToKiloBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(MebibitsPerSecond.ToKiloBytesPerSecond(4.0), 524.288, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 524.288, MebibitsPerSecond.ToKiloBytesPerSecond(4.0));
+    }
+    if !cmp.Equal(MebibitsPerSecond.ToKiloBytesPerSecond(1.45), 190.0544, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 190.0544, MebibitsPerSecond.ToKiloBytesPerSecond(1.45));
+    }
+    if !cmp.Equal(MebibitsPerSecond.ToKiloBytesPerSecond(88.11), 11548.754, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 11548.754, MebibitsPerSecond.ToKiloBytesPerSecond(88.11));
+    }
+}
+
+func TestConvertKnownMebibitsPerSecondToMegaBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(MebibitsPerSecond.ToMegaBytesPerSecond(109.0), 14.2868, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 14.2868, MebibitsPerSecond.ToMegaBytesPerSecond(109.0));
+    }
+    if !cmp.Equal(MebibitsPerSecond.ToMegaBytesPerSecond(55.67), 7.2967782, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 7.2967782, MebibitsPerSecond.ToMegaBytesPerSecond(55.67));
+    }
+    if !cmp.Equal(MebibitsPerSecond.ToMegaBytesPerSecond(45678.0), 5987.1068, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 5987.1068, MebibitsPerSecond.ToMegaBytesPerSecond(45678.0));
+    }
+}
+
+func TestConvertKnownMebibitsPerSecondToGigaBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(MebibitsPerSecond.ToGigaBytesPerSecond(4000.0), 0.524288311, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.524288311, MebibitsPerSecond.ToGigaBytesPerSecond(4000.0));
+    }
+    if !cmp.Equal(MebibitsPerSecond.ToGigaBytesPerSecond(90100.0), 11.80959421, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 11.80959421, MebibitsPerSecond.ToGigaBytesPerSecond(90100.0));
+    }
+    if !cmp.Equal(MebibitsPerSecond.ToGigaBytesPerSecond(1009.0), 0.132251727, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.132251727, MebibitsPerSecond.ToGigaBytesPerSecond(1009.0));
+    }
+}
+
+func TestConvertKnownMebibitsPerSecondToTeraBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(MebibitsPerSecond.ToTeraBytesPerSecond(1000009.0), 0.1310731796, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.1310731796, MebibitsPerSecond.ToTeraBytesPerSecond(1000009.0));
+    }
+    if !cmp.Equal(MebibitsPerSecond.ToTeraBytesPerSecond(90808080.0), 11.902396662, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 11.902396662, MebibitsPerSecond.ToTeraBytesPerSecond(90808080.0));
+    }
+    if !cmp.Equal(MebibitsPerSecond.ToTeraBytesPerSecond(5.2e12), 681574.4, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 681574.4, MebibitsPerSecond.ToTeraBytesPerSecond(5.2e12));
+    }
+}
+
+func TestConvertKnownMebibitsPerSecondToKibibitsPerSecond(t * testing.T) {
+    if !cmp.Equal(MebibitsPerSecond.ToKibibitsPerSecond(5.0), 5120.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 5120.0, MebibitsPerSecond.ToKibibitsPerSecond(5.0));
+    }
+    if !cmp.Equal(MebibitsPerSecond.ToKibibitsPerSecond(1234.56), 1264189.44, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1264189.44, MebibitsPerSecond.ToKibibitsPerSecond(1234.56));
+    }
+    if !cmp.Equal(MebibitsPerSecond.ToKibibitsPerSecond(505.0), 517120.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 517120.0, MebibitsPerSecond.ToKibibitsPerSecond(505.0));
+    }
+}
+
+func TestConvertKnownMegaBitsPerSecondToBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(MegaBitsPerSecond.ToBitsPerSecond(0.34), 340000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 340000.0, MegaBitsPerSecond.ToBitsPerSecond(0.34));
+    }
+    if !cmp.Equal(MegaBitsPerSecond.ToBitsPerSecond(9.12), 9120000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 9120000.0, MegaBitsPerSecond.ToBitsPerSecond(9.12));
+    }
+    if !cmp.Equal(MegaBitsPerSecond.ToBitsPerSecond(0.987), 987000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 987000.0, MegaBitsPerSecond.ToBitsPerSecond(0.987));
+    }
+}
+
+func TestConvertKnownMegaBitsPerSecondToKiloBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(MegaBitsPerSecond.ToKiloBitsPerSecond(0.77), 770.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 770.0, MegaBitsPerSecond.ToKiloBitsPerSecond(0.77));
+    }
+    if !cmp.Equal(MegaBitsPerSecond.ToKiloBitsPerSecond(5.0), 5000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 5000.0, MegaBitsPerSecond.ToKiloBitsPerSecond(5.0));
+    }
+    if !cmp.Equal(MegaBitsPerSecond.ToKiloBitsPerSecond(0.987), 987.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 987.0, MegaBitsPerSecond.ToKiloBitsPerSecond(0.987));
+    }
+}
+
+func TestConvertKnownMegaBitsPerSecondToGigaBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(MegaBitsPerSecond.ToGigaBitsPerSecond(900.0), 0.9, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.9, MegaBitsPerSecond.ToGigaBitsPerSecond(900.0));
+    }
+    if !cmp.Equal(MegaBitsPerSecond.ToGigaBitsPerSecond(12345.0), 12.345, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 12.345, MegaBitsPerSecond.ToGigaBitsPerSecond(12345.0));
+    }
+    if !cmp.Equal(MegaBitsPerSecond.ToGigaBitsPerSecond(189.1), 0.1891, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.1891, MegaBitsPerSecond.ToGigaBitsPerSecond(189.1));
+    }
+}
+
+func TestConvertKnownMegaBitsPerSecondToTeraBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(MegaBitsPerSecond.ToTeraBitsPerSecond(100200300.0), 100.2003, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 100.2003, MegaBitsPerSecond.ToTeraBitsPerSecond(100200300.0));
+    }
+    if !cmp.Equal(MegaBitsPerSecond.ToTeraBitsPerSecond(99887777.0), 99.887777, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 99.887777, MegaBitsPerSecond.ToTeraBitsPerSecond(99887777.0));
+    }
+    if !cmp.Equal(MegaBitsPerSecond.ToTeraBitsPerSecond(80009.0), 0.080009, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.080009, MegaBitsPerSecond.ToTeraBitsPerSecond(80009.0));
+    }
+}
+
+func TestConvertKnownMegaBitsPerSecondToKiloBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(MegaBitsPerSecond.ToKiloBytesPerSecond(9.0), 1125.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1125.0, MegaBitsPerSecond.ToKiloBytesPerSecond(9.0));
+    }
+    if !cmp.Equal(MegaBitsPerSecond.ToKiloBytesPerSecond(1.23), 153.75, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 153.75, MegaBitsPerSecond.ToKiloBytesPerSecond(1.23));
+    }
+    if !cmp.Equal(MegaBitsPerSecond.ToKiloBytesPerSecond(98.1), 12262.5, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 12262.5, MegaBitsPerSecond.ToKiloBytesPerSecond(98.1));
+    }
+}
+
+func TestConvertKnownMegaBitsPerSecondToMegaBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(MegaBitsPerSecond.ToMegaBytesPerSecond(98.1), 12.2625, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 12.2625, MegaBitsPerSecond.ToMegaBytesPerSecond(98.1));
+    }
+    if !cmp.Equal(MegaBitsPerSecond.ToMegaBytesPerSecond(10.9), 1.3625, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.3625, MegaBitsPerSecond.ToMegaBytesPerSecond(10.9));
+    }
+    if !cmp.Equal(MegaBitsPerSecond.ToMegaBytesPerSecond(888.123), 111.015375, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 111.015375, MegaBitsPerSecond.ToMegaBytesPerSecond(888.123));
+    }
+}
+
+func TestConvertKnownMegaBitsPerSecondToGigaBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(MegaBitsPerSecond.ToGigaBytesPerSecond(900.0), 0.1125, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.1125, MegaBitsPerSecond.ToGigaBytesPerSecond(900.0));
+    }
+    if !cmp.Equal(MegaBitsPerSecond.ToGigaBytesPerSecond(10123.0), 1.265375, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.265375, MegaBitsPerSecond.ToGigaBytesPerSecond(10123.0));
+    }
+    if !cmp.Equal(MegaBitsPerSecond.ToGigaBytesPerSecond(9988.0), 1.2485, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.2485, MegaBitsPerSecond.ToGigaBytesPerSecond(9988.0));
+    }
+}
+
+func TestConvertKnownMegaBitsPerSecondToTeraBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(MegaBitsPerSecond.ToTeraBytesPerSecond(998877.0), 0.124859625, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.124859625, MegaBitsPerSecond.ToTeraBytesPerSecond(998877.0));
+    }
+    if !cmp.Equal(MegaBitsPerSecond.ToTeraBytesPerSecond(100200400.0), 12.5250375, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 12.5250375, MegaBitsPerSecond.ToTeraBytesPerSecond(100200400.0));
+    }
+    if !cmp.Equal(MegaBitsPerSecond.ToTeraBytesPerSecond(9008877.0), 1.126109625, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.126109625, MegaBitsPerSecond.ToTeraBytesPerSecond(9008877.0));
+    }
+}
+
+func TestConvertKnownMegaBitsPerSecondToKibibitsPerSecond(t * testing.T) {
+    if !cmp.Equal(MegaBitsPerSecond.ToKibibitsPerSecond(12.0), 11718.756, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 11718.756, MegaBitsPerSecond.ToKibibitsPerSecond(12.0));
+    }
+    if !cmp.Equal(MegaBitsPerSecond.ToKibibitsPerSecond(0.9), 878.906, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 878.906, MegaBitsPerSecond.ToKibibitsPerSecond(0.9));
+    }
+    if !cmp.Equal(MegaBitsPerSecond.ToKibibitsPerSecond(1.23), 1201.172, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1201.172, MegaBitsPerSecond.ToKibibitsPerSecond(1.23));
+    }
+}
+
+func TestConvertKnownMegaBitsPerSecondToMebibitsPerSecond(t * testing.T) {
+    if !cmp.Equal(MegaBitsPerSecond.ToMebibitsPerSecond(4.5), 4.29153, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 4.29153, MegaBitsPerSecond.ToMebibitsPerSecond(4.5));
+    }
+    if !cmp.Equal(MegaBitsPerSecond.ToMebibitsPerSecond(0.8), 0.762939, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.762939, MegaBitsPerSecond.ToMebibitsPerSecond(0.8));
+    }
+    if !cmp.Equal(MegaBitsPerSecond.ToMebibitsPerSecond(900.0), 858.307, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 858.307, MegaBitsPerSecond.ToMebibitsPerSecond(900.0));
+    }
+}
+
+func TestConvertKnownMegaBytesPerSecondToBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(MegaBytesPerSecond.ToBitsPerSecond(0.04), 320000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 320000.0, MegaBytesPerSecond.ToBitsPerSecond(0.04));
+    }
+    if !cmp.Equal(MegaBytesPerSecond.ToBitsPerSecond(0.0091), 72800.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 72800.0, MegaBytesPerSecond.ToBitsPerSecond(0.0091));
+    }
+    if !cmp.Equal(MegaBytesPerSecond.ToBitsPerSecond(3e-5), 240.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 240.0, MegaBytesPerSecond.ToBitsPerSecond(3e-5));
+    }
+}
+
+func TestConvertKnownMegaBytesPerSecondToKiloBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(MegaBytesPerSecond.ToKiloBitsPerSecond(6.0), 48000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 48000.0, MegaBytesPerSecond.ToKiloBitsPerSecond(6.0));
+    }
+    if !cmp.Equal(MegaBytesPerSecond.ToKiloBitsPerSecond(0.3), 2400.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 2400.0, MegaBytesPerSecond.ToKiloBitsPerSecond(0.3));
+    }
+    if !cmp.Equal(MegaBytesPerSecond.ToKiloBitsPerSecond(0.009), 72.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 72.0, MegaBytesPerSecond.ToKiloBitsPerSecond(0.009));
+    }
+}
+
+func TestConvertKnownMegaBytesPerSecondToMegaBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(MegaBytesPerSecond.ToMegaBitsPerSecond(3.0), 24.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 24.0, MegaBytesPerSecond.ToMegaBitsPerSecond(3.0));
+    }
+    if !cmp.Equal(MegaBytesPerSecond.ToMegaBitsPerSecond(0.9), 7.2, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 7.2, MegaBytesPerSecond.ToMegaBitsPerSecond(0.9));
+    }
+    if !cmp.Equal(MegaBytesPerSecond.ToMegaBitsPerSecond(13.0), 104.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 104.0, MegaBytesPerSecond.ToMegaBitsPerSecond(13.0));
+    }
+}
+
+func TestConvertKnownMegaBytesPerSecondToGigaBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(MegaBytesPerSecond.ToGigaBitsPerSecond(13.0), 0.104, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.104, MegaBytesPerSecond.ToGigaBitsPerSecond(13.0));
+    }
+    if !cmp.Equal(MegaBytesPerSecond.ToGigaBitsPerSecond(900.0), 7.2, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 7.2, MegaBytesPerSecond.ToGigaBitsPerSecond(900.0));
+    }
+    if !cmp.Equal(MegaBytesPerSecond.ToGigaBitsPerSecond(18000.0), 144.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 144.0, MegaBytesPerSecond.ToGigaBitsPerSecond(18000.0));
+    }
+}
+
+func TestConvertKnownMegaBytesPerSecondToTeraBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(MegaBytesPerSecond.ToTeraBitsPerSecond(18000.0), 0.144, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.144, MegaBytesPerSecond.ToTeraBitsPerSecond(18000.0));
+    }
+    if !cmp.Equal(MegaBytesPerSecond.ToTeraBitsPerSecond(9718290.0), 77.74632, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 77.74632, MegaBytesPerSecond.ToTeraBitsPerSecond(9718290.0));
+    }
+    if !cmp.Equal(MegaBytesPerSecond.ToTeraBitsPerSecond(9e12), 72000000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 72000000.0, MegaBytesPerSecond.ToTeraBitsPerSecond(9e12));
+    }
+}
+
+func TestConvertKnownMegaBytesPerSecondToKiloBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(MegaBytesPerSecond.ToKiloBytesPerSecond(6.0), 6000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 6000.0, MegaBytesPerSecond.ToKiloBytesPerSecond(6.0));
+    }
+    if !cmp.Equal(MegaBytesPerSecond.ToKiloBytesPerSecond(0.9), 900.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 900.0, MegaBytesPerSecond.ToKiloBytesPerSecond(0.9));
+    }
+    if !cmp.Equal(MegaBytesPerSecond.ToKiloBytesPerSecond(123.4), 123400.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 123400.0, MegaBytesPerSecond.ToKiloBytesPerSecond(123.4));
+    }
+}
+
+func TestConvertKnownMegaBytesPerSecondToGigaBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(MegaBytesPerSecond.ToGigaBytesPerSecond(123.4), 0.1234, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.1234, MegaBytesPerSecond.ToGigaBytesPerSecond(123.4));
+    }
+    if !cmp.Equal(MegaBytesPerSecond.ToGigaBytesPerSecond(900.0), 0.9, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.9, MegaBytesPerSecond.ToGigaBytesPerSecond(900.0));
+    }
+    if !cmp.Equal(MegaBytesPerSecond.ToGigaBytesPerSecond(8e6), 8000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 8000.0, MegaBytesPerSecond.ToGigaBytesPerSecond(8e6));
+    }
+}
+
+func TestConvertKnownMegaBytesPerSecondToTeraBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(MegaBytesPerSecond.ToTeraBytesPerSecond(80000.0), 0.08, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.08, MegaBytesPerSecond.ToTeraBytesPerSecond(80000.0));
+    }
+    if !cmp.Equal(MegaBytesPerSecond.ToTeraBytesPerSecond(12345678.0), 12.345678, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 12.345678, MegaBytesPerSecond.ToTeraBytesPerSecond(12345678.0));
+    }
+    if !cmp.Equal(MegaBytesPerSecond.ToTeraBytesPerSecond(900800.0), 0.9008, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.9008, MegaBytesPerSecond.ToTeraBytesPerSecond(900800.0));
+    }
+}
+
+func TestConvertKnownMegaBytesPerSecondToKibibitsPerSecond(t * testing.T) {
+    if !cmp.Equal(MegaBytesPerSecond.ToKibibitsPerSecond(6.0), 46875.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 46875.0, MegaBytesPerSecond.ToKibibitsPerSecond(6.0));
+    }
+    if !cmp.Equal(MegaBytesPerSecond.ToKibibitsPerSecond(0.9), 7031.25, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 7031.25, MegaBytesPerSecond.ToKibibitsPerSecond(0.9));
+    }
+    if !cmp.Equal(MegaBytesPerSecond.ToKibibitsPerSecond(0.03), 234.375, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 234.375, MegaBytesPerSecond.ToKibibitsPerSecond(0.03));
+    }
+}
+
+func TestConvertKnownMegaBytesPerSecondToMebibitsPerSecond(t * testing.T) {
+    if !cmp.Equal(MegaBytesPerSecond.ToMebibitsPerSecond(0.03), 0.2288818, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.2288818, MegaBytesPerSecond.ToMebibitsPerSecond(0.03));
+    }
+    if !cmp.Equal(MegaBytesPerSecond.ToMebibitsPerSecond(4.5), 34.3323, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 34.3323, MegaBytesPerSecond.ToMebibitsPerSecond(4.5));
+    }
+    if !cmp.Equal(MegaBytesPerSecond.ToMebibitsPerSecond(80.1), 611.1145, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 611.1145, MegaBytesPerSecond.ToMebibitsPerSecond(80.1));
+    }
+}
+
+func TestConvertKnownTeraBitsPerSecondToBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(TeraBitsPerSecond.ToBitsPerSecond(0.0007), 700000000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 700000000.0, TeraBitsPerSecond.ToBitsPerSecond(0.0007));
+    }
+    if !cmp.Equal(TeraBitsPerSecond.ToBitsPerSecond(1.23e-6), 1230000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1230000.0, TeraBitsPerSecond.ToBitsPerSecond(1.23e-6));
+    }
+    if !cmp.Equal(TeraBitsPerSecond.ToBitsPerSecond(0.00098), 980000000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 980000000.0, TeraBitsPerSecond.ToBitsPerSecond(0.00098));
+    }
+}
+
+func TestConvertKnownTeraBitsPerSecondToKiloBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(TeraBitsPerSecond.ToKiloBitsPerSecond(0.001), 1000000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1000000.0, TeraBitsPerSecond.ToKiloBitsPerSecond(0.001));
+    }
+    if !cmp.Equal(TeraBitsPerSecond.ToKiloBitsPerSecond(6.1e-6), 6100.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 6100.0, TeraBitsPerSecond.ToKiloBitsPerSecond(6.1e-6));
+    }
+    if !cmp.Equal(TeraBitsPerSecond.ToKiloBitsPerSecond(0.00009), 90000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 90000.0, TeraBitsPerSecond.ToKiloBitsPerSecond(0.00009));
+    }
+}
+
+func TestConvertKnownTeraBitsPerSecondToMegaBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(TeraBitsPerSecond.ToMegaBitsPerSecond(0.09), 90000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 90000.0, TeraBitsPerSecond.ToMegaBitsPerSecond(0.09));
+    }
+    if !cmp.Equal(TeraBitsPerSecond.ToMegaBitsPerSecond(3.5e-4), 350.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 350.0, TeraBitsPerSecond.ToMegaBitsPerSecond(3.5e-4));
+    }
+    if !cmp.Equal(TeraBitsPerSecond.ToMegaBitsPerSecond(0.0123), 12300.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 12300.0, TeraBitsPerSecond.ToMegaBitsPerSecond(0.0123));
+    }
+}
+
+func TestConvertKnownTeraBitsPerSecondToGigaBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(TeraBitsPerSecond.ToGigaBitsPerSecond(0.9), 900.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 900.0, TeraBitsPerSecond.ToGigaBitsPerSecond(0.9));
+    }
+    if !cmp.Equal(TeraBitsPerSecond.ToGigaBitsPerSecond(1.45), 1450.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1450.0, TeraBitsPerSecond.ToGigaBitsPerSecond(1.45));
+    }
+    if !cmp.Equal(TeraBitsPerSecond.ToGigaBitsPerSecond(8.19), 8190.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 8190.0, TeraBitsPerSecond.ToGigaBitsPerSecond(8.19));
+    }
+}
+
+func TestConvertKnownTeraBitsPerSecondToKiloBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(TeraBitsPerSecond.ToKiloBytesPerSecond(0.0009), 112500.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 112500.0, TeraBitsPerSecond.ToKiloBytesPerSecond(0.0009));
+    }
+    if !cmp.Equal(TeraBitsPerSecond.ToKiloBytesPerSecond(3.14e-6), 392.5, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 392.5, TeraBitsPerSecond.ToKiloBytesPerSecond(3.14e-6));
+    }
+    if !cmp.Equal(TeraBitsPerSecond.ToKiloBytesPerSecond(0.001), 125000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 125000.0, TeraBitsPerSecond.ToKiloBytesPerSecond(0.001));
+    }
+}
+
+func TestConvertKnownTeraBitsPerSecondToMegaBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(TeraBitsPerSecond.ToMegaBytesPerSecond(0.4), 50000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 50000.0, TeraBitsPerSecond.ToMegaBytesPerSecond(0.4));
+    }
+    if !cmp.Equal(TeraBitsPerSecond.ToMegaBytesPerSecond(3.9e-3), 487.5, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 487.5, TeraBitsPerSecond.ToMegaBytesPerSecond(3.9e-3));
+    }
+    if !cmp.Equal(TeraBitsPerSecond.ToMegaBytesPerSecond(0.007), 875.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 875.0, TeraBitsPerSecond.ToMegaBytesPerSecond(0.007));
+    }
+}
+
+func TestConvertKnownTeraBitsPerSecondToGigaBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(TeraBitsPerSecond.ToGigaBytesPerSecond(0.009), 1.125, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.125, TeraBitsPerSecond.ToGigaBytesPerSecond(0.009));
+    }
+    if !cmp.Equal(TeraBitsPerSecond.ToGigaBytesPerSecond(0.00123), 0.15375, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.15375, TeraBitsPerSecond.ToGigaBytesPerSecond(0.00123));
+    }
+    if !cmp.Equal(TeraBitsPerSecond.ToGigaBytesPerSecond(8.1e-3), 1.0125, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.0125, TeraBitsPerSecond.ToGigaBytesPerSecond(8.1e-3));
+    }
+}
+
+func TestConvertKnownTeraBitsPerSecondToTeraBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(TeraBitsPerSecond.ToTeraBytesPerSecond(0.3), 0.0375, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.0375, TeraBitsPerSecond.ToTeraBytesPerSecond(0.3));
+    }
+    if !cmp.Equal(TeraBitsPerSecond.ToTeraBytesPerSecond(14.0), 1.75, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.75, TeraBitsPerSecond.ToTeraBytesPerSecond(14.0));
+    }
+    if !cmp.Equal(TeraBitsPerSecond.ToTeraBytesPerSecond(0.8), 0.1, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.1, TeraBitsPerSecond.ToTeraBytesPerSecond(0.8));
+    }
+}
+
+func TestConvertKnownTeraBitsPerSecondToKibibitsPerSecond(t * testing.T) {
+    if !cmp.Equal(TeraBitsPerSecond.ToKibibitsPerSecond(0.0009), 878906.25, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 878906.25, TeraBitsPerSecond.ToKibibitsPerSecond(0.0009));
+    }
+    if !cmp.Equal(TeraBitsPerSecond.ToKibibitsPerSecond(6.1e-6), 5957.031, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 5957.031, TeraBitsPerSecond.ToKibibitsPerSecond(6.1e-6));
+    }
+    if !cmp.Equal(TeraBitsPerSecond.ToKibibitsPerSecond(12e-9), 11.71875, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 11.71875, TeraBitsPerSecond.ToKibibitsPerSecond(12e-9));
+    }
+}
+
+func TestConvertKnownTeraBitsPerSecondToMebibitsPerSecond(t * testing.T) {
+    if !cmp.Equal(TeraBitsPerSecond.ToMebibitsPerSecond(0.9), 858306.59999, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 858306.59999, TeraBitsPerSecond.ToMebibitsPerSecond(0.9));
+    }
+    if !cmp.Equal(TeraBitsPerSecond.ToMebibitsPerSecond(4.6e-3), 4386.9, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 4386.9, TeraBitsPerSecond.ToMebibitsPerSecond(4.6e-3));
+    }
+    if !cmp.Equal(TeraBitsPerSecond.ToMebibitsPerSecond(0.00123), 1173.0194092, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1173.0194092, TeraBitsPerSecond.ToMebibitsPerSecond(0.00123));
+    }
+}
+
+func TestConvertKnownTeraBytesPerSecondToBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(TeraBytesPerSecond.ToBitsPerSecond(0.00008), 640000000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 640000000.0, TeraBytesPerSecond.ToBitsPerSecond(0.00008));
+    }
+    if !cmp.Equal(TeraBytesPerSecond.ToBitsPerSecond(1.2e-12), 9.6, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 9.6, TeraBytesPerSecond.ToBitsPerSecond(1.2e-12));
+    }
+    if !cmp.Equal(TeraBytesPerSecond.ToBitsPerSecond(9.0), 7.2e+13, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 7.2e+13, TeraBytesPerSecond.ToBitsPerSecond(9.0));
+    }
+}
+
+func TestConvertKnownTeraBytesPerSecondToKiloBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(TeraBytesPerSecond.ToKiloBitsPerSecond(0.009), 72000000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 72000000.0, TeraBytesPerSecond.ToKiloBitsPerSecond(0.009));
+    }
+    if !cmp.Equal(TeraBytesPerSecond.ToKiloBitsPerSecond(1.4e-6), 11200.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 11200.0, TeraBytesPerSecond.ToKiloBitsPerSecond(1.4e-6));
+    }
+    if !cmp.Equal(TeraBytesPerSecond.ToKiloBitsPerSecond(6.1e-5), 488000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 488000.0, TeraBytesPerSecond.ToKiloBitsPerSecond(6.1e-5));
+    }
+}
+
+func TestConvertKnownTeraBytesPerSecondToMegaBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(TeraBytesPerSecond.ToMegaBitsPerSecond(0.005), 40000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 40000.0, TeraBytesPerSecond.ToMegaBitsPerSecond(0.005));
+    }
+    if !cmp.Equal(TeraBytesPerSecond.ToMegaBitsPerSecond(0.000123), 984.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 984.0, TeraBytesPerSecond.ToMegaBitsPerSecond(0.000123));
+    }
+    if !cmp.Equal(TeraBytesPerSecond.ToMegaBitsPerSecond(0.00006), 480.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 480.0, TeraBytesPerSecond.ToMegaBitsPerSecond(0.00006));
+    }
+}
+
+func TestConvertKnownTeraBytesPerSecondToGigaBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(TeraBytesPerSecond.ToGigaBitsPerSecond(0.008), 64.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 64.0, TeraBytesPerSecond.ToGigaBitsPerSecond(0.008));
+    }
+    if !cmp.Equal(TeraBytesPerSecond.ToGigaBitsPerSecond(3e-7), 0.0024, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 0.0024, TeraBytesPerSecond.ToGigaBitsPerSecond(3e-7));
+    }
+    if !cmp.Equal(TeraBytesPerSecond.ToGigaBitsPerSecond(0.00023), 1.84, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 1.84, TeraBytesPerSecond.ToGigaBitsPerSecond(0.00023));
+    }
+}
+
+func TestConvertKnownTeraBytesPerSecondToTeraBitsPerSecond(t * testing.T) {
+    if !cmp.Equal(TeraBytesPerSecond.ToTeraBitsPerSecond(5.0), 40.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 40.0, TeraBytesPerSecond.ToTeraBitsPerSecond(5.0));
+    }
+    if !cmp.Equal(TeraBytesPerSecond.ToTeraBitsPerSecond(1.23), 9.84, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 9.84, TeraBytesPerSecond.ToTeraBitsPerSecond(1.23));
+    }
+    if !cmp.Equal(TeraBytesPerSecond.ToTeraBitsPerSecond(800.0), 6400.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 6400.0, TeraBytesPerSecond.ToTeraBitsPerSecond(800.0));
+    }
+}
+
+func TestConvertKnownTeraBytesPerSecondToKiloBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(TeraBytesPerSecond.ToKiloBytesPerSecond(0.0009), 900000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 900000.0, TeraBytesPerSecond.ToKiloBytesPerSecond(0.0009));
+    }
+    if !cmp.Equal(TeraBytesPerSecond.ToKiloBytesPerSecond(3.14e-7), 314.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 314.0, TeraBytesPerSecond.ToKiloBytesPerSecond(3.14e-7));
+    }
+    if !cmp.Equal(TeraBytesPerSecond.ToKiloBytesPerSecond(0.00063), 630000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 630000.0, TeraBytesPerSecond.ToKiloBytesPerSecond(0.00063));
+    }
+}
+
+func TestConvertKnownTeraBytesPerSecondToMegaBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(TeraBytesPerSecond.ToMegaBytesPerSecond(0.009), 9000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 9000.0, TeraBytesPerSecond.ToMegaBytesPerSecond(0.009));
+    }
+    if !cmp.Equal(TeraBytesPerSecond.ToMegaBytesPerSecond(0.234), 234000.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 234000.0, TeraBytesPerSecond.ToMegaBytesPerSecond(0.234));
+    }
+    if !cmp.Equal(TeraBytesPerSecond.ToMegaBytesPerSecond(2.0), 2e+6, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 2e+6, TeraBytesPerSecond.ToMegaBytesPerSecond(2.0));
+    }
+}
+
+func TestConvertKnownTeraBytesPerSecondToGigaBytesPerSecond(t * testing.T) {
+    if !cmp.Equal(TeraBytesPerSecond.ToGigaBytesPerSecond(2.7), 2700.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 2700.0, TeraBytesPerSecond.ToGigaBytesPerSecond(2.7));
+    }
+    if !cmp.Equal(TeraBytesPerSecond.ToGigaBytesPerSecond(0.9), 900.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 900.0, TeraBytesPerSecond.ToGigaBytesPerSecond(0.9));
+    }
+    if !cmp.Equal(TeraBytesPerSecond.ToGigaBytesPerSecond(0.0123), 12.3, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 12.3, TeraBytesPerSecond.ToGigaBytesPerSecond(0.0123));
+    }
+}
+
+func TestConvertKnownTeraBytesPerSecondToKibibitsPerSecond(t * testing.T) {
+    if !cmp.Equal(TeraBytesPerSecond.ToKibibitsPerSecond(0.0009), 7031250.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 7031250.0, TeraBytesPerSecond.ToKibibitsPerSecond(0.0009));
+    }
+    if !cmp.Equal(TeraBytesPerSecond.ToKibibitsPerSecond(1.23e-5), 96093.75, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 96093.75, TeraBytesPerSecond.ToKibibitsPerSecond(1.23e-5));
+    }
+    if !cmp.Equal(TeraBytesPerSecond.ToKibibitsPerSecond(0.0001), 781250.0, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 781250.0, TeraBytesPerSecond.ToKibibitsPerSecond(0.0001));
+    }
+}
+
+func TestConvertKnownTeraBytesPerSecondToMebibitsPerSecond(t * testing.T) {
+    if !cmp.Equal(TeraBytesPerSecond.ToMebibitsPerSecond(0.01), 76293.95, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 76293.95, TeraBytesPerSecond.ToMebibitsPerSecond(0.01));
+    }
+    if !cmp.Equal(TeraBytesPerSecond.ToMebibitsPerSecond(0.008), 61035.156, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 61035.156, TeraBytesPerSecond.ToMebibitsPerSecond(0.008));
+    }
+    if !cmp.Equal(TeraBytesPerSecond.ToMebibitsPerSecond(2.0), 15258789.0625, withinTolerance()) {
+        t.Fatalf("Expected %f, was %f", 15258789.0625, TeraBytesPerSecond.ToMebibitsPerSecond(2.0));
+    }
 }
+

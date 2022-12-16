@@ -6,6 +6,246 @@
 
 package volume
 
+// CubicFeet (Cubic Feet) conversion functions
+type CubicFeet float64
+
+// ToMillilitres converts the supplied Cubic Feet value to Millilitres
+func (value CubicFeet) ToMillilitres() float64 { 
+	return float64(value * 28316.8)
+}
+// ToLitres converts the supplied Cubic Feet value to Litres
+func (value CubicFeet) ToLitres() float64 { 
+	return float64(value * 28.3168)
+}
+// ToKilolitres converts the supplied Cubic Feet value to Kilolitres
+func (value CubicFeet) ToKilolitres() float64 { 
+	return float64(value / 35.3147)
+}
+// ToTeaspoons converts the supplied Cubic Feet value to Teaspoons
+func (value CubicFeet) ToTeaspoons() float64 { 
+	return float64(value * 4783.74)
+}
+// ToTablespoons converts the supplied Cubic Feet value to Tablespoons
+func (value CubicFeet) ToTablespoons() float64 { 
+	return float64(value * 1594.58)
+}
+// ToQuarts converts the supplied Cubic Feet value to Quarts
+func (value CubicFeet) ToQuarts() float64 { 
+	return float64(value * 24.9153)
+}
+// ToPints converts the supplied Cubic Feet value to Pints
+func (value CubicFeet) ToPints() float64 { 
+	return float64(value * 49.8307)
+}
+// ToGallons converts the supplied Cubic Feet value to Gallons
+func (value CubicFeet) ToGallons() float64 { 
+	return float64(value * 6.22884)
+}
+// ToFluidOunces converts the supplied Cubic Feet value to Fluid Ounces
+func (value CubicFeet) ToFluidOunces() float64 { 
+	return float64(value * 996.614)
+}
+// ToUSTeaspoons converts the supplied Cubic Feet value to US Teaspoons
+func (value CubicFeet) ToUSTeaspoons() float64 { 
+	return float64(value * 5745.04)
+}
+// ToUSTablespoons converts the supplied Cubic Feet value to US Tablespoons
+func (value CubicFeet) ToUSTablespoons() float64 { 
+	return float64(value * 1915.01)
+}
+// ToUSQuarts converts the supplied Cubic Feet value to US Quarts
+func (value CubicFeet) ToUSQuarts() float64 { 
+	return float64(value * 29.9221)
+}
+// ToUSPints converts the supplied Cubic Feet value to US Pints
+func (value CubicFeet) ToUSPints() float64 { 
+	return float64(value * 59.8442)
+}
+// ToUSGallons converts the supplied Cubic Feet value to US Gallons
+func (value CubicFeet) ToUSGallons() float64 { 
+	return float64(value * 7.48052)
+}
+// ToUSFluidOunces converts the supplied Cubic Feet value to US Fluid Ounces
+func (value CubicFeet) ToUSFluidOunces() float64 { 
+	return float64(value * 957.506)
+}
+// ToUSCups converts the supplied Cubic Feet value to US Cups
+func (value CubicFeet) ToUSCups() float64 { 
+	return float64(value * 117.987)
+}
+// ToCubicMetres converts the supplied Cubic Feet value to Cubic Metres
+func (value CubicFeet) ToCubicMetres() float64 { 
+	return float64(value / 35.3147)
+}
+// ToCubicInches converts the supplied Cubic Feet value to Cubic Inches
+func (value CubicFeet) ToCubicInches() float64 { 
+	return float64(value * 1728.0)
+}
+// ToOilBarrels converts the supplied Cubic Feet value to Oil Barrels
+func (value CubicFeet) ToOilBarrels() float64 { 
+	return float64(value * 0.178108)
+}
+
+// CubicInches (Cubic Inches) conversion functions
+type CubicInches float64
+
+// ToMillilitres converts the supplied Cubic Inches value to Millilitres
+func (value CubicInches) ToMillilitres() float64 { 
+	return float64(value * 16.3871)
+}
+// ToLitres converts the supplied Cubic Inches value to Litres
+func (value CubicInches) ToLitres() float64 { 
+	return float64(value / 61.024)
+}
+// ToKilolitres converts the supplied Cubic Inches value to Kilolitres
+func (value CubicInches) ToKilolitres() float64 { 
+	return float64(value / 61024.0)
+}
+// ToTeaspoons converts the supplied Cubic Inches value to Teaspoons
+func (value CubicInches) ToTeaspoons() float64 { 
+	return float64(value * 2.76837)
+}
+// ToTablespoons converts the supplied Cubic Inches value to Tablespoons
+func (value CubicInches) ToTablespoons() float64 { 
+	return float64(value / 1.08367)
+}
+// ToQuarts converts the supplied Cubic Inches value to Quarts
+func (value CubicInches) ToQuarts() float64 { 
+	return float64(value / 69.355)
+}
+// ToPints converts the supplied Cubic Inches value to Pints
+func (value CubicInches) ToPints() float64 { 
+	return float64(value / 34.677)
+}
+// ToGallons converts the supplied Cubic Inches value to Gallons
+func (value CubicInches) ToGallons() float64 { 
+	return float64(value / 277.4)
+}
+// ToFluidOunces converts the supplied Cubic Inches value to Fluid Ounces
+func (value CubicInches) ToFluidOunces() float64 { 
+	return float64(value / 1.73387)
+}
+// ToUSTeaspoons converts the supplied Cubic Inches value to US Teaspoons
+func (value CubicInches) ToUSTeaspoons() float64 { 
+	return float64(value * 3.32468)
+}
+// ToUSTablespoons converts the supplied Cubic Inches value to US Tablespoons
+func (value CubicInches) ToUSTablespoons() float64 { 
+	return float64(value * 1.10823)
+}
+// ToUSQuarts converts the supplied Cubic Inches value to US Quarts
+func (value CubicInches) ToUSQuarts() float64 { 
+	return float64(value / 57.75)
+}
+// ToUSPints converts the supplied Cubic Inches value to US Pints
+func (value CubicInches) ToUSPints() float64 { 
+	return float64(value / 28.875)
+}
+// ToUSGallons converts the supplied Cubic Inches value to US Gallons
+func (value CubicInches) ToUSGallons() float64 { 
+	return float64(value / 231.0)
+}
+// ToUSFluidOunces converts the supplied Cubic Inches value to US Fluid Ounces
+func (value CubicInches) ToUSFluidOunces() float64 { 
+	return float64(value / 1.80469)
+}
+// ToUSCups converts the supplied Cubic Inches value to US Cups
+func (value CubicInches) ToUSCups() float64 { 
+	return float64(value / 14.6457)
+}
+// ToCubicMetres converts the supplied Cubic Inches value to Cubic Metres
+func (value CubicInches) ToCubicMetres() float64 { 
+	return float64(value / 61023.7)
+}
+// ToCubicFeet converts the supplied Cubic Inches value to Cubic Feet
+func (value CubicInches) ToCubicFeet() float64 { 
+	return float64(value / 1728.0)
+}
+// ToOilBarrels converts the supplied Cubic Inches value to Oil Barrels
+func (value CubicInches) ToOilBarrels() float64 { 
+	return float64(value / 9702.0)
+}
+
+// CubicMetres (Cubic Metres) conversion functions
+type CubicMetres float64
+
+// ToMillilitres converts the supplied Cubic Metres value to Millilitres
+func (value CubicMetres) ToMillilitres() float64 { 
+	return float64(value * 1000000.0)
+}
+// ToLitres converts the supplied Cubic Metres value to Litres
+func (value CubicMetres) ToLitres() float64 { 
+	return float64(value * 1000.0)
+}
+// ToKilolitres converts the supplied Cubic Metres value to Kilolitres
+func (value CubicMetres) ToKilolitres() float64 { 
+	return float64(value * 1.0)
+}
+// ToTeaspoons converts the supplied Cubic Metres value to Teaspoons
+func (value CubicMetres) ToTeaspoons() float64 { 
+	return float64(value * 168936.0)
+}
+// ToTablespoons converts the supplied Cubic Metres value to Tablespoons
+func (value CubicMetres) ToTablespoons() float64 { 
+	return float64(value * 56312.1)
+}
+// ToQuarts converts the supplied Cubic Metres value to Quarts
+func (value CubicMetres) ToQuarts() float64 { 
+	return float64(value * 879.877)
+}
+// ToPints converts the supplied Cubic Metres value to Pints
+func (value CubicMetres) ToPints() float64 { 
+	return float64(value * 1759.75)
+}
+// ToGallons converts the supplied Cubic Metres value to Gallons
+func (value CubicMetres) ToGallons() float64 { 
+	return float64(value * 219.969)
+}
+// ToFluidOunces converts the supplied Cubic Metres value to Fluid Ounces
+func (value CubicMetres) ToFluidOunces() float64 { 
+	return float64(value * 35195.1)
+}
+// ToUSTeaspoons converts the supplied Cubic Metres value to US Teaspoons
+func (value CubicMetres) ToUSTeaspoons() float64 { 
+	return float64(value * 202884.0)
+}
+// ToUSTablespoons converts the supplied Cubic Metres value to US Tablespoons
+func (value CubicMetres) ToUSTablespoons() float64 { 
+	return float64(value * 67628.0)
+}
+// ToUSQuarts converts the supplied Cubic Metres value to US Quarts
+func (value CubicMetres) ToUSQuarts() float64 { 
+	return float64(value * 1056.69)
+}
+// ToUSPints converts the supplied Cubic Metres value to US Pints
+func (value CubicMetres) ToUSPints() float64 { 
+	return float64(value * 2113.38)
+}
+// ToUSGallons converts the supplied Cubic Metres value to US Gallons
+func (value CubicMetres) ToUSGallons() float64 { 
+	return float64(value * 264.172)
+}
+// ToUSFluidOunces converts the supplied Cubic Metres value to US Fluid Ounces
+func (value CubicMetres) ToUSFluidOunces() float64 { 
+	return float64(value * 33814.0)
+}
+// ToUSCups converts the supplied Cubic Metres value to US Cups
+func (value CubicMetres) ToUSCups() float64 { 
+	return float64(value * 4166.67)
+}
+// ToCubicFeet converts the supplied Cubic Metres value to Cubic Feet
+func (value CubicMetres) ToCubicFeet() float64 { 
+	return float64(value * 35.3147)
+}
+// ToCubicInches converts the supplied Cubic Metres value to Cubic Inches
+func (value CubicMetres) ToCubicInches() float64 { 
+	return float64(value * 61023.7)
+}
+// ToOilBarrels converts the supplied Cubic Metres value to Oil Barrels
+func (value CubicMetres) ToOilBarrels() float64 { 
+	return float64(value * 6.28981)
+}
+
 // FluidOunces (Fluid Ounces) conversion functions
 type FluidOunces float64
 
@@ -68,6 +308,22 @@ func (value FluidOunces) ToUSFluidOunces() float64 {
 // ToUSCups converts the supplied Fluid Ounces value to US Cups
 func (value FluidOunces) ToUSCups() float64 { 
 	return float64(value / 8.3267384046639071232)
+}
+// ToCubicMetres converts the supplied Fluid Ounces value to Cubic Metres
+func (value FluidOunces) ToCubicMetres() float64 { 
+	return float64(value / 35195.1)
+}
+// ToCubicFeet converts the supplied Fluid Ounces value to Cubic Feet
+func (value FluidOunces) ToCubicFeet() float64 { 
+	return float64(value / 996.614)
+}
+// ToCubicInches converts the supplied Fluid Ounces value to Cubic Inches
+func (value FluidOunces) ToCubicInches() float64 { 
+	return float64(value * 1.73387)
+}
+// ToOilBarrels converts the supplied Fluid Ounces value to Oil Barrels
+func (value FluidOunces) ToOilBarrels() float64 { 
+	return float64(value / 5595.57)
 }
 
 // Gallons (Gallons) conversion functions
@@ -133,6 +389,22 @@ func (value Gallons) ToUSFluidOunces() float64 {
 func (value Gallons) ToUSCups() float64 { 
 	return float64(value / 0.052042115029149417472)
 }
+// ToCubicMetres converts the supplied Gallons value to Cubic Metres
+func (value Gallons) ToCubicMetres() float64 { 
+	return float64(value / 219.969)
+}
+// ToCubicFeet converts the supplied Gallons value to Cubic Feet
+func (value Gallons) ToCubicFeet() float64 { 
+	return float64(value / 6.22884)
+}
+// ToCubicInches converts the supplied Gallons value to Cubic Inches
+func (value Gallons) ToCubicInches() float64 { 
+	return float64(value * 277.419)
+}
+// ToOilBarrels converts the supplied Gallons value to Oil Barrels
+func (value Gallons) ToOilBarrels() float64 { 
+	return float64(value / 34.9723)
+}
 
 // Kilolitres (Kilolitres) conversion functions
 type Kilolitres float64
@@ -196,6 +468,22 @@ func (value Kilolitres) ToUSFluidOunces() float64 {
 // ToUSCups converts the supplied Kilolitres value to US Cups
 func (value Kilolitres) ToUSCups() float64 { 
 	return float64(value / 0.000236588236499999989)
+}
+// ToCubicMetres converts the supplied Kilolitres value to Cubic Metres
+func (value Kilolitres) ToCubicMetres() float64 { 
+	return float64(value * 1.0)
+}
+// ToCubicFeet converts the supplied Kilolitres value to Cubic Feet
+func (value Kilolitres) ToCubicFeet() float64 { 
+	return float64(value * 35.3147)
+}
+// ToCubicInches converts the supplied Kilolitres value to Cubic Inches
+func (value Kilolitres) ToCubicInches() float64 { 
+	return float64(value * 61023.7)
+}
+// ToOilBarrels converts the supplied Kilolitres value to Oil Barrels
+func (value Kilolitres) ToOilBarrels() float64 { 
+	return float64(value * 6.28981)
 }
 
 // Litres (Litres) conversion functions
@@ -261,6 +549,22 @@ func (value Litres) ToUSFluidOunces() float64 {
 func (value Litres) ToUSCups() float64 { 
 	return float64(value / 0.23658823649999998976)
 }
+// ToCubicMetres converts the supplied Litres value to Cubic Metres
+func (value Litres) ToCubicMetres() float64 { 
+	return float64(value / 1000.0)
+}
+// ToCubicFeet converts the supplied Litres value to Cubic Feet
+func (value Litres) ToCubicFeet() float64 { 
+	return float64(value / 28.317)
+}
+// ToCubicInches converts the supplied Litres value to Cubic Inches
+func (value Litres) ToCubicInches() float64 { 
+	return float64(value * 61.0237)
+}
+// ToOilBarrels converts the supplied Litres value to Oil Barrels
+func (value Litres) ToOilBarrels() float64 { 
+	return float64(value / 158.987)
+}
 
 // Millilitres (Millilitres) conversion functions
 type Millilitres float64
@@ -324,6 +628,102 @@ func (value Millilitres) ToUSFluidOunces() float64 {
 // ToUSCups converts the supplied Millilitres value to US Cups
 func (value Millilitres) ToUSCups() float64 { 
 	return float64(value / 236.58823649999998976)
+}
+// ToCubicMetres converts the supplied Millilitres value to Cubic Metres
+func (value Millilitres) ToCubicMetres() float64 { 
+	return float64(value / 1000000.0)
+}
+// ToCubicFeet converts the supplied Millilitres value to Cubic Feet
+func (value Millilitres) ToCubicFeet() float64 { 
+	return float64(value / 28316.8)
+}
+// ToCubicInches converts the supplied Millilitres value to Cubic Inches
+func (value Millilitres) ToCubicInches() float64 { 
+	return float64(value / 16.3871)
+}
+// ToOilBarrels converts the supplied Millilitres value to Oil Barrels
+func (value Millilitres) ToOilBarrels() float64 { 
+	return float64(value / 158987.0)
+}
+
+// OilBarrels (Oil Barrels) conversion functions
+type OilBarrels float64
+
+// ToMillilitres converts the supplied Oil Barrels value to Millilitres
+func (value OilBarrels) ToMillilitres() float64 { 
+	return float64(value * 158987.0)
+}
+// ToLitres converts the supplied Oil Barrels value to Litres
+func (value OilBarrels) ToLitres() float64 { 
+	return float64(value * 158.987)
+}
+// ToKilolitres converts the supplied Oil Barrels value to Kilolitres
+func (value OilBarrels) ToKilolitres() float64 { 
+	return float64(value / 6.28981)
+}
+// ToTeaspoons converts the supplied Oil Barrels value to Teaspoons
+func (value OilBarrels) ToTeaspoons() float64 { 
+	return float64(value * 26858.7)
+}
+// ToTablespoons converts the supplied Oil Barrels value to Tablespoons
+func (value OilBarrels) ToTablespoons() float64 { 
+	return float64(value * 8952.91)
+}
+// ToQuarts converts the supplied Oil Barrels value to Quarts
+func (value OilBarrels) ToQuarts() float64 { 
+	return float64(value * 139.889)
+}
+// ToPints converts the supplied Oil Barrels value to Pints
+func (value OilBarrels) ToPints() float64 { 
+	return float64(value * 279.779)
+}
+// ToGallons converts the supplied Oil Barrels value to Gallons
+func (value OilBarrels) ToGallons() float64 { 
+	return float64(value * 34.9723)
+}
+// ToFluidOunces converts the supplied Oil Barrels value to Fluid Ounces
+func (value OilBarrels) ToFluidOunces() float64 { 
+	return float64(value * 5595.57)
+}
+// ToUSTeaspoons converts the supplied Oil Barrels value to US Teaspoons
+func (value OilBarrels) ToUSTeaspoons() float64 { 
+	return float64(value * 32256.0)
+}
+// ToUSTablespoons converts the supplied Oil Barrels value to US Tablespoons
+func (value OilBarrels) ToUSTablespoons() float64 { 
+	return float64(value * 10752.0)
+}
+// ToUSQuarts converts the supplied Oil Barrels value to US Quarts
+func (value OilBarrels) ToUSQuarts() float64 { 
+	return float64(value * 168.0)
+}
+// ToUSPints converts the supplied Oil Barrels value to US Pints
+func (value OilBarrels) ToUSPints() float64 { 
+	return float64(value * 336.0)
+}
+// ToUSGallons converts the supplied Oil Barrels value to US Gallons
+func (value OilBarrels) ToUSGallons() float64 { 
+	return float64(value * 42.0)
+}
+// ToUSFluidOunces converts the supplied Oil Barrels value to US Fluid Ounces
+func (value OilBarrels) ToUSFluidOunces() float64 { 
+	return float64(value * 5376.0)
+}
+// ToUSCups converts the supplied Oil Barrels value to US Cups
+func (value OilBarrels) ToUSCups() float64 { 
+	return float64(value * 662.447)
+}
+// ToCubicMetres converts the supplied Oil Barrels value to Cubic Metres
+func (value OilBarrels) ToCubicMetres() float64 { 
+	return float64(value / 6.28981)
+}
+// ToCubicFeet converts the supplied Oil Barrels value to Cubic Feet
+func (value OilBarrels) ToCubicFeet() float64 { 
+	return float64(value * 5.61458)
+}
+// ToCubicInches converts the supplied Oil Barrels value to Cubic Inches
+func (value OilBarrels) ToCubicInches() float64 { 
+	return float64(value * 9702.0)
 }
 
 // Pints (Pints) conversion functions
@@ -389,6 +789,22 @@ func (value Pints) ToUSFluidOunces() float64 {
 func (value Pints) ToUSCups() float64 { 
 	return float64(value / 0.41633692023319535616)
 }
+// ToCubicMetres converts the supplied Pints value to Cubic Metres
+func (value Pints) ToCubicMetres() float64 { 
+	return float64(value / 1759.75)
+}
+// ToCubicFeet converts the supplied Pints value to Cubic Feet
+func (value Pints) ToCubicFeet() float64 { 
+	return float64(value / 49.8307)
+}
+// ToCubicInches converts the supplied Pints value to Cubic Inches
+func (value Pints) ToCubicInches() float64 { 
+	return float64(value * 34.6774)
+}
+// ToOilBarrels converts the supplied Pints value to Oil Barrels
+func (value Pints) ToOilBarrels() float64 { 
+	return float64(value / 279.779)
+}
 
 // Quarts (Quarts) conversion functions
 type Quarts float64
@@ -452,6 +868,22 @@ func (value Quarts) ToUSFluidOunces() float64 {
 // ToUSCups converts the supplied Quarts value to US Cups
 func (value Quarts) ToUSCups() float64 { 
 	return float64(value / 0.20816846011659767808)
+}
+// ToCubicMetres converts the supplied Quarts value to Cubic Metres
+func (value Quarts) ToCubicMetres() float64 { 
+	return float64(value / 879.877)
+}
+// ToCubicFeet converts the supplied Quarts value to Cubic Feet
+func (value Quarts) ToCubicFeet() float64 { 
+	return float64(value / 24.9153)
+}
+// ToCubicInches converts the supplied Quarts value to Cubic Inches
+func (value Quarts) ToCubicInches() float64 { 
+	return float64(value * 69.3549)
+}
+// ToOilBarrels converts the supplied Quarts value to Oil Barrels
+func (value Quarts) ToOilBarrels() float64 { 
+	return float64(value / 139.889)
 }
 
 // Tablespoons (Tablespoons) conversion functions
@@ -517,6 +949,22 @@ func (value Tablespoons) ToUSFluidOunces() float64 {
 func (value Tablespoons) ToUSCups() float64 { 
 	return float64(value / 13.322781447462250496)
 }
+// ToCubicMetres converts the supplied Tablespoons value to Cubic Metres
+func (value Tablespoons) ToCubicMetres() float64 { 
+	return float64(value / 56312.1)
+}
+// ToCubicFeet converts the supplied Tablespoons value to Cubic Feet
+func (value Tablespoons) ToCubicFeet() float64 { 
+	return float64(value / 1594.58)
+}
+// ToCubicInches converts the supplied Tablespoons value to Cubic Inches
+func (value Tablespoons) ToCubicInches() float64 { 
+	return float64(value * 1.08367)
+}
+// ToOilBarrels converts the supplied Tablespoons value to Oil Barrels
+func (value Tablespoons) ToOilBarrels() float64 { 
+	return float64(value / 8952.91)
+}
 
 // Teaspoons (Teaspoons) conversion functions
 type Teaspoons float64
@@ -580,6 +1028,22 @@ func (value Teaspoons) ToUSFluidOunces() float64 {
 // ToUSCups converts the supplied Teaspoons value to US Cups
 func (value Teaspoons) ToUSCups() float64 { 
 	return float64(value / 39.968344342386753536)
+}
+// ToCubicMetres converts the supplied Teaspoons value to Cubic Metres
+func (value Teaspoons) ToCubicMetres() float64 { 
+	return float64(value / 168936.0)
+}
+// ToCubicFeet converts the supplied Teaspoons value to Cubic Feet
+func (value Teaspoons) ToCubicFeet() float64 { 
+	return float64(value / 4783.74)
+}
+// ToCubicInches converts the supplied Teaspoons value to Cubic Inches
+func (value Teaspoons) ToCubicInches() float64 { 
+	return float64(value / 2.76837)
+}
+// ToOilBarrels converts the supplied Teaspoons value to Oil Barrels
+func (value Teaspoons) ToOilBarrels() float64 { 
+	return float64(value / 26858.7)
 }
 
 // USCups (US Cups) conversion functions
@@ -645,6 +1109,22 @@ func (value USCups) ToUSGallons() float64 {
 func (value USCups) ToUSFluidOunces() float64 { 
 	return float64(value * 8.0)
 }
+// ToCubicMetres converts the supplied US Cups value to Cubic Metres
+func (value USCups) ToCubicMetres() float64 { 
+	return float64(value / 4166.67)
+}
+// ToCubicFeet converts the supplied US Cups value to Cubic Feet
+func (value USCups) ToCubicFeet() float64 { 
+	return float64(value / 117.987)
+}
+// ToCubicInches converts the supplied US Cups value to Cubic Inches
+func (value USCups) ToCubicInches() float64 { 
+	return float64(value * 14.6457)
+}
+// ToOilBarrels converts the supplied US Cups value to Oil Barrels
+func (value USCups) ToOilBarrels() float64 { 
+	return float64(value / 662.447)
+}
 
 // USFluidOunces (US Fluid Ounces) conversion functions
 type USFluidOunces float64
@@ -708,6 +1188,22 @@ func (value USFluidOunces) ToUSGallons() float64 {
 // ToUSCups converts the supplied US Fluid Ounces value to US Cups
 func (value USFluidOunces) ToUSCups() float64 { 
 	return float64(value / 8.0)
+}
+// ToCubicMetres converts the supplied US Fluid Ounces value to Cubic Metres
+func (value USFluidOunces) ToCubicMetres() float64 { 
+	return float64(value / 33814.0)
+}
+// ToCubicFeet converts the supplied US Fluid Ounces value to Cubic Feet
+func (value USFluidOunces) ToCubicFeet() float64 { 
+	return float64(value / 957.506)
+}
+// ToCubicInches converts the supplied US Fluid Ounces value to Cubic Inches
+func (value USFluidOunces) ToCubicInches() float64 { 
+	return float64(value * 1.80469)
+}
+// ToOilBarrels converts the supplied US Fluid Ounces value to Oil Barrels
+func (value USFluidOunces) ToOilBarrels() float64 { 
+	return float64(value / 5376.0)
 }
 
 // USGallons (US Gallons) conversion functions
@@ -773,6 +1269,22 @@ func (value USGallons) ToUSFluidOunces() float64 {
 func (value USGallons) ToUSCups() float64 { 
 	return float64(value * 16.0)
 }
+// ToCubicMetres converts the supplied US Gallons value to Cubic Metres
+func (value USGallons) ToCubicMetres() float64 { 
+	return float64(value / 264.172)
+}
+// ToCubicFeet converts the supplied US Gallons value to Cubic Feet
+func (value USGallons) ToCubicFeet() float64 { 
+	return float64(value / 7.48052)
+}
+// ToCubicInches converts the supplied US Gallons value to Cubic Inches
+func (value USGallons) ToCubicInches() float64 { 
+	return float64(value * 231.0)
+}
+// ToOilBarrels converts the supplied US Gallons value to Oil Barrels
+func (value USGallons) ToOilBarrels() float64 { 
+	return float64(value / 42.0)
+}
 
 // USPints (US Pints) conversion functions
 type USPints float64
@@ -836,6 +1348,22 @@ func (value USPints) ToUSFluidOunces() float64 {
 // ToUSCups converts the supplied US Pints value to US Cups
 func (value USPints) ToUSCups() float64 { 
 	return float64(value * 2.0)
+}
+// ToCubicMetres converts the supplied US Pints value to Cubic Metres
+func (value USPints) ToCubicMetres() float64 { 
+	return float64(value / 2113.38)
+}
+// ToCubicFeet converts the supplied US Pints value to Cubic Feet
+func (value USPints) ToCubicFeet() float64 { 
+	return float64(value / 59.8442)
+}
+// ToCubicInches converts the supplied US Pints value to Cubic Inches
+func (value USPints) ToCubicInches() float64 { 
+	return float64(value * 28.875)
+}
+// ToOilBarrels converts the supplied US Pints value to Oil Barrels
+func (value USPints) ToOilBarrels() float64 { 
+	return float64(value / 336.0)
 }
 
 // USQuarts (US Quarts) conversion functions
@@ -901,6 +1429,22 @@ func (value USQuarts) ToUSFluidOunces() float64 {
 func (value USQuarts) ToUSCups() float64 { 
 	return float64(value * 4.0)
 }
+// ToCubicMetres converts the supplied US Quarts value to Cubic Metres
+func (value USQuarts) ToCubicMetres() float64 { 
+	return float64(value / 1056.69)
+}
+// ToCubicFeet converts the supplied US Quarts value to Cubic Feet
+func (value USQuarts) ToCubicFeet() float64 { 
+	return float64(value / 29.9221)
+}
+// ToCubicInches converts the supplied US Quarts value to Cubic Inches
+func (value USQuarts) ToCubicInches() float64 { 
+	return float64(value * 57.75)
+}
+// ToOilBarrels converts the supplied US Quarts value to Oil Barrels
+func (value USQuarts) ToOilBarrels() float64 { 
+	return float64(value / 168.0)
+}
 
 // USTablespoons (US Tablespoons) conversion functions
 type USTablespoons float64
@@ -965,6 +1509,22 @@ func (value USTablespoons) ToUSFluidOunces() float64 {
 func (value USTablespoons) ToUSCups() float64 { 
 	return float64(value / 16.0)
 }
+// ToCubicMetres converts the supplied US Tablespoons value to Cubic Metres
+func (value USTablespoons) ToCubicMetres() float64 { 
+	return float64(value / 67628.0)
+}
+// ToCubicFeet converts the supplied US Tablespoons value to Cubic Feet
+func (value USTablespoons) ToCubicFeet() float64 { 
+	return float64(value / 1915.01)
+}
+// ToCubicInches converts the supplied US Tablespoons value to Cubic Inches
+func (value USTablespoons) ToCubicInches() float64 { 
+	return float64(value / 1.10823)
+}
+// ToOilBarrels converts the supplied US Tablespoons value to Oil Barrels
+func (value USTablespoons) ToOilBarrels() float64 { 
+	return float64(value / 10752.0)
+}
 
 // USTeaspoons (US Teaspoons) conversion functions
 type USTeaspoons float64
@@ -1028,4 +1588,20 @@ func (value USTeaspoons) ToUSFluidOunces() float64 {
 // ToUSCups converts the supplied US Teaspoons value to US Cups
 func (value USTeaspoons) ToUSCups() float64 { 
 	return float64(value / 48.0)
+}
+// ToCubicMetres converts the supplied US Teaspoons value to Cubic Metres
+func (value USTeaspoons) ToCubicMetres() float64 { 
+	return float64(value / 202884.0)
+}
+// ToCubicFeet converts the supplied US Teaspoons value to Cubic Feet
+func (value USTeaspoons) ToCubicFeet() float64 { 
+	return float64(value / 5745.04)
+}
+// ToCubicInches converts the supplied US Teaspoons value to Cubic Inches
+func (value USTeaspoons) ToCubicInches() float64 { 
+	return float64(value / 3.32468)
+}
+// ToOilBarrels converts the supplied US Teaspoons value to Oil Barrels
+func (value USTeaspoons) ToOilBarrels() float64 { 
+	return float64(value / 32256.0)
 }
